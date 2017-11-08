@@ -4,6 +4,11 @@
 @section('hirizontal_nav_dailyEntry_active', 'class=active')
 
 
+{{-- sidebar and main content column size setting --}}
+@section('sidebar_column_number', '3')
+@section('main_content_column_number', '9')
+
+
 @section('sidebar_navigation')
 
 	<div id="daily_notification_bar">
@@ -88,12 +93,12 @@
 	                  <div class="form-group">
 	                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="daily_catagory_select">ক্যাটাগরি</label>
 	                    <div class="col-md-6 col-sm-6 col-xs-12">
-	                      <select id="daily_catagory_select" class="form-control input_select_val">
-	                        <option>শেয়ার</option>
-	                        <option>সঞ্চয়</option>
-	                        <option>লোন</option>
-	                        <option>রিজার্ভ</option>
-	                        <option>মুনাফা থেকে খরচ</option>
+	                      <select name="daily_catagory_select" id="daily_catagory_select" class="form-control input_select_val">
+	                        <option value="sheyar">শেয়ার</option>
+	                        <option value="sonchoy">সঞ্চয়</option>
+	                        <option value="loan">লোন</option>
+	                        <option value="bibidh">রিজার্ভ</option>
+	                        <option value="munafa_theke_khoroch">মুনাফা থেকে খরচ</option>
 	                        <!-- <option>Option four</option> -->
 	                      </select>
 	                    </div>
@@ -111,9 +116,9 @@
 
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
 
-	                  	    <select id="sheyar_subCatagory_input" class="form-control input_select_val">
-	                  	      <option>ক্রয়</option>
-	                  	      <option>হস্তান্তর</option>
+	                  	    <select name="sheyar_subCatagory_input" id="sheyar_subCatagory_input" class="form-control input_select_val">
+	                  	      <option value="buy">ক্রয়</option>
+	                  	      <option value="sell">হস্তান্তর</option>
 	                  	      
 	                  	    </select>
 
@@ -129,9 +134,10 @@
 
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
 
-	                  	    <select id="sonchoy_subCatagory_input" class="form-control input_select_val">
-	                  	      <option>মাসিক সঞ্চয় জমা</option>
-	                  	      <option>সঞ্চয় উত্তলন</option>
+	                  	    <select name="sonchoy_subCatagory_input" id="sonchoy_subCatagory_input" class="form-control input_select_val">
+	                  	      <option value="sonchoy_masik_joma">মাসিক সঞ্চয় জমা</option>
+	                  	      <option value="sonchoy_masik_joma_advanced">মাসিক সঞ্চয় জমা ( অগ্রিম )</option>
+	                  	      <option value="sonchoy_uttolon">সঞ্চয় উত্তলন</option>
 	                  	      
 	                  	    </select>
 
@@ -148,10 +154,10 @@
 
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
 
-	                  	    <select id="loan_subCatagory_input" class="form-control input_select_val">
-	                  	      <option>লোন বিতরন</option>
-	                  	      <option>লোন জমা</option>
-	                  	      <option>লোন এর মাসিক মুনাফা</option>
+	                  	    <select name="loan_subCatagory_input" id="loan_subCatagory_input" class="form-control input_select_val">
+	                  	      <option value="loan_bitoron">লোন বিতরন</option>
+	                  	      <option value="loan_joma">লোন জমা</option>
+	                  	      <option value="loan_masik_munafa">লোন এর মাসিক মুনাফা</option>
 	                  	      
 	                  	    </select>
 
@@ -168,9 +174,9 @@
 
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
 
-	                  	    <select id="bibidh_subCatagory_input" class="form-control input_select_val">
-	                  	      <option>আয়</option>
-	                  	      <option>ব্যয়</option>
+	                  	    <select name="bibidh_subCatagory_input" id="bibidh_subCatagory_input" class="form-control input_select_val">
+	                  	      <option value="income">আয়</option>
+	                  	      <option value="spent">ব্যয়</option>
 	                  	      
 	                  	    </select>
 
@@ -194,7 +200,7 @@
 		                    	সভ্য সদস্য নম্বর
 		                    </label>
 		                    <div class="col-md-6 col-sm-6 col-xs-12">
-		                      <input id="sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number">
+		                      <input name="sovvo_sodosso_number_input" id="sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number">
 		                    </div>
 		                  </div>
 
@@ -204,7 +210,7 @@
 		                    	যে হস্তান্তর করছে তার <br> সভ্য সদস্য নম্বর
 		                    </label>
 		                    <div class="col-md-6 col-sm-6 col-xs-12">
-		                      <input id="from_sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number">
+		                      <input name="from_sovvo_sodosso_number_input" id="from_sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number">
 		                    </div>
 		                  </div>
 
@@ -214,7 +220,7 @@
 		                    	যার কাছে হস্তান্তর করছে তার <br> সভ্য সদস্য নম্বর
 		                    </label>
 		                    <div class="col-md-6 col-sm-6 col-xs-12">
-		                      <input id="to_sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number">
+		                      <input name="to_sovvo_sodosso_number_input" id="to_sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number">
 		                    </div>
 		                  </div>
 
@@ -225,7 +231,7 @@
 		                    	শেয়ার সংখা
 		                    </label>
 		                    <div class="col-md-6 col-sm-6 col-xs-12">
-		                      <input id="number_of_sheyar_input" class="form-control col-md-7 col-xs-12"  type="number" min="0">
+		                      <input name="number_of_sheyar_input" id="number_of_sheyar_input" class="form-control col-md-7 col-xs-12"  type="number" min="0">
 		                    </div>
 		                  </div>
 
@@ -236,7 +242,7 @@
 		                    	প্রদেয় টাকার পরিমান <br> ( টাকায় )
 		                    </label>
 		                    <div class="col-md-6 col-sm-6 col-xs-12">
-		                      <input id="sheyar_amount_in_money_input" class="form-control col-md-7 col-xs-12"  type="text" disabled>
+		                      <input name="sheyar_amount_in_money_input" id="sheyar_amount_in_money_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
 		                    </div>
 		                  </div>
 	                  
@@ -257,7 +263,7 @@
 	                  	  	মাসিক সঞ্চয় জমা <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="sonchoy_masik_joma_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
+	                  	    <input name="sonchoy_masik_joma_input" id="sonchoy_masik_joma_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
 	                  	  </div>
 	                  	</div>
 
@@ -267,7 +273,7 @@
 	                  	  	মাসিক সঞ্চয় এর জরিমানা <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="sonchoy_masik_jorimana_input" class="form-control col-md-7 col-xs-12"  type="number">
+	                  	    <input name="sonchoy_masik_jorimana_input" id="sonchoy_masik_jorimana_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
 	                  	</div>
 
@@ -277,7 +283,7 @@
 	                  	  	মাসিক সঞ্চয় এর জরিমানা এর ছাড় <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="sonchoy_masik_jorimana_char_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
+	                  	    <input name="sonchoy_masik_jorimana_char_input" id="sonchoy_masik_jorimana_char_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
 	                  	  </div>
 	                  	</div> -->
 
@@ -286,7 +292,26 @@
 	                  	  	মোট জমা <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="sonchoy_net_masik_joma_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
+	                  	    <input name="sonchoy_net_masik_joma_input" id="sonchoy_net_masik_joma_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
+	                  	  </div>
+	                  	</div>
+
+
+	                  	<div id="sonchoy_ogrim_joma_month" class="form-group remove_item">
+	                  	  <label for="sonchoy_ogrim_joma_month_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+	                  	  	মাসের পরিমান 
+	                  	  </label>
+	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
+	                  	    <input name="sonchoy_ogrim_joma_month_input" id="sonchoy_ogrim_joma_month_input" class="form-control col-md-7 col-xs-12"  type="number">
+	                  	  </div>
+	                  	</div>
+
+	                  	<div id="sonchoy_ogrim_joma_amount" class="form-group remove_item">
+	                  	  <label for="sonchoy_ogrim_joma_amount_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+	                  	  	মোট জমা <br> ( টাকায় )
+	                  	  </label>
+	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
+	                  	    <input name="sonchoy_ogrim_joma_amount_input" id="sonchoy_ogrim_joma_amount_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
 	                  	  </div>
 	                  	</div>
 
@@ -296,7 +321,7 @@
 	                  	  	মোট সঞ্চয় এর পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="sonchoy_net_amount_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
+	                  	    <input name="sonchoy_net_amount_input" id="sonchoy_net_amount_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
 	                  	  </div>
 	                  	</div>
 
@@ -306,7 +331,7 @@
 	                  	  	সঞ্চয় উত্তলন করুন <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="sonchoy_uttolon_amount_input" class="form-control col-md-7 col-xs-12"  type="number" max="12564789">
+	                  	    <input name="sonchoy_uttolon_amount_input" id="sonchoy_uttolon_amount_input" class="form-control col-md-7 col-xs-12"  type="number" max="12564789">
 	                  	  </div>
 	                  	</div>
 
@@ -321,7 +346,7 @@
 	                  =            loan            =
 	                  ===========================-->
 	                  
-	                  	<div id="loan_subCatagory" class="form-group remove_item">
+	                  	{{-- <div id="loan_subCatagory" class="form-group remove_item">
 
 	                  	  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="loan_subCatagory_input">সাব ক্যাটাগরি</label>
 
@@ -335,7 +360,7 @@
 	                  	    </select>
 
 	                  	  </div>
-	                  	</div>
+	                  	</div> --}}
 
 	
 	                  	<div id="loan_max_possible_amount" class="form-group remove_item">
@@ -343,7 +368,7 @@
 	                  	  	সর্বোচ্চ লোন এর পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_max_possible_amount_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
+	                  	    <input name="loan_max_possible_amount_input" id="loan_max_possible_amount_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
 	                  	  </div>
 	                  	</div>
 
@@ -353,7 +378,7 @@
 	                  	  	প্রদাঙ্কৃত লোন এর পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_giving_amount_input" class="form-control col-md-7 col-xs-12"  type="number" max="465451">
+	                  	    <input name="loan_giving_amount_input" id="loan_giving_amount_input" class="form-control col-md-7 col-xs-12"  type="number" max="465451">
 	                  	  </div>
 	                  	</div>
 
@@ -364,7 +389,7 @@
 	                  	  	মোট লোন এর পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_total_haveTo_pay_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
+	                  	    <input name="loan_total_haveTo_pay_input" id="loan_total_haveTo_pay_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
 	                  	  </div>
 	                  	</div>
 
@@ -374,7 +399,7 @@
 	                  	  	প্রদেয় লোন এর পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_now_pay_input" class="form-control col-md-7 col-xs-12"  type="number">
+	                  	    <input name="loan_now_pay_input" id="loan_now_pay_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
 	                  	</div>
 
@@ -383,7 +408,7 @@
 	                  	  	অবশিস্ট লোন এর পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_remaining_pay_input" class="form-control col-md-7 col-xs-12"  type="number">
+	                  	    <input name="loan_remaining_pay_input" id="loan_remaining_pay_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
 	                  	</div>
 
@@ -396,7 +421,7 @@
 	                  	  </label>
 
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_masik_munafa_joma_input" class="form-control col-md-7 col-xs-12"  type="number" disabled>
+	                  	    <input name="loan_masik_munafa_joma_input" id="loan_masik_munafa_joma_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
 
 	                  	  <div class="col-md-1 col-sm-6 col-xs-12">
@@ -412,7 +437,7 @@
 	                  	  	মাসিক লোন এর মুনাফা এর জরিমানা <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_masik_jorimana_input" class="form-control col-md-7 col-xs-12"  type="number">
+	                  	    <input name="loan_masik_jorimana_input" id="loan_masik_jorimana_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
 	                  	</div>
 
@@ -422,7 +447,7 @@
 	                  	  	মাসিক লোন এর মুনাফা এর জরিমানা এর ছাড় <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_masik_jorimana_char_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
+	                  	    <input name="loan_masik_jorimana_char_input" id="loan_masik_jorimana_char_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
 	                  	  </div>
 	                  	</div> -->
 
@@ -431,7 +456,7 @@
 	                  	  	মোট জমা <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="loan_net_masik_joma_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
+	                  	    <input name="loan_net_masik_joma_input" id="loan_net_masik_joma_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
 	                  	  </div>
 	                  	</div>
 
@@ -452,7 +477,7 @@
 	                  	  	উদ্দেশ্য
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="bibidh_uddesso_input" class="form-control col-md-7 col-xs-12"  type="text">
+	                  	    <input name="bibidh_uddesso_input" id="bibidh_uddesso_input" class="form-control col-md-7 col-xs-12"  type="text">
 	                  	  </div>
 	                  	</div>
 
@@ -462,7 +487,7 @@
 	                  	  	পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="bibidh_money_amount_input" class="form-control col-md-7 col-xs-12"  type="number">
+	                  	    <input name="bibidh_money_amount_input" id="bibidh_money_amount_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
 	                  	</div>
 
@@ -481,7 +506,7 @@
 	                  	  	উদ্দেশ্য
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="munafa_theke_khoroch_uddesso_input" class="form-control col-md-7 col-xs-12"  type="text">
+	                  	    <input name="munafa_theke_khoroch_uddesso_input" id="munafa_theke_khoroch_uddesso_input" class="form-control col-md-7 col-xs-12"  type="text">
 	                  	  </div>
 	                  	</div>
 
@@ -491,7 +516,7 @@
 	                  	  	পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input id="munafa_theke_khoroch_money_amount_input" class="form-control col-md-7 col-xs-12"  type="number">
+	                  	    <input name="munafa_theke_khoroch_money_amount_input" id="munafa_theke_khoroch_money_amount_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
 	                  	</div>
 	                  
@@ -499,7 +524,7 @@
 	                  
 	                  
 	                  
-	                  <div id="munafa_theke_khoroch_money_amount" class="form-group">
+	                  <div class="form-group">
 	                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
 	                    	
 	                    </label>

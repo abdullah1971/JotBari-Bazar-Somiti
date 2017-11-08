@@ -34,3 +34,23 @@ Route::get('/home', 'HomeController@index')->name('home');
 /*=====  End of daily entry portion  ======*/
 
 
+
+
+/*==================================================
+=            sodosso ( member ) portion            =
+==================================================*/
+
+	/* sodoss index */
+	Route::get('/company_member', 'CompanySodossInfo@index')->name('company_sodosso.home');
+
+
+
+	/* sodosso masik shonchoy setting */
+	Route::get('/company_member_masik_sonchoy_set', 'CompanySodossInfo@masik_sonchoy_set')->name('company_sodosso.masik_sonchoy_set');
+
+	Route::post('/company_member_masik_sonchoy_set', 'CompanySodossInfo@masik_sonchoy_setting_store')->name('company_sodosso.masik_sonchoy_setting_store');
+
+/*=====  End of sodosso ( member ) portion  ======*/
+		
+
+

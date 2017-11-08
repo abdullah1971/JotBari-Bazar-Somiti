@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 		var daily_catagory_select = $("#daily_catagory_select").val();
 
-		if(daily_catagory_select === "শেয়ার"){
+		if(daily_catagory_select === "sheyar"){
 
 			// console.log("sdfdf");
 
@@ -76,6 +76,8 @@ $(document).ready(function() {
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
 
 			/* loan portion */
 			$("#loan_subCatagory").addClass('remove_item');
@@ -115,7 +117,7 @@ $(document).ready(function() {
 
 
 		}
-		else if(daily_catagory_select === "সঞ্চয়"){
+		else if(daily_catagory_select === "sonchoy"){
 
 			/*----------  add remove_item class  ----------*/
 			
@@ -170,7 +172,7 @@ $(document).ready(function() {
 
 
 		}
-		else if (daily_catagory_select === "লোন") {
+		else if (daily_catagory_select === "loan") {
 
 			/*----------  add remove_item class  ----------*/
 			
@@ -190,6 +192,8 @@ $(document).ready(function() {
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
 
 			/* bibidh portion */
 			$("#bibidh_subCatagory").addClass('remove_item');
@@ -216,7 +220,7 @@ $(document).ready(function() {
 			$("#loan_giving_amount").removeClass('remove_item');
 	
 		}
-		else if (daily_catagory_select === "রিজার্ভ") {
+		else if (daily_catagory_select === "bibidh") {
 
 
 			/*----------  add remove_item class  ----------*/
@@ -238,6 +242,8 @@ $(document).ready(function() {
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
 
 
 			/* loan portion */
@@ -271,7 +277,7 @@ $(document).ready(function() {
 			$("#bibidh_money_amount").removeClass('remove_item');
 			
 		}
-		else if(daily_catagory_select === "মুনাফা থেকে খরচ") {
+		else if(daily_catagory_select === "munafa_theke_khoroch") {
 
 
 
@@ -294,6 +300,8 @@ $(document).ready(function() {
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
 
 
 			/* loan portion */
@@ -341,7 +349,7 @@ $(document).ready(function() {
 			
 			var sheyar_subCatagory_val = $("#sheyar_subCatagory_input").val();
 
-			if (sheyar_subCatagory_val === "ক্রয়") {
+			if (sheyar_subCatagory_val === "buy") {
 
 				/* remove  remove_item class */
 				$("#sovvo_sodosso_number").removeClass('remove_item');
@@ -350,7 +358,7 @@ $(document).ready(function() {
 				$("#from_sovvo_sodosso_number").addClass('remove_item');
 				$("#to_sovvo_sodosso_number").addClass('remove_item');
 			}
-			else if (sheyar_subCatagory_val === "হস্তান্তর") {
+			else if (sheyar_subCatagory_val === "sell") {
 
 				/* remove  remove_item class */
 				$("#from_sovvo_sodosso_number").removeClass('remove_item');
@@ -395,11 +403,13 @@ $(document).ready(function() {
 
 			console.log(sonchoy_subCatagory);
 
-			if(sonchoy_subCatagory === "মাসিক সঞ্চয় জমা"){
+			if(sonchoy_subCatagory === "sonchoy_masik_joma"){
 
 				/* add remove_item class */
 				$("#sonchoy_net_amount").addClass('remove_item');
 				$("#sonchoy_uttolon_amount").addClass('remove_item');
+				$("#sonchoy_ogrim_joma_month").addClass('remove_item');
+				$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
 
 				/* remove remvoe_item class */
 				$("#sonchoy_masik_joma").removeClass('remove_item');
@@ -407,17 +417,39 @@ $(document).ready(function() {
 				$("#sonchoy_masik_jorimana_char").removeClass('remove_item');
 				$("#sonchoy_net_masik_joma").removeClass('remove_item');
 			}
-			else if (sonchoy_subCatagory === "সঞ্চয় উত্তলন") {
+			else if (sonchoy_subCatagory === "sonchoy_masik_joma_advanced") {
 
-				/* remove remove_item class */
-				$("#sonchoy_net_amount").removeClass('remove_item');
-				$("#sonchoy_uttolon_amount").removeClass('remove_item');
+
+				/* add remove_item class */
+				$("#sonchoy_net_amount").addClass('remove_item');
+				$("#sonchoy_uttolon_amount").addClass('remove_item');
+				$("#sonchoy_masik_joma").addClass('remove_item');
+				$("#sonchoy_masik_jorimana").addClass('remove_item');
+				$("#sonchoy_masik_jorimana_char").addClass('remove_item');
+				$("#sonchoy_net_masik_joma").addClass('remove_item');
+
+				/* remove remvoe_item class */
+				$("#sonchoy_ogrim_joma_month").removeClass('remove_item');
+				$("#sonchoy_ogrim_joma_amount").removeClass('remove_item');
+				
+
+			}
+			else if (sonchoy_subCatagory === "sonchoy_uttolon") {
 
 				/* add remvoe_item class */
 				$("#sonchoy_masik_joma").addClass('remove_item');
 				$("#sonchoy_masik_jorimana").addClass('remove_item');
 				$("#sonchoy_masik_jorimana_char").addClass('remove_item');
 				$("#sonchoy_net_masik_joma").addClass('remove_item');
+				$("#sonchoy_ogrim_joma_month").addClass('remove_item');
+				$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+
+
+				/* remove remove_item class */
+				$("#sonchoy_net_amount").removeClass('remove_item');
+				$("#sonchoy_uttolon_amount").removeClass('remove_item');
+				
+
 			}
 
 		});
@@ -439,7 +471,7 @@ $(document).ready(function() {
 
 			console.log(sonchoy_subCatagory);
 
-			if(loan_subCatagory === "লোন বিতরন"){
+			if(loan_subCatagory === "loan_bitoron"){
 
 				/* add remove_item class */
 				$("#loan_total_haveTo_pay").addClass('remove_item');
@@ -457,7 +489,7 @@ $(document).ready(function() {
 				$("#loan_giving_amount").removeClass('remove_item');
 				
 			}
-			else if (loan_subCatagory === "লোন জমা") {
+			else if (loan_subCatagory === "loan_joma") {
 
 				/* add remvoe_item class */
 				$("#loan_masik_munafa_joma").addClass('remove_item');
@@ -474,7 +506,7 @@ $(document).ready(function() {
 				$("#loan_remaining_pay").removeClass('remove_item');
 
 			}
-			else if (loan_subCatagory === "লোন এর মাসিক মুনাফা") {
+			else if (loan_subCatagory === "loan_masik_munafa") {
 
 				/* add remvoe_item class */
 				$("#number_of_sheyar").addClass('remove_item');

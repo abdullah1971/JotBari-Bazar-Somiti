@@ -54,14 +54,22 @@
 	        </div>
 	        <div id="navbar" class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
-	            <li @yield('hirizontal_nav_dailyEntry_active')><a href="index.html">প্রাত্যাহিক আদান-প্রদান</a></li>
+	            <li @yield('hirizontal_nav_dailyEntry_active')><a href="{{ route('daily_entry.home') }}">প্রাত্যাহিক আদান-প্রদান</a></li>
+
 	            <li @yield('hirizontal_nav_sheyar_active')><a href="#">শেয়ার </a></li>
+
 	            <li @yield('hirizontal_nav_sonchoy_active')><a href="#">সঞ্চয়</a></li>
+
 	            <li @yield('hirizontal_nav_loan_active')><a href="#">লোন </a></li>
+
 	            <li @yield('hirizontal_nav_bibidh_active')><a href="#">বিবিধ</a></li>
+
 	            <li @yield('hirizontal_nav_closing_active')><a href="#">ক্লোজিং</a></li>
-	            <li @yield('hirizontal_nav_sodosso_active')><a href="#">সদস্য</a></li>
+
+	            <li @yield('hirizontal_nav_sodosso_active')><a href="{{ route('company_sodosso.home') }}">সদস্য</a></li>
+
 	            <li @yield('hirizontal_nav_comitee_active')><a href="#">কমিটি</a></li>
+
 	            <li @yield('hirizontal_nav_search_active')><a href="#">খুজুন</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
@@ -78,7 +86,7 @@
 
 	<div id="main_body" style="margin-top: 50px;">
 		
-		<div class="col-sm-3">
+		<div class="col-sm-@yield('sidebar_column_number')">
 
 
 			@yield('sidebar_navigation')
@@ -86,7 +94,7 @@
 
 		</div>
 
-		<div class="col-sm-9">
+		<div class="col-sm-@yield('main_content_column_number')">
 			
 	        
 			@yield('main_frame_content')
