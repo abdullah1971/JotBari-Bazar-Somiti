@@ -54,7 +54,7 @@
 
 	            <li style="padding: 0 12px;" @yield('hirizontal_nav_sodoss_biboron_active')><a href="{{ route('user.info_details') }}">সদস্য বিবরন </a></li>
 
-	            <li style="padding: 0 12px;" @yield('hirizontal_nav_sheyar_active')><a href="#">শেয়ার </a></li>
+	            <li style="padding: 0 12px;" @yield('hirizontal_nav_sheyar_active')><a href="{{ route('user.Sheyar_kroy') }}">শেয়ার </a></li>
 
 	            <li style="padding: 0 12px;" @yield('hirizontal_nav_sonchoy_active')><a href="#">সঞ্চয়</a></li>
 

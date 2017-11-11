@@ -2,8 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use App\Sheyar;
+use App\User_account;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -26,4 +28,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+
+    // public function User_sheyar_details()
+    // {
+        
+    //     return $this->hasMany(Sheyar::class, 'membership_no', 'user_id');
+    // }
 }

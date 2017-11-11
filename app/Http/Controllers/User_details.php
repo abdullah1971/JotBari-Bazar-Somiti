@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Sheyar;
 use App\User_account;
 use App\User_info;
 use Illuminate\Http\Request;
@@ -29,7 +30,6 @@ class User_details extends Controller
 
     	$user_info_instance = User_info::where('membership_no' , $user->membership_no)->get()->first();
 
-// return $user_info_instance->user_father_name;
 
     	if(!$user_info_instance){
 
@@ -74,7 +74,6 @@ class User_details extends Controller
     	
     	$user_info_instance = User_info::where('membership_no' , $user->membership_no)->get();
 
-    	// return "something";
     	if($user_info_instance->isEmpty()){
 
     		$user_info_instance = new User_info;
@@ -124,58 +123,57 @@ class User_details extends Controller
 
     	return redirect()->route('user.info_details');
 
-
-    	// if($user_info_instance->isEmpty()){
-
-    		
-
-    		
-    	// 	$user_instance = Auth::user();
-
-    	// 	$user_info_instance = new User_info;
-
-    	// 	/* user name */
-    		
-    	// 	$user_instance->name = $request->user_name_input;
-    	// 	$user_instance->save();
-
-    	// 	/* other user info */
-    		
-    	// 	$user_info_instance->membership_no = $user_instance->membership_no;
-    	// 	$user_info_instance->user_father_name = $request->user_father_name_input;
-    	// 	$user_info_instance->user_mother_name = $request->user_mother_name_input;
-    	// 	$user_info_instance->user_husbandORwife_name = $request->user_husbandORwife_name_input;
-    	// 	$user_info_instance->present_address = $request->present_address_input;
-    	// 	$user_info_instance->permanent_address = $request->permanent_address_input;
-    	// 	$user_info_instance->mobile_no = $request->mobile_no_input;
-    	// 	$user_info_instance->date_of_being_user = $request->date_of_being_user_input;
+    }
 
 
-    	// 	if ($request->hasFile('user_image_input')) {
+
+    /* user sheyar all */
+    
+    public function Sheyar_all()
+    {
+        
+        $user = Auth::user();
+
+        $sheyar_instance = Sheyar::where('user_id' , $user->membership_no)->get();
+
+        return view('user.user_sheyar_all', compact('sheyar_instance'));
+    }
 
 
-    	// 		$image_name = $request->user_image_input->getClientOriginalName();
 
-    	// 		$path = $request->user_image_input->storeAs('images', $image_name);
+    /* user sheyar kroy */
+    
+    public function Sheyar_kroy()
+    {
+        
+        $user = Auth::user();
 
-    	// 		$user_info_instance->image_path = $path;
-    	// 	}
+        $sheyar_instance = Sheyar::where('user_id' , $user->membership_no)
+                                    ->where('info_type' , 'buy')->get();
 
 
-    	// 	$user_info_instance->save();
 
-    	// 	return redirect()->route('user.info_details');
+        return view('user.user_sheyar_kroy', compact('sheyar_instance'));
 
-    		
-    	// }
-    	// else{
+    }
 
-    		
 
-    		
-    	// 	return "update";
-    		
-    	// }
+    /* user sheyar bikroy */
+    
+    public function Sheyar_sell()
+    {
+        
+        $user = Auth::user();
+
+        $sheyar_instance = Sheyar::where('user_id' , $user->membership_no)
+                                    ->where('info_type' , 'sell')->get();
+
+        // foreach ($sheyar_instance as $sheyar) {
+            
+        //      dd($sheyar->userPrimary()->membership_no);
+        // }
+
+        return view('user.user_sheyar_bikroy', compact('sheyar_instance'));
     }
 }
 
