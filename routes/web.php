@@ -51,6 +51,30 @@ Route::get('/home', 'HomeController@index')->name('home');
 	Route::post('/company_member_masik_sonchoy_set', 'CompanySodossInfo@masik_sonchoy_setting_store')->name('company_sodosso.masik_sonchoy_setting_store');
 
 /*=====  End of sodosso ( member ) portion  ======*/
+
+
+
+/*==================================================
+=            ajax data handling portion            =
+==================================================*/
+
+	Route::post('/get_all_data_about_specified_user', 'Daily_entry@Get_all_data_about_specified_user')->name('ajax_data.fetch_user_data');
+
+/*=====  End of ajax data handling portion  ======*/
+
+
+
+/*=======================================
+=            user entry page            =
+=======================================*/
+
+	Route::get('/user_info', 'User_details@Index')->name('user.info_details');
+
+	Route::get('/user_info_update', 'User_details@Update_page')->name('user.info_details_update');
+
+/*=====  End of user entry page  ======*/
+
+
 		
 
 

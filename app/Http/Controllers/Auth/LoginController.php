@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,33 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
+
+
+
+    /* custom redirection */
+    protected function redirectTo()
+    {
+
+        /* get user */
+        $user = Auth::user();
+
+        /* check whether user or admin */
+        if($user->membership_no == "12233344440"){
+
+            return '/daily_entry';
+            
+        }
+        else{
+
+
+            return '/user_info';
+        }
+
+
+    }
+
+
 
     /**
      * Create a new controller instance.

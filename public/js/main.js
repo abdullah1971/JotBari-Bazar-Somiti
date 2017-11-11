@@ -127,6 +127,8 @@ $(document).ready(function() {
 			$("#sheyar_amount_in_money").addClass('remove_item');
 			$("#from_sovvo_sodosso_number").addClass('remove_item');
 			$("#to_sovvo_sodosso_number").addClass('remove_item');
+			$("#net_number_of_sheyar").addClass('remove_item');
+			$("#selling_amount_of_sheyar").addClass('remove_item');
 
 
 			/* loan portion */
@@ -182,6 +184,8 @@ $(document).ready(function() {
 			$("#sheyar_amount_in_money").addClass('remove_item');
 			$("#from_sovvo_sodosso_number").addClass('remove_item');
 			$("#to_sovvo_sodosso_number").addClass('remove_item');
+			$("#net_number_of_sheyar").addClass('remove_item');
+			$("#selling_amount_of_sheyar").addClass('remove_item');
 
 
 			/* sonchoy portion */
@@ -232,6 +236,8 @@ $(document).ready(function() {
 			$("#sovvo_sodosso_number").addClass('remove_item');
 			$("#from_sovvo_sodosso_number").addClass('remove_item');
 			$("#to_sovvo_sodosso_number").addClass('remove_item');
+			$("#net_number_of_sheyar").addClass('remove_item');
+			$("#selling_amount_of_sheyar").addClass('remove_item');
 
 
 			/* sonchoy portion */
@@ -290,6 +296,8 @@ $(document).ready(function() {
 			$("#sovvo_sodosso_number").addClass('remove_item');
 			$("#from_sovvo_sodosso_number").addClass('remove_item');
 			$("#to_sovvo_sodosso_number").addClass('remove_item');
+			$("#net_number_of_sheyar").addClass('remove_item');
+			$("#selling_amount_of_sheyar").addClass('remove_item');
 
 
 			/* sonchoy portion */
@@ -357,15 +365,20 @@ $(document).ready(function() {
 				/* add remove_item class */
 				$("#from_sovvo_sodosso_number").addClass('remove_item');
 				$("#to_sovvo_sodosso_number").addClass('remove_item');
+				$("#net_number_of_sheyar").addClass('remove_item');
+				$("#selling_amount_of_sheyar").addClass('remove_item');
 			}
 			else if (sheyar_subCatagory_val === "sell") {
 
 				/* remove  remove_item class */
 				$("#from_sovvo_sodosso_number").removeClass('remove_item');
 				$("#to_sovvo_sodosso_number").removeClass('remove_item');
+				$("#net_number_of_sheyar").removeClass('remove_item');
+				$("#selling_amount_of_sheyar").removeClass('remove_item');
 
 				/* add remove_item class */
 				$("#sovvo_sodosso_number").addClass('remove_item');
+				$("#number_of_sheyar").addClass('remove_item');
 			}
 		});
 
@@ -385,6 +398,22 @@ $(document).ready(function() {
 			$("#sheyar_amount_in_money_input").val(sheyar_money_amount);
 
 		});
+
+
+		$("#selling_amount_of_sheyar_input").change(function() {
+			
+
+			var sheyar_amount = $("#selling_amount_of_sheyar_input").val();
+
+			var sheyar_money_amount = sheyar_amount * 100;
+			// sheyar_money_amount = sheyar_money_amount + "  টাকা ";
+
+			$("#sheyar_amount_in_money_input").val(sheyar_money_amount);
+
+		});
+
+
+
 	
 	
 	/*=====  End of sheyar portion ( except sheyar main catagory select )  ======*/
@@ -531,13 +560,61 @@ $(document).ready(function() {
 
 
 
-	/*=============================================
-	=            Section comment block            =
-	=============================================*/
+	/*============================================================
+	=            fetching data by using ajax + jquery            =
+	============================================================*/
 	
+		$('#sovvo_sodosso_number_input').keyup(function() {
+			
+			var sovvo_sodosso_number = $('#sovvo_sodosso_number_input').val();
+			var _token = $("input[name='_token']").val();
+
+			// console.log($('#sovvo_sodosso_number_input').val());
+
+
+			$.ajax({
+
+				url: '/get_all_data_about_specified_user',
+				type: 'POST',
+				data: {_token:_token, sovvo_sodosso_number: sovvo_sodosso_number},
+
+			})
+			.done(function(data) {
+
+				console.log(data.user_info.sheyar);
+
+				/* number of sheyar */
+				$("#number_of_sheyar_input").val(data.user_info.sheyar);
+
+
+				//  sheyar_amount_in_money 
+				// $("#sheyar_amount_in_money_input").val(data.user_info.sheyar * 100);
+
+
+
+
+				/* sonchoy_masik_joma */
+				$("#sonchoy_masik_joma_input").val(data.user_info.fixed_sonchoy);
+
+				/* sonchoy_net_amount */
+				$("#sonchoy_net_amount_input").val(data.user_info.net_sonchoy);
+
+
+				/* loan_max_possible_amount */
+				$("#loan_max_possible_amount_input").val(data.user_info.sheyar * 4000 - data.user_info.taken_loan_amount + data.user_info.paid_loan_amount);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+
+		});
+	
+	/*=====  End of fetching data by using ajax + jquery  ======*/
 		
-	
-	/*=====  End of Section comment block  ======*/
 	
 	
 	
