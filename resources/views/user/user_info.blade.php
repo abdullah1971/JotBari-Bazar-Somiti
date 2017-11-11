@@ -10,7 +10,7 @@
 
 @section('sidebar_navigation')
 
-	<div id="sidebar_links">
+	<div id="sidebar_links" style="font-size: 17px;">
 
 		<div class="list-group">
 
@@ -28,54 +28,415 @@
 
 @section('main_frame_content')
 
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h2>Form Design <small>different form elements</small></h2>
+    <div class="row container" style="margin-top: 20px; color: white;">
+      <div id="user_info_main_frame" class="col-md-12 col-sm-12 col-xs-12" style="font-size: 22px;">
+        
+        <br>
+
+        {{-- /* image */ --}}
+        
+        
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
             
-            <div class="clearfix"></div>
           </div>
-        <div>
-        <br />
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
 
-        <form id="" class="form-horizontal form-label-left" method="post" action="{{ route('company_sodosso.masik_sonchoy_setting_store') }}">
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+          </div>
 
-        	{{ csrf_field() }}
-
-              <div id="sovvo_sodosso_number" class="form-group">
-                <label for="sovvo_sodosso_number_input" class="control-label col-md-3 col-sm-3 col-xs-12">
-                	সভ্য সদস্য নম্বর
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="sovvo_sodosso_number_input" id="sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number" required>
-                </div>
-              </div>
+          <div class="col-md-3 col-sm-3 col-xs-12 thumbnail">
+            <img src={{ asset("storage/images/$user_info_instance->image_path") }} alt="">
+          </div>
 
 
-              <div id="sonchoy_monthly_fix_amount" class="form-group">
-                <label for="sonchoy_monthly_fix_amount_input" class="control-label col-md-3 col-sm-3 col-xs-12">
-                	প্রদেয় টাকার পরিমান <br> ( টাকায় )
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="sonchoy_monthly_fix_amount_input" id="sonchoy_monthly_fix_amount_input" class="form-control col-md-7 col-xs-12"  type="number" required>
-                </div>
-              </div>
+        </div>
 
 
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12">
-              	
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                
-              	<button type="submit" class="btn btn-success pull-right">Submit</button>
+        {{-- /* membership no */ --}}
+        
+        <hr>
+        <div class="row">
 
-				  	{{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            সভ্য সদস্য নম্বর 
 
-              </div>
-            </div>
-        </form>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+              
+            {{ $user->membership_no }}
+
+          </div>
+
+
+        </div>
+
+
+
+        {{-- /* name */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            নাম
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user->name }}
+
+          </div>
+
+
+        </div>
+        
+
+
+
+        {{-- /* fathers name */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            পিতার নাম
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_info_instance->user_father_name }}
+
+          </div>
+
+
+        </div>
+
+
+
+        {{-- /* mothers name */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+           মাতার নাম
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_info_instance->user_mother_name }}
+
+          </div>
+
+
+        </div>
+
+
+
+        {{-- /* housband or wife  name */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            
+            স্বামি / স্ত্রী এর নাম 
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_info_instance->user_husbandORwife_name }}
+
+          </div>
+
+
+        </div>
+
+
+
+
+        {{-- /* present address */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            বর্তমান ঠিকানা
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_info_instance->present_address }}
+
+          </div>
+
+
+        </div>
+
+
+        {{-- /* permanent address */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            স্থায়ী ঠিকানা
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_info_instance->permanent_address }}
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+        {{-- /* mobile no */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            মোবাইল নম্বর 
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_info_instance->mobile_no }}
+
+          </div>
+
+
+        </div>
+
+
+
+
+        {{-- /* sodosso pod er date */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            সদস্য হওয়ার তারিখ 
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_info_instance->date_of_being_user }}
+
+          </div>
+
+
+        </div>
+
+
+
+
+        {{-- /* account status */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            একাউন্ট
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            
+            {{ $user_account_instance->account_status }}
+
+          </div>
+
+
+        </div>
+
+
+
+
+        {{-- /* sheyar amount */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            শেয়ার সংখা
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+                        
+            {{ $user_account_instance->sheyar }}
+            
+          
+          </div>
+
+
+        </div>
+
+
+
+
+        {{-- /* fixed sonchoy amount */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            ফিক্সড সঞ্চয় 
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+                        
+            {{ $user_account_instance->fixed_sonchoy }} tk
+            
+          
+          </div>
+
+
+        </div>
+
+
+
+
+        {{-- /* sonchoy amount */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            মোট সঞ্চয়
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+                        
+            {{ $user_account_instance->net_sonchoy }} tk
+            
+          
+          </div>
+
+
+        </div>
+        
+
+
+        {{-- /* loan amount */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            মোট লোন 
+
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+                        
+            {{ $user_account_instance->taken_loan_amount - $user_account_instance->paid_loan_amount }} tk
+            
+          
+          </div>
+
+
+        </div>
+        <hr>
+
+
+        
+
       </div>
     </div>
 	        

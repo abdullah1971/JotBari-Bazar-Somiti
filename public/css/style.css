@@ -60,6 +60,10 @@
 }
 
 
+
+
+
+
 /* table styling */
 
 
@@ -107,3 +111,12 @@ th {
             width: 33.33%;
             float: left;
         }*/
+
+
+
+/* user info main frame */
+
+#user_info_main_frame{
+
+    background-color: #0b5077;
+}

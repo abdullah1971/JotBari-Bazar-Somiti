@@ -10,7 +10,7 @@
 
 @section('sidebar_navigation')
 
-	<div id="sidebar_links">
+	<div id="sidebar_links" style="font-size: 17px;">
 
 		<div class="list-group">
 
@@ -39,7 +39,7 @@
         <div>
         <br />
 
-        <form id="" class="form-horizontal form-label-left" method="post" action="{{ route('company_sodosso.masik_sonchoy_setting_store') }}">
+        <form id="" class="form-horizontal form-label-left" method="post" action="{{ route('user.info_details_update_store') }}" enctype="multipart/form-data">
 
         	{{ csrf_field() }}
 
@@ -63,7 +63,7 @@
                   পিতার নাম
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="user_father_name_input" id="user_father_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status ? $user_info_instance->user_father_name : "" }}">
+                  <input name="user_father_name_input" id="user_father_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status == true ? $user_info_instance->user_father_name : "" }}">
                 </div>
               </div>
 
@@ -171,13 +171,15 @@
                 
               	<button type="submit" class="btn btn-success pull-right">Submit</button>
 
-				  	{{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
+				  	 {{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
 
               </div>
             </div>
         </form>
       </div>
     </div>
+
+    {{-- <img src={{ asset('storage/images/sheyar.png') }} alt=""> --}}
 	        
 
 @endsection
