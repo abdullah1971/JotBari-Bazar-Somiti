@@ -32,10 +32,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 	
 
 	// entry point
-	Route::get('/daily_entry', 'Daily_entry@index')->name('daily_entry.home');
+	Route::get('/daily_entry', 'Daily_entry_controller@index')->name('daily_entry.home');
 
 	// form submit
-	Route::post('/dailty_entry', 'Daily_entry@fromInfo')->name('daily_entry.form');
+	Route::post('/dailty_entry', 'Daily_entry_controller@fromInfo')->name('daily_entry.form');
 
 
 
@@ -85,7 +85,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 	 */
 	
 
-	Route::post('/get_all_data_about_specified_user', 'Daily_entry@Get_all_data_about_specified_user')->name('ajax_data.fetch_user_data');
+	Route::post('/get_all_data_about_specified_user', 'Daily_entry_controller@Get_all_data_about_specified_user')->name('ajax_data.fetch_user_data');
 
 
 /*=====  End of company portion  ======*/

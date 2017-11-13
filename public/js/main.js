@@ -564,6 +564,8 @@ $(document).ready(function() {
 	=            fetching data by using ajax + jquery            =
 	============================================================*/
 	
+		/* by using sovvo sodosso number */
+		
 		$('#sovvo_sodosso_number_input').keyup(function() {
 			
 			var sovvo_sodosso_number = $('#sovvo_sodosso_number_input').val();
@@ -602,6 +604,9 @@ $(document).ready(function() {
 
 				/* loan_max_possible_amount */
 				$("#loan_max_possible_amount_input").val(data.user_info.sheyar * 4000 - data.user_info.taken_loan_amount + data.user_info.paid_loan_amount);
+
+				/* net loan amount */
+				$("#loan_total_haveTo_pay_input").val(data.user_info.taken_loan_amount - data.user_info.paid_loan_amount);
 			})
 			.fail(function() {
 				console.log("error");
@@ -612,6 +617,36 @@ $(document).ready(function() {
 			
 
 		});
+
+
+
+		/* by using je hostantor korse */
+		
+		$('#from_sovvo_sodosso_number_input').keyup(function() {
+			
+			var sovvo_sodosso_number = $('#from_sovvo_sodosso_number_input').val();
+			var _token = $("input[name='_token']").val();
+
+			$.ajax({
+
+				url: '/get_all_data_about_specified_user',
+				type: 'POST',
+				data: {_token:_token, sovvo_sodosso_number: sovvo_sodosso_number},
+
+			})
+			.done(function(data) {
+
+				/* number of sheyar */
+				$("#net_number_of_sheyar_input").val(data.user_info.sheyar);
+
+
+				
+			})
+			
+			
+
+		});
+
 	
 	/*=====  End of fetching data by using ajax + jquery  ======*/
 		

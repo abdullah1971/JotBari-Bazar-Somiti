@@ -15,11 +15,30 @@ class User_details extends Controller
 
     	$user = Auth::user();
 
-    	$user_info_instance = User_info::where('membership_no' , $user->membership_no)->get()->first();
-
     	$user_account_instance = User_account::where('user_id' , $user->membership_no)->get()->first();
+
+        $user_info_instance = User_info::where('membership_no' , $user->membership_no)->get()->first();
+
+
+        if(!$user_info_instance){
+
+            $info_status = false;
+
+            return view('user.user_info', compact('user', 'user_info_instance', 'user_account_instance', 'info_status'));
+        }
+        else{
+
+            $info_status = true;
+
+
+            return view('user.user_info', compact('user', 'user_info_instance', 'user_account_instance', 'info_status'));
+            
+        }
+
+
+
     	
-    	return view('user.user_info', compact('user', 'user_info_instance', 'user_account_instance'));
+    	// return view('user.user_info', compact('user', 'user_info_instance', 'user_account_instance'));
     }
 
 

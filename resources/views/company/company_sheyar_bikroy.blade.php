@@ -41,6 +41,7 @@
 	  	      </tr>
 	  	</thead>
 	  	    <tbody style="text-align: center; font-size: 22px;">
+	  	    	
 	  	    	@foreach ($sheyar_info as $single_sheyar)
 	  	    		
 

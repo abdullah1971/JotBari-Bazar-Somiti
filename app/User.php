@@ -2,7 +2,10 @@
 
 namespace App;
 
+use App\Loan;
+use App\Munafa;
 use App\Sheyar;
+use App\Sonchoy;
 use App\User_account;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -53,6 +56,50 @@ class User extends Authenticatable
         
         return $this->hasMany('App\Sheyar', 'user_id', 'membership_no');
     }
+
+
+
+    /**
+     *
+     * relation with sonchoy and user table
+     *
+     */
+    
+    public function SonchoyInfo()
+    {
+        
+        return $this->hasMany('App\Sonchoy', 'user_id', 'membership_no');
+    }
+
+
+
+    /**
+     *
+     * relation with loan and user table
+     *
+     */
+    
+    public function LoanInfo()
+    {
+        
+        return $this->hasMany('App\Loan', 'user_id', 'membership_no');
+    }
+
+
+    /**
+     *
+     * relation with munafa and user table
+     *
+     */
+    
+    public function MunafaInfo()
+    {
+        
+        return $this->hasMany('App\Munafa', 'user_id', 'membership_no');
+    }
+
+
+    
 
 
 }

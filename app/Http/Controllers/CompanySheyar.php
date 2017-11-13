@@ -53,6 +53,11 @@ class CompanySheyar extends Controller
 
     	$sheyar_info = $sheyar_instance->where('info_type', 'sell')->orderBy('updated_at', 'desc')->paginate(2);
 
+        // foreach ($sheyar_info as $single_sheyar) {
+            
+        //     return $single_sheyar->UserBasicInfoBikroy->membership_no;
+        // }
+
 
     	return view('company.company_sheyar_bikroy', compact('sheyar_info'));
     }

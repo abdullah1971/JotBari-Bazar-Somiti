@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Loan;
+use App\Sonchoy;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,9 +14,29 @@ class User_account extends Model
     ];
 
 
-    // public function userName()
-    // {
+    /**
+     *
+     * relation with sonchoy and user account table
+     *
+     */
+    
+    public function SonchoyInfoFromUserAccount()
+    {
     	
-    // 	return $this->belongsTo(User::class, 'membership_no');
-    // }
+    	return $this->hasMany('App\Sonchoy', 'user_id', 'user_id');
+    }
+
+
+
+    /**
+     *
+     * relation with loan and user account table
+     *
+     */
+    
+    public function LoanInfoFromUserAccount()
+    {
+    	
+    	return $this->hasMany('App\Loan', 'user_id', 'user_id');
+    }
 }

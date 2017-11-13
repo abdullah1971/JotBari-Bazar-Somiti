@@ -51,7 +51,12 @@
           </div>
 
           <div class="col-md-3 col-sm-3 col-xs-12 thumbnail">
-            <img src={{ asset("storage/images/$user_info_instance->image_path") }} alt="">
+
+            @if ($info_status)
+              
+             <img src={{ asset("storage/images/$user_info_instance->image_path") }} alt="">
+              
+            @endif
           </div>
 
 
@@ -127,8 +132,11 @@
           </div>
           
           <div class="col-md-6 col-sm-6 col-xs-12">
-            
-            {{ $user_info_instance->user_father_name }}
+            @if ($info_status)
+              
+              {{ $user_info_instance->user_father_name }}
+
+            @endif
 
           </div>
 
@@ -153,8 +161,11 @@
           </div>
           
           <div class="col-md-6 col-sm-6 col-xs-12">
-            
-            {{ $user_info_instance->user_mother_name }}
+            @if ($info_status)
+              
+              {{ $user_info_instance->user_mother_name }}
+
+            @endif
 
           </div>
 
@@ -180,8 +191,11 @@
           </div>
           
           <div class="col-md-6 col-sm-6 col-xs-12">
-            
-            {{ $user_info_instance->user_husbandORwife_name }}
+            @if ($info_status)
+              
+              {{ $user_info_instance->user_husbandORwife_name }}
+
+            @endif
 
           </div>
 
@@ -207,8 +221,11 @@
           </div>
           
           <div class="col-md-6 col-sm-6 col-xs-12">
-            
-            {{ $user_info_instance->present_address }}
+            @if ($info_status)
+              
+              {{ $user_info_instance->present_address }}
+
+            @endif
 
           </div>
 
@@ -232,8 +249,11 @@
           </div>
           
           <div class="col-md-6 col-sm-6 col-xs-12">
-            
-            {{ $user_info_instance->permanent_address }}
+            @if ($info_status)
+              
+              {{ $user_info_instance->permanent_address }}
+
+            @endif
 
           </div>
 
@@ -260,8 +280,11 @@
           </div>
           
           <div class="col-md-6 col-sm-6 col-xs-12">
-            
-            {{ $user_info_instance->mobile_no }}
+            @if ($info_status)
+              
+              {{ $user_info_instance->mobile_no }}
+
+            @endif
 
           </div>
 
@@ -287,8 +310,11 @@
           </div>
           
           <div class="col-md-6 col-sm-6 col-xs-12">
-            
-            {{ $user_info_instance->date_of_being_user }}
+            @if ($info_status)
+              
+              {{ $user_info_instance->date_of_being_user }}
+
+            @endif
 
           </div>
 

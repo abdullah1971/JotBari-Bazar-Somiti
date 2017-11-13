@@ -102,7 +102,7 @@ class RegisterController extends Controller
 
         User_account::create([
 
-            'user_id' => $user_id,
+            'user_id' => $data['membership_no'],
             'sheyar' => 0,
             'fixed_sonchoy' => 0,
             'net_sonchoy' => 0,

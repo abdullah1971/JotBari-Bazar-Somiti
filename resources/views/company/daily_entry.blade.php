@@ -11,62 +11,275 @@
 
 @section('sidebar_navigation')
 
-	<div id="daily_notification_bar">
+	
+
+<div id="daily_notification_bar">
+
 		
-		<div class="panel panel-info">
-		  <!-- info panel contents -->
-		  <div class="panel-heading">Panel heading</div>
-		  <div class="panel-body">
-		    <p>...</p>
-		  </div>
-
-		  <!-- List group -->
-		  <ul class="list-group">
-		    <li class="list-group-item">Cras justo odio</li>
-		    <li class="list-group-item">Dapibus ac facilisis in</li>
-		    <li class="list-group-item">Morbi leo risus</li>
-		    <li class="list-group-item">Porta ac consectetur ac</li>
-		    <li class="list-group-item">Vestibulum at eros</li>
-		  </ul>
-		</div>
 
 
-		<div class="panel panel-info">
-		  <!-- info panel contents -->
-		  <div class="panel-heading">Panel heading</div>
-		  <div class="panel-body">
-		    <p>...</p>
-		  </div>
+	@foreach ($daily_entry_instance as $single_entry)
+		
 
-		  <!-- List group -->
-		  <ul class="list-group">
-		    <li class="list-group-item">Cras justo odio</li>
-		    <li class="list-group-item">Dapibus ac facilisis in</li>
-		    <li class="list-group-item">Morbi leo risus</li>
-		    <li class="list-group-item">Porta ac consectetur ac</li>
-		    <li class="list-group-item">Vestibulum at eros</li>
-		  </ul>
-		</div>
+		@if ($single_entry->entry_type == "sheyar_and_buy")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">শেয়ার ক্রয় </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_sheyar->UserBasicInfoKroy->name }}</li>
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sheyar->user_id }}</li>
+			    <li class="list-group-item">শেয়ার সংখাঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount / 100 }}</li>
+			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+		@elseif ($single_entry->entry_type == "sheyar_and_sell")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">শেয়ার বিক্রয়ঃ  </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_sheyar->UserBasicInfoKroy->name }}</li>
+
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sheyar->user_id }}</li>
+
+			    <li class="list-group-item">যার কাছে বিক্রয় করা হয়েছেঃ  {{ $single_entry->Daily_entry_and_sheyar->UserBasicInfoBikroy->name ." ( ".$single_entry->Daily_entry_and_sheyar->to_whom." )"  }}</li>
+
+			    <li class="list-group-item">শেয়ার সংখাঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount / 100 }}</li>
+
+			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
+
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+		@elseif ($single_entry->entry_type == "sheyar_and_sell")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">শেয়ার বিক্রয়  </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_sheyar->UserBasicInfoKroy->name }}</li>
+
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sheyar->user_id }}</li>
+
+			    <li class="list-group-item">যার কাছে বিক্রয় করা হয়েছেঃ  {{ $single_entry->Daily_entry_and_sheyar->UserBasicInfoBikroy->name ." ( ".$single_entry->Daily_entry_and_sheyar->to_whom." )"  }}</li>
+
+			    <li class="list-group-item">শেয়ার সংখাঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount / 100 }}</li>
+
+			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
+
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+		@elseif ($single_entry->entry_type == "sonchoy_and_masik_joma")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">সঞ্চয় মাসিক জমা   </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_sonchoy->UserBasicInfo->name }}</li>
+
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sonchoy->user_id }}</li>
+
+			    <li class="list-group-item">মাসিক সঞ্চয় জমাঃ  {{ $single_entry->Daily_entry_and_sonchoy->money_amount  }}</li>
+
+			    <li class="list-group-item">মাসিক সঞ্চয় এর জরিমানাঃ {{ $single_entry->Daily_entry_and_sonchoy->jorimana_amount }}</li>
+
+			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sonchoy->total_amount }}</li>
+
+			    <li class="list-group-item">বর্তমানে মোট সঞ্চয়ঃ  {{ $single_entry->Daily_entry_and_sonchoy->current_month_sonchoy }}</li>
+
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
 
 
-		<div class="panel panel-info">
-		  <!-- info panel contents -->
-		  <div class="panel-heading">Panel heading</div>
-		  <div class="panel-body">
-		    <p>...</p>
-		  </div>
+		@elseif ($single_entry->entry_type == "sonchoy_and_uttolon")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">সঞ্চয় উত্তোলন   </div>
+			  
 
-		  <!-- List group -->
-		  <ul class="list-group">
-		    <li class="list-group-item">Cras justo odio</li>
-		    <li class="list-group-item">Dapibus ac facilisis in</li>
-		    <li class="list-group-item">Morbi leo risus</li>
-		    <li class="list-group-item">Porta ac consectetur ac</li>
-		    <li class="list-group-item">Vestibulum at eros</li>
-		  </ul>
-		</div>
-	</div>
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_sonchoy->UserBasicInfo->name }}</li>
 
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sonchoy->user_id }}</li>
+
+			    <li class="list-group-item">মোট সঞ্চয় এর পরিমানঃ  {{ $single_entry->Daily_entry_and_sonchoy->current_month_sonchoy +  $single_entry->Daily_entry_and_sonchoy->money_amount }}</li>
+
+			    <li class="list-group-item">উত্তোলনকৃত সঞ্চয় এর পরিমানঃ   {{ $single_entry->Daily_entry_and_sonchoy->money_amount }}</li>
+
+			    <li class="list-group-item">বর্তমানে মোট সঞ্চয়ঃ  {{ $single_entry->Daily_entry_and_sonchoy->current_month_sonchoy }}</li>
+
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+
+		@elseif ($single_entry->entry_type == "loan_and_bitoron")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">লোন বিতরন  </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_loan->UserBasicInfo->name }}</li>
+
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_loan->user_id }}</li>
+
+			    <li class="list-group-item">সর্বোচ্চ লোন এর পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->sheyar * 4000 - $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount +  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount + $single_entry->Daily_entry_and_loan->money_amount }}</li>
+
+			    <li class="list-group-item">প্রদানকৃত লোন এর পরিমানঃ   {{ $single_entry->Daily_entry_and_loan->money_amount }}</li>
+
+			    <li class="list-group-item">ভবিস্যতে লোন প্রাপ্তির পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->sheyar * 4000 - $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount +  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount }}</li>
+
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+
+		@elseif ($single_entry->entry_type == "loan_and_joma")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">লোন জমা  </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_loan->UserBasicInfo->name }}</li>
+
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_loan->user_id }}</li>
+
+			    <li class="list-group-item">মোট লোন এর পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount -  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount + $single_entry->Daily_entry_and_loan->money_amount }}</li>
+
+			    <li class="list-group-item">প্রদানকৃত লোন এর পরিমানঃ   {{ $single_entry->Daily_entry_and_loan->money_amount }}</li>
+
+			    <li class="list-group-item">অবশিস্ট লোন এর পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount -  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount }}</li>
+
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+
+			@elseif ($single_entry->entry_type == "loan_and_masik_joma")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">লোন মাসিক জমা  </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_loan->UserBasicInfo->name }}</li>
+
+			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_loan->user_id }}</li>
+
+			    <li class="list-group-item">মোট লোন এর পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount -  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount  }}</li>
+
+			    <li class="list-group-item">লোন এর মাসিক মুনাফা জমাঃ   {{ $single_entry->Daily_entry_and_loan->money_amount }}</li>
+
+			    <li class="list-group-item">লোন এর মাসিক মুনাফা এর জরিমানাঃ  {{ $single_entry->Daily_entry_and_loan->jorimana_amount }}</li>
+
+			    <li class="list-group-item">মোট জমাঃ  {{ $single_entry->Daily_entry_and_loan->total_amount }}</li>
+
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+
+			@elseif ($single_entry->entry_type == "reserve_and_income")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">রিজার্ভ ( আয় )  </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">উৎসঃ  {{ $single_entry->Daily_entry_and_reserve->subject }}</li>
+
+			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_reserve->money_amount }}</li>
+
+			    
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+
+			@elseif ($single_entry->entry_type == "reserve_and_spent")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">রিজার্ভ ( ব্যয় )  </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">উৎসঃ  {{ $single_entry->Daily_entry_and_reserve->subject }}</li>
+
+			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_reserve->money_amount }}</li>
+
+			    
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+
+
+
+			@elseif ($single_entry->entry_type == "munafa_theke_khoroch")
+			
+			<div class="panel panel-info">
+			  <!-- info panel contents -->
+			  <div class="panel-heading">মুনাফা থেকে খরচ </div>
+			  
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">উৎসঃ  {{ $single_entry->Daily_entry_and_munafa_theke_khoroch->subject }}</li>
+
+			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_munafa_theke_khoroch->money_amount }}</li>
+
+			    
+			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			  </ul>
+			</div>
+
+		@endif
+
+
+		
+
+		
+	@endforeach 
+
+
+
+
+
+		
+</div>
 
 
 @endsection
@@ -340,7 +553,7 @@
 	                  	  	মোট সঞ্চয় এর পরিমান <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
-	                  	    <input name="sonchoy_net_amount_input" id="sonchoy_net_amount_input" class="form-control col-md-7 col-xs-12"  type="number" readonly="true" value="568974">
+	                  	    <input name="sonchoy_net_amount_input" id="sonchoy_net_amount_input" class="form-control col-md-7 col-xs-12"  type="number" readonly="true" >
 	                  	  </div>
 	                  	</div>
 
