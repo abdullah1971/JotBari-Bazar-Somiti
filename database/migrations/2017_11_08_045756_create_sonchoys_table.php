@@ -20,7 +20,9 @@ class CreateSonchoysTable extends Migration
             $table->bigInteger('money_amount');
             $table->bigInteger('jorimana_amount')->nullable($value = true);
             $table->bigInteger('total_amount')->nullable($value = true);
+            $table->bigInteger('current_month_sonchoy');
             $table->timestamps();
+
         });
     }
 

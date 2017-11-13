@@ -7,9 +7,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sheyar extends Model
 {
-   	// public function userPrimary()
-   	// {
+   	
+   	/**
+   	 *
+   	 * relation with sheyar and user table
+   	 *
+   	 */
+   	
+      /* bikroy */
+      
+   	public function UserBasicInfoBikroy()
+      {
+         
+          return $this->belongsTo('App\User', 'to_whom');
+      }
+
+      /* kroy */
+      
+      public function UserBasicInfoKroy()
+   	{
    		
-   	// 	return $this->belongsTo(User::class, 'user_id');
-   	// }
+   		 return $this->belongsTo('App\User', 'user_id');
+   	}
 }

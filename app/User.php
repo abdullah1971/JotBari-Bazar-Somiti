@@ -31,9 +31,28 @@ class User extends Authenticatable
 
 
 
-    // public function User_sheyar_details()
-    // {
+    /**
+     *
+     * relation with sheyar and user table
+     *
+     */
+
+    /* bikroy */
+    
+    public function SheyarInfoBikroy()
+    {
         
-    //     return $this->hasMany(Sheyar::class, 'membership_no', 'user_id');
-    // }
+        return $this->hasMany('App\Sheyar', 'to_whom', 'membership_no');
+    }
+
+
+    /* kroy */
+    
+    public function SheyarInfoKroy()
+    {
+        
+        return $this->hasMany('App\Sheyar', 'user_id', 'membership_no');
+    }
+
+
 }

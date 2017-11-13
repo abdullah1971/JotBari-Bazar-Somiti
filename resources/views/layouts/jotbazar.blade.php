@@ -2,19 +2,19 @@
 <html>
 <head>
 
-	<!-- /*----------  meta data  ----------*/ -->
+	<!--   meta data   -->
 	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- /*----------  heading  ----------*/ -->
+	<!--   heading   -->
 	
 	<title>জোতবাজার বণিক সমবায় সমিতি</title>
 
 	
 
-	<!-- /*----------  external css group  ----------*/ -->
+	<!--   external css group   -->
 	
 	
 	<!-- Latest compiled and minified CSS -->
@@ -56,7 +56,7 @@
 	          <ul class="nav navbar-nav">
 	            <li @yield('hirizontal_nav_dailyEntry_active')><a href="{{ route('daily_entry.home') }}">প্রাত্যাহিক আদান-প্রদান</a></li>
 
-	            <li @yield('hirizontal_nav_sheyar_active')><a href="#">শেয়ার </a></li>
+	            <li @yield('hirizontal_nav_sheyar_active')><a href="{{ route('company.all_sheyar') }}">শেয়ার </a></li>
 
 	            <li @yield('hirizontal_nav_sonchoy_active')><a href="#">সঞ্চয়</a></li>
 
