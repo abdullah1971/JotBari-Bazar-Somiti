@@ -19,7 +19,7 @@ class Sheyar extends Model
       
    	public function UserBasicInfoBikroy(){
          
-      return $this->belongsTo('App\User', 'to_whom');
+      return $this->belongsTo('App\User', 'to_whom' , 'membership_no');
 
     }
 
@@ -27,7 +27,7 @@ class Sheyar extends Model
       
     public function UserBasicInfoKroy(){
    		
-   		return $this->belongsTo('App\User', 'user_id');
+   		return $this->belongsTo('App\User', 'user_id' , 'membership_no');
 
    	}
 

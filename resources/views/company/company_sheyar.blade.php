@@ -46,7 +46,9 @@
 
 		  	      <tr>
 		  	        <td>
+		  	        	
 		  	        	{{ $single_sheyar->UserBasicInfoKroy->name ." ( ". $single_sheyar->UserBasicInfoKroy->membership_no ." )" }}
+		  	        	
 		  	        </td>
 		  	        <td>{{ $single_sheyar->sheyar_amount / 100 }}</td>
 		  	        <td>{{ $single_sheyar->sheyar_amount  }}</td>

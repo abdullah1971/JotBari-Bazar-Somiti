@@ -23,6 +23,15 @@ class CompanySheyar extends Controller
 
     	$sheyar_info = $sheyar_instance->orderBy('updated_at', 'desc')->paginate(2);
 
+        // $sheyar_info = $sheyar_instance->all();
+
+        // dd($sheyar_info);
+
+        // foreach ($sheyar_info as $single_sheyar) {
+            
+        //     dd($single_sheyar->UserBasicInfoKroy->membership_no);
+        // }
+
 
     	return view('company.company_sheyar', compact('sheyar_info'));
     }

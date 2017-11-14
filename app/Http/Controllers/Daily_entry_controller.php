@@ -26,14 +26,14 @@ class Daily_entry_controller extends Controller
 
         $daily_entry_instance = Daily_entry::orderBy('updated_at', 'desc')->where('updated_at', 'LIKE' , "%$todayDate%")->get();
 
-        foreach ($daily_entry_instance as $single_entry) {
+        // foreach ($daily_entry_instance as $single_entry) {
             
 
-            if ($single_entry->entry_type == "sheyar_and_sell") {
+        //     if ($single_entry->entry_type == "sheyar_and_sell") {
                 
-                return $single_entry->Daily_entry_and_sheyar->UserBasicInfoBikroy->name;
-            }
-        }
+        //         return $single_entry->Daily_entry_and_sheyar->UserBasicInfoBikroy->name;
+        //     }
+        // }
     	
     	return view('company.daily_entry', compact('daily_entry_instance'));
     }
