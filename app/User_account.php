@@ -39,4 +39,19 @@ class User_account extends Model
     	
     	return $this->hasMany('App\Loan', 'user_id', 'user_id');
     }
+
+
+
+
+    /**
+     *
+     * relation with user and user account table
+     *
+     */
+    
+    public function UserBasicInfo()
+    {
+        
+        return $this->belongsTo('App\User', 'user_id', 'membership_no');
+    }
 }

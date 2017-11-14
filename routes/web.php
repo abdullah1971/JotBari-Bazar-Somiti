@@ -57,6 +57,31 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+	/**
+	 *
+	 * sonchoy portion
+	 *
+	 */
+	
+
+	/* all member net sonchoy */
+	Route::get('all_user_net_sonchoy', 'CompanySonchoyController@NetSonchoy')->name('compnay.net_sonchoy');
+
+	/* all member fixed sonchoy */
+	Route::get('all_user_fixed_monthly_sonchoy', 'CompanySonchoyController@FixedSonchoy')->name('company.fixed_monthly_sonchoy');
+
+	/* all member sonchoy masik joma */
+	Route::get('all_user_masik_sonchoy_joma', 'CompanySonchoyController@MasikJoma')->name('company.masik_sonchoy_joma');
+	
+	/* all member sonchoy uttolon */
+	Route::get('all_user_sonchoy_uttolon', 'CompanySonchoyController@Uttolon')->name('company.sonchoy_uttolon');
+
+
+
+
+
+
+
 
 	/**
 	 *

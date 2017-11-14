@@ -100,6 +100,17 @@ class User extends Authenticatable
 
 
     
+    /**
+     *
+     * relation with user account and user table
+     *
+     */
+    
+    public function UserAccountInfo()
+    {
+        
+        return $this->hasOne('App\User_account', 'user_id', 'membership_no');
+    }
 
 
 }

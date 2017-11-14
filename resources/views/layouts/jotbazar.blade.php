@@ -58,7 +58,7 @@
 
 	            <li @yield('hirizontal_nav_sheyar_active')><a href="{{ route('company.all_sheyar') }}">শেয়ার </a></li>
 
-	            <li @yield('hirizontal_nav_sonchoy_active')><a href="#">সঞ্চয়</a></li>
+	            <li @yield('hirizontal_nav_sonchoy_active')><a href="{{ route('compnay.net_sonchoy') }}">সঞ্চয়</a></li>
 
 	            <li @yield('hirizontal_nav_loan_active')><a href="#">লোন </a></li>
 

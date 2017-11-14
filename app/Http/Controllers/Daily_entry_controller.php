@@ -170,7 +170,7 @@ class Daily_entry_controller extends Controller
 
                 /* for who is selling */
                 
-                $user_account_instance = User_account::find($request->from_sovvo_sodosso_number_input);
+                $user_account_instance = User_account::where('user_id', $request->from_sovvo_sodosso_number_input)->get()->first();
                 // dd($user_account_instance);
 
                 $previous_sheyar_amount = $user_account_instance->sheyar;
@@ -226,7 +226,7 @@ class Daily_entry_controller extends Controller
 
                 /* increase users sonchoy amount */
 
-                $user_account_instance = User_account::find($request->sovvo_sodosso_number_input);
+                $user_account_instance = User_account::where('user_id', $request->sovvo_sodosso_number_input)->get()->first();
 
                 $user_account_instance->net_sonchoy = $user_account_instance->net_sonchoy + $request->sonchoy_masik_joma_input;
 
@@ -326,7 +326,7 @@ class Daily_entry_controller extends Controller
 
                 /* reduce users sonchoy amount */
 
-                $user_account_instance = User_account::find($request->sovvo_sodosso_number_input);
+                $user_account_instance = User_account::where('user_id', $request->sovvo_sodosso_number_input)->get()->first();
 
                 /* check whether uttolon amount is less or not than net sonchoy */
                 if ($request->sonchoy_net_amount_input > $user_account_instance->net_sonchoy){
@@ -396,14 +396,15 @@ class Daily_entry_controller extends Controller
 
                 /* check if it is 40x of share or not then update user account */
                 
-                $user_account_instance = User_account::find($request->sovvo_sodosso_number_input);
+                $user_account_instance = User_account::where('user_id', $request->sovvo_sodosso_number_input)->get()->first();
 
-                $elegible_loan_amount = $user_account_instance->sheyar * 40;
+                $elegible_loan_amount = $user_account_instance->sheyar * 4000;
 
                 $loan_can_be_given = $elegible_loan_amount - $user_account_instance->taken_loan_amount + $user_account_instance->paid_loan_amount;
 
                 if($request->loan_giving_amount_input > $loan_can_be_given){
 
+                    // return $elegible_loan_amount;
                     return back()->withInput();
                 }
                 else{
@@ -463,7 +464,7 @@ class Daily_entry_controller extends Controller
 
                 /* update user account */
                 
-                $user_account_instance = User_account::find($request->sovvo_sodosso_number_input);
+                $user_account_instance = User_account::where('user_id', $request->sovvo_sodosso_number_input)->get()->first();
 
 
                 if($request->loan_now_pay_input > $user_account_instance->taken_loan_amount){

@@ -32,7 +32,7 @@ class Loan extends Model
     public function UserBasicInfo()
     {
         
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\User', 'user_id', 'membership_no');
     }
 
 
@@ -46,6 +46,6 @@ class Loan extends Model
     public function UserAccountInfo()
     {
         
-        return $this->belongsTo('App\User_account', 'user_id');
+        return $this->belongsTo('App\User_account', 'user_id', 'user_id');
     }
 }
