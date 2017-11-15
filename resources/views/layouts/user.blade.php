@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<!-- /*----------  meta data  ----------*/ -->
+	<!--   meta data   -->
 	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,9 +56,9 @@
 
 	            <li style="padding: 0 12px;" @yield('hirizontal_nav_sheyar_active')><a href="{{ route('user.Sheyar_all') }}">শেয়ার </a></li>
 
-	            <li style="padding: 0 12px;" @yield('hirizontal_nav_sonchoy_active')><a href="#">সঞ্চয়</a></li>
+	            <li style="padding: 0 12px;" @yield('hirizontal_nav_sonchoy_active')><a href="{{ route('user.sonchoy_biboron') }}">সঞ্চয়</a></li>
 
-	            <li style="padding: 0 12px;" @yield('hirizontal_nav_loan_active')><a href="#">লোন </a></li>
+	            <li style="padding: 0 12px;" @yield('hirizontal_nav_loan_active')><a href="{{ route('user.loan_uttolon') }}">লোন </a></li>
 
 	            <li style="padding: 0 12px;" @yield('hirizontal_nav_closing_active')><a href="#">ক্লোজিং</a></li>
 

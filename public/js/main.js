@@ -607,6 +607,10 @@ $(document).ready(function() {
 
 				/* net loan amount */
 				$("#loan_total_haveTo_pay_input").val(data.user_info.taken_loan_amount - data.user_info.paid_loan_amount);
+
+
+				/* update loan table */
+				// $("#loan_modal_table").empty();
 			})
 			.fail(function() {
 				console.log("error");

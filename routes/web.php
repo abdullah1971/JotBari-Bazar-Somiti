@@ -175,6 +175,38 @@ Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/user_sheyar_buy' , 'User_details@Sheyar_kroy')->name('user.Sheyar_kroy');
 	Route::get('/user_sheyar_sell' , 'User_details@Sheyar_sell')->name('user.Sheyar_sell');
 
+
+
+	/**
+	 *
+	 * sonchoy
+	 *
+	 */
+	
+	/* sonchoy biboron */
+	Route::get('user_sonchoy_biboron', 'User_details@SonchoyBiboron')->name('user.sonchoy_biboron');
+
+	/* sonchoy uttolon */
+	Route::get('user_sonchoy_uttolon', 'User_details@SonchoyUttolon')->name('user.sonchoy_uttolon');
+
+
+
+
+	/**
+	 *
+	 * loan
+	 *
+	 */
+	
+	/* loan uttolon */
+	Route::get('user_loan_uttolon', 'User_details@LoanUttolon')->name('user.loan_uttolon');
+
+	/* loan joma */
+	Route::get('user_loan_joma', 'User_details@LoanJoma')->name('user.loan_joma');
+
+	/* loan joma */
+	Route::get('user_loan_masik_munafa', 'User_details@LoanMasikMunafa')->name('user.loan_masik_munafa');
+
 /*=====  End of user entry page  ======*/
 
 

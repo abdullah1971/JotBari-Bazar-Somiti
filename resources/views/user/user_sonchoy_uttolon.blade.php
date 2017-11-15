@@ -1,4 +1,4 @@
-@extends('layouts.jotbazar')
+@extends('layouts.user')
 
 @section('hirizontal_nav_sonchoy_active', 'class=active')
 
@@ -14,10 +14,10 @@
 	<div id="sidebar_links" style="font-size: 17px;">
 
 		<div class="list-group">
-		  <a href="{{ route('compnay.net_sonchoy') }}" class="list-group-item">মোট সঞ্চয় </a>
-		  <a href="{{ route('company.fixed_monthly_sonchoy') }}" class="list-group-item">ফিক্স মাসিক সঞ্চয় </a>
-		  <a href="{{ route('company.masik_sonchoy_joma') }}" class="list-group-item active">মাসিক সঞ্চয় জমা </a>
-		  <a href="{{ route('company.sonchoy_uttolon') }}" class="list-group-item">সঞ্চয় উত্তোলন </a>
+
+		  <a href="{{ route('user.sonchoy_biboron') }}" class="list-group-item">সঞ্চয় বিবরন </a>
+
+		  <a href="{{ route('user.sonchoy_uttolon') }}" class="list-group-item active">সঞ্চয় উত্তোলন </a>
 		  
 		</div>
 
@@ -34,11 +34,8 @@
 	    
 	  	<thead>
 	  	      <tr>
-	  	        <th style="text-align: center; font-size: 22px;">সদস্যের নাম</th>
-	  	        <th style="text-align: center; font-size: 22px;">সদস্য নম্বর</th>
-	  	        <th style="text-align: center; font-size: 22px;">মাসিক সঞ্চয় </th>
-	  	        <th style="text-align: center; font-size: 22px;">জরিমানা</th>
-	  	        <th style="text-align: center; font-size: 22px;">মোট প্রদান</th>
+	  	        
+	  	        <th style="text-align: center; font-size: 22px;">মোট উত্তোলন</th>
 	  	        <th style="text-align: center; font-size: 22px;">বর্তমানে সঞ্চয়</th>
 	  	        <th style="text-align: center; font-size: 22px;">তারিখ</th>
 	  	      </tr>
@@ -49,11 +46,8 @@
 	  	    		
 
 		  	      <tr>
-		  	        <td>{{ $single_sonchoy_info->UserBasicInfo->name }}</td>
-		  	        <td>{{ $single_sonchoy_info->UserBasicInfo->membership_no }}</td>
+		  	        
 		  	        <td>{{ $single_sonchoy_info->money_amount }}</td>
-		  	        <td>{{ $single_sonchoy_info->jorimana_amount }}</td>
-		  	        <td>{{ $single_sonchoy_info->total_amount }}</td>
 		  	        <td>{{ $single_sonchoy_info->current_month_sonchoy }}</td>
 		  	        <td>{{ $single_sonchoy_info->updated_at->formatLocalized('%A %d %B %Y') }}</td>
 		  	      </tr>

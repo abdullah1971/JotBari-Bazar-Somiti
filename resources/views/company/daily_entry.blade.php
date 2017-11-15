@@ -658,7 +658,7 @@
 
 	                  	  <div class="col-md-1 col-sm-6 col-xs-12">
 	                  	  	
-	                  	  	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loan_info_modal">loan details</button>
+	                  	  	<button id="loan_modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#loan_info_modal">loan details</button>
 
 	                  	  </div>
 	                  	</div>
@@ -804,30 +804,42 @@
 	         <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
 	       </div>
 	       <div class="modal-body">
-	         <div class="row">
-	           <div class="col-md-4">.col-md-4</div>
-	           <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
-	         </div>
-	         <div class="row">
-	           <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-	           <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
-	         </div>
-	         <div class="row">
-	           <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-	         </div>
-	         <div class="row">
-	           <div class="col-sm-9">
-	             Level 1: .col-sm-9
-	             <div class="row">
-	               <div class="col-xs-8 col-sm-6">
-	                 Level 2: .col-xs-8 .col-sm-6
-	               </div>
-	               <div class="col-xs-4 col-sm-6">
-	                 Level 2: .col-xs-4 .col-sm-6
-	               </div>
-	             </div>
-	           </div>
-	         </div>
+
+
+	         <div id="loan_modal_table" class="table-responsive" style="margin-top: 20px;">
+	         	  <table class="table table-hover table-striped">
+	         	    
+	         	  	<thead>
+	         	  	      <tr>
+	         	  	        <th style="text-align: center;">ক্রমিক</th>
+	         	  	        <th style="text-align: center;">লোনের পরিমান</th>
+	         	  	        <th style="text-align: center;">শোধের পরিমান</th>
+	         	  	        <th style="text-align: center;">তারিখ </th>
+	         	  	      </tr>
+	         	  	</thead>
+	         	  	    <tbody style="text-align: center; font-size: 22px;">
+
+	         	  	    	
+	         	  	    		
+
+	         		  	      <tr>
+	         		  	        <td>kdjhfdkfj</td>
+	         		  	        <td>kdjhfdkfj</td>
+	         		  	        <td>kdjhfdkfj</td>
+	         		  	        <td>kdjhfdkfj</td>
+	         		  	        	  	        
+	         		  	      </tr>	        
+	         		  	      
+	         	  	    		
+	         	  	    	
+	         	  	      
+	         	  	    </tbody>
+
+	         	  </table>
+	         	</div>
+	         
+
+
 	       </div>
 	       <div class="modal-footer">
 	         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

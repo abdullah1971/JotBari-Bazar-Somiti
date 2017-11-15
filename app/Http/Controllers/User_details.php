@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Loan;
 use App\Sheyar;
+use App\Sonchoy;
 use App\User_account;
 use App\User_info;
 use Illuminate\Http\Request;
@@ -193,6 +195,90 @@ class User_details extends Controller
         // }
 
         return view('user.user_sheyar_bikroy', compact('sheyar_instance'));
+    }
+
+
+
+
+    /**
+     *
+     * sonchoy portion
+     *
+     */
+    
+
+    /* sonchoy biboron */
+
+    public function SonchoyBiboron()
+    {
+        
+        $user = Auth::user();
+
+        $sonchoy_instance = Sonchoy::where('user_id', $user->membership_no)->where('info_type', '!=' , 'sonchoy_uttolon')->orderby('updated_at', 'dec')->paginate(5);
+
+        return view('user.user_sonchoy_biboron', compact('sonchoy_instance'));
+    }
+
+
+
+    /* sonchoy uttolon */
+
+    public function SonchoyUttolon()
+    {
+        
+        $user = Auth::user();
+
+        $sonchoy_instance = Sonchoy::where('user_id', $user->membership_no)->where('info_type', 'sonchoy_uttolon')->orderby('updated_at', 'dec')->paginate(5);
+
+        return view('user.user_sonchoy_uttolon', compact('sonchoy_instance'));
+    }
+
+
+
+
+    /**
+     *
+     * loan portion
+     *
+     */
+    
+    /* loan uttolon */
+    
+    public function LoanUttolon()
+    {
+        
+         $user = Auth::user();
+
+         $loan_instance = Loan::where('user_id', $user->membership_no)->where('info_type', 'loan_bitoron')->paginate(5);
+
+         return view('user.user_loan_uttolon', compact('loan_instance'));
+    }
+
+
+
+    /* loan uttolon */
+    
+    public function LoanJoma()
+    {
+        
+         $user = Auth::user();
+
+         $loan_instance = Loan::where('user_id', $user->membership_no)->where('info_type', 'loan_joma')->paginate(5);
+
+         return view('user.user_loan_joma', compact('loan_instance'));
+    }
+
+
+    /* loan masik munafa joma */
+    
+    public function LoanMasikMunafa()
+    {
+        
+         $user = Auth::user();
+
+         $loan_instance = Loan::where('user_id', $user->membership_no)->where('info_type', 'loan_masik_munafa')->orderBy('updated_at', 'dec')->paginate(5);
+
+         return view('user.user_loan_masik_joma', compact('loan_instance'));
     }
 }
 
