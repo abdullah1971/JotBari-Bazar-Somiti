@@ -98,6 +98,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 	/**
 	 *
+	 * reserve portion
+	 *
+	 */
+	
+	/* income */
+	Route::get('all_income_reserve', 'CompanyReserveController@Income')->name('company.reserve_income');
+
+	/* income */
+	Route::get('all_spend_reserve', 'CompanyReserveController@Spend')->name('company.reserve_spend');
+
+
+
+
+	/**
+	 *
 	 * sodosso portion
 	 *
 	 */

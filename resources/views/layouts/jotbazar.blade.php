@@ -62,7 +62,7 @@
 
 	            <li @yield('hirizontal_nav_loan_active')><a href="{{ route('company.loan_biboron') }}">লোন </a></li>
 
-	            <li @yield('hirizontal_nav_bibidh_active')><a href="#">বিবিধ</a></li>
+	            <li @yield('hirizontal_nav_bibidh_active')><a href="{{ route('company.reserve_income') }}">রিজার্ভ</a></li>
 
 	            <li @yield('hirizontal_nav_closing_active')><a href="#">ক্লোজিং</a></li>
 

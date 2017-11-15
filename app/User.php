@@ -4,6 +4,7 @@ namespace App;
 
 use App\Loan;
 use App\Munafa;
+use App\Reserve;
 use App\Sheyar;
 use App\Sonchoy;
 use App\User_account;
@@ -110,6 +111,21 @@ class User extends Authenticatable
     {
         
         return $this->hasOne('App\User_account', 'user_id', 'membership_no');
+    }
+
+
+
+
+    /**
+     *
+     * relation with user and reserve table
+     *
+     */
+    
+    public function ReserveInfo()
+    {
+        
+        return $this->hasMany('App\Reserve', 'subject', 'membership_no');
     }
 
 
