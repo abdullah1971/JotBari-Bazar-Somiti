@@ -81,6 +81,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+	/**
+	 *
+	 * loan portion
+	 *
+	 */
+	
+	/* loan biboron */
+	Route::get('all_user_loan_biboron', 'CompanyLoanController@LoanBiboron')->name('company.loan_biboron');
+
+	/* loan masik munafa */
+	Route::get('loan_masik_munafa', 'CompanyLoanController@LoanMasikMunafa')->name('company.loan_masik_munafa');
+
+
 
 
 	/**
