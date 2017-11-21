@@ -8,6 +8,7 @@ use App\Reserve;
 use App\Sheyar;
 use App\Sonchoy;
 use App\User_account;
+use App\User_info;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -126,6 +127,21 @@ class User extends Authenticatable
     {
         
         return $this->hasMany('App\Reserve', 'subject', 'membership_no');
+    }
+
+
+
+
+    /**
+     *
+     * relation with user and user info table
+     *
+     */
+    
+    public function UserOthersInfo()
+    {
+        
+        return $this->hasOne('App\User_info', 'membership_no', 'membership_no');
     }
 
 

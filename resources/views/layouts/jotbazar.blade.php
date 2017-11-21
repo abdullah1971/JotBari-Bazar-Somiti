@@ -54,7 +54,7 @@
 	        </div>
 	        <div id="navbar" class="collapse navbar-collapse">
 	          <ul class="nav navbar-nav">
-	            <li @yield('hirizontal_nav_dailyEntry_active')><a href="{{ route('daily_entry.home') }}">প্রাত্যাহিক আদান-প্রদান</a></li>
+	            <li @yield('hirizontal_nav_dailyEntry_active')><a href="{{ route('daily_entry.home') }}">প্রাত্যহিক আদান-প্রদান</a></li>
 
 	            <li @yield('hirizontal_nav_sheyar_active')><a href="{{ route('company.all_sheyar') }}">শেয়ার </a></li>
 
@@ -70,7 +70,7 @@
 
 	            <li @yield('hirizontal_nav_comitee_active')><a href="#">কমিটি</a></li>
 
-	            <li @yield('hirizontal_nav_search_active')><a href="#">খুজুন</a></li>
+	            <li @yield('hirizontal_nav_search_active')><a href="#">খুঁজুন </a></li>
 
 
 

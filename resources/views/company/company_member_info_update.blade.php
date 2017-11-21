@@ -1,6 +1,6 @@
-@extends('layouts.user')
+@extends('layouts.jotbazar')
 
-@section('hirizontal_nav_sodoss_biboron_active', 'class=active')
+@section('hirizontal_nav_sodosso_active', 'class=active')
 
 
 {{-- sidebar and main content column size setting --}}
@@ -8,16 +8,19 @@
 @section('main_content_column_number', '10')
 
 
+
 @section('sidebar_navigation')
 
-	<div id="sidebar_links" style="font-size: 17px;">
+	<div id="sidebar_links">
 
 		<div class="list-group">
-
-		  <a href="{{ route('user.info_details') }}" class="list-group-item">সদস্য বিবরন </a>
-
-		  {{-- <a href="{{ route('user.info_details_update') }}" class="list-group-item active">সদস্য বিবরন হালনাগাদ </a> --}}
-		 
+		  <a href="{{ route('company_sodosso.home') }}" class="list-group-item">সদস্য বিবরন </a>
+		  <a href="{{ route('company.sodosso_info_update_page') }}" class="list-group-item active">সদস্য বিবরন হালনাগাদ </a>
+		  <a href="{{ route('company.sodoss_sheyar_info') }}" class="list-group-item">শেয়ার বিবরন </a>
+		  <a href="{{ route('company.sodosso_sonchoy_info') }}" class="list-group-item">সঞ্চয় বিবরন </a>
+		  <a href="{{ route('company.sodosso__loan_info') }}" class="list-group-item">লোন বিবরন </a>
+		  <a href="#" class="list-group-item">সদস্য বাতিল </a>
+		  <a href="{{ route('company_sodosso.masik_sonchoy_set') }}" class="list-group-item">মাসিক সঞ্চয় নির্ধারন </a>
 		</div>
 
 	</div>
@@ -27,6 +30,10 @@
 
 
 @section('main_frame_content')
+
+	
+	{{-- /*----------  take user number   ----------*/ --}}
+	
 
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -39,9 +46,41 @@
         <div>
         <br />
 
-        <form id="" class="form-horizontal form-label-left" method="post" action="{{ route('user.info_details_update_store') }}" enctype="multipart/form-data">
+        <form class="form-horizontal form-label-left">
 
         	{{ csrf_field() }}
+
+              <div id="company_member_page_sovvo_sodosso_number" class="form-group">
+                <label for="company_member_page_sovvo_sodosso_number_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                	সভ্য সদস্য নম্বর
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input name="company_member_page_sovvo_sodosso_number_input" id="company_member_page_sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number" required>
+                </div>
+              </div>
+
+
+             
+
+
+            
+        </form>
+      </div>
+    </div>
+
+
+
+    {{-- /*----------  form for updating user info  ----------*/ --}}
+    
+    
+
+    
+
+        <form id="" class="form-horizontal form-label-left" method="post" action="{{ route('company.sodosso_info_update_store') }}" enctype="multipart/form-data">
+
+          {{ csrf_field() }}
+
+              <input type="hidden" id="user_membership_no" name="user_membership_no" value="">
 
               <!-- user name -->
               
@@ -50,7 +89,7 @@
                   নাম
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="user_name_input" id="user_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $user->name }}">
+                  <input name="user_name_input" id="user_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 
@@ -63,7 +102,7 @@
                   পিতার নাম
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="user_father_name_input" id="user_father_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status == true ? $user_info_instance->user_father_name : "" }}">
+                  <input name="user_father_name_input" id="user_father_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 
@@ -76,7 +115,7 @@
                   মাতার নাম
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="user_mother_name_input" id="user_mother_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status ? $user_info_instance->user_mother_name : "" }}">
+                  <input name="user_mother_name_input" id="user_mother_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 
@@ -90,7 +129,7 @@
                   স্বামি / স্ত্রী এর নাম
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="user_husbandORwife_name_input" id="user_husbandORwife_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status ? $user_info_instance->user_husbandORwife_name : "" }}">
+                  <input name="user_husbandORwife_name_input" id="user_husbandORwife_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 
@@ -104,7 +143,7 @@
                   বর্তমান ঠিকানা
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="present_address_input" id="present_address_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status ? $user_info_instance->present_address : "" }}">
+                  <input name="present_address_input" id="present_address_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 
@@ -118,7 +157,7 @@
                   স্থায়ী ঠিকানা
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="permanent_address_input" id="permanent_address_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status ? $user_info_instance->permanent_address : "" }}">
+                  <input name="permanent_address_input" id="permanent_address_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 
@@ -131,7 +170,7 @@
                   মোবাইল নম্বর 
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="mobile_no_input" id="mobile_no_input" class="form-control col-md-7 col-xs-12"  type="text" value="{{ $info_status ? $user_info_instance->mobile_no : "" }}">
+                  <input name="mobile_no_input" id="mobile_no_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 
@@ -157,7 +196,7 @@
                   সদস্য হওয়ার তারিখ
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="date_of_being_user_input" id="date_of_being_user_input" class="form-control col-md-7 col-xs-12"  type="date" value="{{ $info_status ? $user_info_instance->date_of_being_user : "" }}">
+                  <input name="date_of_being_user_input" id="date_of_being_user_input" class="form-control col-md-7 col-xs-12"  type="date" value="">
                 </div>
               </div>
 
@@ -165,21 +204,19 @@
 
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12">
-              	
+                
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
                 
-              	<button type="submit" class="btn btn-success pull-right">Submit</button>
+                <button type="submit" class="btn btn-success pull-right">Submit</button>
 
-				  	 {{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
+             {{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
 
               </div>
             </div>
         </form>
       </div>
     </div>
-
-    {{-- <img src={{ asset('storage/images/sheyar.png') }} alt=""> --}}
-	        
+	
 
 @endsection

@@ -657,6 +657,148 @@ $(document).ready(function() {
 	
 	
 	
+	/*============================================================================
+	=            fetching data for company member page by using ajax             =
+	============================================================================*/
+	
+		$("#company_member_page_sovvo_sodosso_number_input").keyup(function() {
+			
+
+			var user_number = $("#company_member_page_sovvo_sodosso_number_input").val();
+
+			var token = $("input[name='_token']").val();
+
+			$.ajax({
+
+
+				url: '/company_user_info',
+				type: 'POST',
+				// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+				data: {_token: token, user_number: user_number},
+
+			})
+			.done(function(data) {
+
+
+
+
+				/**
+				 *
+				 * first clear all field 
+				 *
+				 */
+				
+				/* for sodosso info page */
+				
+				$("#member_no").text();
+				$("#member_name").text();
+
+				$("#member_account_status").text();
+				$("#member_sheyar").text();
+				$("#member_fixed_sonchoy").text();
+				$("#member_net_sonchoy").text();
+				$("#member_net_loan").text();
+
+				$("#member_father_name").text();
+				$("#member_mother_name").text();
+				$("#member_husbandORwife_name").text();
+				$("#member_present_address").text();
+				$("#member_permanent_address").text();
+				$("#member_mobile_no").text();
+				$("#member_date_of_being_user").text();
+				$("#member_image").empty();	
+
+				/* for sodosso info update page */
+				
+				$("#user_name_input").val("");
+				$("#user_father_name_input").val("");
+				$("#user_mother_name_input").val("");
+				$("#user_husbandORwife_name_input").val("");
+				$("#present_address_input").val("");
+				$("#permanent_address_input").val("");
+				$("#mobile_no_input").val();
+				// $("#user_image_input").val("");
+				$("#date_of_being_user_input").val("");
+				$("#user_membership_no").val("");
+
+
+				/**
+				 *
+				 * user basic info
+				 *
+				 */
+				
+
+				$("#member_no").text(data.user.membership_no);
+				$("#member_name").text(data.user.name);
+
+
+				/**
+				 *
+				 * user account info
+				 *
+				 */
+				
+				$("#member_account_status").text(data.user_account.account_status);
+				$("#member_sheyar").text(data.user_account.sheyar);
+				$("#member_fixed_sonchoy").text(data.user_account.fixed_sonchoy);
+				$("#member_net_sonchoy").text(data.user_account.net_sonchoy);
+				$("#member_net_loan").text(data.user_account.taken_loan_amount - data.user_account.paid_loan_amount);
+
+
+
+				/**
+				 *
+				 * user others info
+				 *
+				 */
+
+				var image_code = '<img src="storage/images/' + data.user_info.image_path + '" alt="">';
+				
+				$("#member_father_name").text(data.user_info.user_father_name);
+				$("#member_mother_name").text(data.user_info.user_mother_name);
+				$("#member_husbandORwife_name").text(data.user_info.user_husbandORwife_name);
+				$("#member_present_address").text(data.user_info.present_address);
+				$("#member_permanent_address").text(data.user_info.permanent_address);
+				$("#member_mobile_no").text(data.user_info.mobile_no);
+				$("#member_date_of_being_user").text(data.user_info.date_of_being_user);
+				$("#member_image").html(image_code);
+
+
+				/**
+				 *
+				 * user data update page
+				 *
+				 */
+				
+				$("#user_name_input").val(data.user.name);
+				$("#user_father_name_input").val(data.user_info.user_father_name);
+				$("#user_mother_name_input").val(data.user_info.user_mother_name);
+				$("#user_husbandORwife_name_input").val(data.user_info.user_husbandORwife_name);
+				$("#present_address_input").val(data.user_info.present_address);
+				$("#permanent_address_input").val(data.user_info.permanent_address);
+				$("#mobile_no_input").val(data.user_info.mobile_no);
+				// $("#user_image_input").val();
+				$("#date_of_being_user_input").val(data.user_info.date_of_being_user);
+				$("#user_membership_no").val(data.user_info.membership_no);
+				
+
+				console.log(data.user);
+				console.log(data.user_account);
+				console.log(data.user_info);
+
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		});
+	
+	/*=====  End of fetching data for company member page by using ajax   ======*/
+	
 
 
 });

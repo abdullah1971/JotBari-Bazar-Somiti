@@ -13,10 +13,12 @@
 	<div id="sidebar_links">
 
 		<div class="list-group">
-		  <a href="#" class="list-group-item">সদস্য বিবরন </a>
-		  <a href="#" class="list-group-item">শেয়ার বিবরন </a>
-		  <a href="#" class="list-group-item">সঞ্চয় বিবরন </a>
-		  <a href="#" class="list-group-item">লোন বিবরন </a>
+      <a href="{{ route('company_sodosso.home') }}" class="list-group-item">সদস্য বিবরন </a>
+		  <a href="{{ route('company.sodosso_info_update_page') }}" class="list-group-item">সদস্য বিবরন হালনাগাদ </a>
+		  <a href="{{ route('company.sodoss_sheyar_info') }}" class="list-group-item">শেয়ার বিবরন </a>
+		  <a href="{{ route('company.sodosso_sonchoy_info') }}" class="list-group-item">সঞ্চয় বিবরন </a>
+      <a href="{{ route('company.sodosso__loan_info') }}" class="list-group-item">লোন বিবরন </a>
+		  <a href="#" class="list-group-item">সদস্য বাতিল </a>
 		  <a href="{{ route('company_sodosso.masik_sonchoy_set') }}" class="list-group-item active">মাসিক সঞ্চয় নির্ধারন </a>
 		</div>
 

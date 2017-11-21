@@ -122,6 +122,30 @@ Route::get('/home', 'HomeController@index')->name('home');
 	/* sodoss index */
 	Route::get('/company_member', 'CompanySodossInfo@index')->name('company_sodosso.home');
 
+	/* sodosso info ajax */
+	Route::post('/company_user_info', 'CompanySodossInfo@SodossoInfo')->name('company.sodosso_info');
+
+	/* sodosso info update */
+	Route::get('/company_user_info_update', 'CompanySodossInfo@UpdateInfoPage')->name('company.sodosso_info_update_page');
+	Route::post('/company_user_info_update', 'CompanySodossInfo@StoreOrUpdateUserInfo')->name('company.sodosso_info_update_store');
+
+
+	/* sodosso sheyar */
+	Route::get('/company_user_sheyar_biboron/{id?}', 'CompanySodossInfo@SodossoSheyarInfo')->name('company.sodoss_sheyar_info');
+	Route::post('/company_user_sheyar_biboron/{id?}', 'CompanySodossInfo@SingleSodossoSheyarInfo')->name('company.single_sodoss_sheyar_info');
+
+
+	/* sodosso sonchoy */
+	Route::get('/company_user_sonchoy_biboron/{id?}', 'CompanySodossInfo@SodossoSonchoyInfo')->name('company.sodosso_sonchoy_info');
+	Route::post('/company_user_sonchoy_biboron/{id?}', 'CompanySodossInfo@SingleSodossoSonchoyInfo')->name('company.single_sodosso_sonchoy_info');
+
+
+	/* sodosso loan */
+	Route::get('/company_user_loan_biboron/{id?}', 'CompanySodossInfo@SodossoLoanInfo')->name('company.sodosso__loan_info');
+	Route::post('/company_user_loan_biboron/{id?}', 'CompanySodossInfo@SingleSodossoLoanInfo')->name('company.single_sodosso__loan_info');
+
+
+
 
 
 	/* sodosso masik shonchoy setting */
@@ -161,8 +185,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 	
 	Route::get('/user_info', 'User_details@Index')->name('user.info_details');
 
-	Route::get('/user_info_update', 'User_details@Update_page')->name('user.info_details_update');
-	Route::post('/user_info_update', 'User_details@Update_page_store')->name('user.info_details_update_store');
+	// Route::get('/user_info_update', 'User_details@Update_page')->name('user.info_details_update');
+	// Route::post('/user_info_update', 'User_details@Update_page_store')->name('user.info_details_update_store');
 
 
 	/**

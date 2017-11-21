@@ -16,7 +16,7 @@
 
 		  <a href="{{ route('user.info_details') }}" class="list-group-item active">সদস্য বিবরন </a>
 		  
-		  <a href="{{ route('user.info_details_update') }}" class="list-group-item">সদস্য বিবরন হালনাগাদ </a>
+		  {{-- <a href="{{ route('user.info_details_update') }}" class="list-group-item">সদস্য বিবরন হালনাগাদ </a> --}}
 		 
 		</div>
 
@@ -38,17 +38,17 @@
         
         <div class="row">
 
-          <div class="col-md-2 col-sm-2 col-xs-12">
+          <div class="col-md-3 col-sm-3 col-xs-12">
             
           </div>
           
-          <div class="col-md-3 col-sm-3 col-xs-12">
+          {{-- <div class="col-md-3 col-sm-3 col-xs-12">
 
-          </div>
+          </div> --}}
           
-          <div class="col-md-3 col-sm-3 col-xs-12">
+          {{-- <div class="col-md-3 col-sm-3 col-xs-12">
             
-          </div>
+          </div> --}}
 
           <div class="col-md-3 col-sm-3 col-xs-12 thumbnail">
 
