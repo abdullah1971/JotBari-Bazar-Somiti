@@ -7,6 +7,7 @@ use App\Munafa;
 use App\Reserve;
 use App\Sheyar;
 use App\Sonchoy;
+use App\TemporaryRinKhelapiInfo;
 use App\User_account;
 use App\User_info;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -142,6 +143,20 @@ class User extends Authenticatable
     {
         
         return $this->hasOne('App\User_info', 'membership_no', 'membership_no');
+    }
+
+
+
+
+    /**
+     *
+     * relation with user and rin khelapi
+     *
+     */
+    
+    public function RinKhelapi()
+    {
+        return $this->hasOne('App\TemporaryRinKhelapiInfo', 'user_id', 'membership_no');
     }
 
 

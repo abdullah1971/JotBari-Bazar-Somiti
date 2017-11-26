@@ -15,15 +15,20 @@
 
 <div id="daily_notification_bar">
 
-		
+	@php
+		$i = 0;
+	@endphp
 
 
 	@foreach ($daily_entry_instance as $single_entry)
 		
+		@php
+			$i++;
+		@endphp
 
 		@if ($single_entry->entry_type == "sheyar_and_buy")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">শেয়ার ক্রয় </div>
 			  
@@ -34,13 +39,19 @@
 			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sheyar->user_id }}</li>
 			    <li class="list-group-item">শেয়ার সংখাঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount / 100 }}</li>
 			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+
+			    	
+			    </li>
 			  </ul>
 			</div>
 
 		@elseif ($single_entry->entry_type == "sheyar_and_sell")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">শেয়ার বিক্রয়ঃ  </div>
 			  
@@ -57,13 +68,16 @@
 
 			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 		@elseif ($single_entry->entry_type == "sheyar_and_sell")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">শেয়ার বিক্রয়  </div>
 			  
@@ -80,13 +94,16 @@
 
 			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 		@elseif ($single_entry->entry_type == "sonchoy_and_masik_joma")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">সঞ্চয় মাসিক জমা   </div>
 			  
@@ -105,14 +122,17 @@
 
 			    <li class="list-group-item">বর্তমানে মোট সঞ্চয়ঃ  {{ $single_entry->Daily_entry_and_sonchoy->current_month_sonchoy }}</li>
 
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 
 		@elseif ($single_entry->entry_type == "sonchoy_and_uttolon")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">সঞ্চয় উত্তোলন   </div>
 			  
@@ -129,14 +149,17 @@
 
 			    <li class="list-group-item">বর্তমানে মোট সঞ্চয়ঃ  {{ $single_entry->Daily_entry_and_sonchoy->current_month_sonchoy }}</li>
 
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 
 		@elseif ($single_entry->entry_type == "loan_and_bitoron")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">লোন বিতরন  </div>
 			  
@@ -153,14 +176,17 @@
 
 			    <li class="list-group-item">ভবিস্যতে লোন প্রাপ্তির পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->sheyar * 4000 - $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount +  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 
 		@elseif ($single_entry->entry_type == "loan_and_joma")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">লোন জমা  </div>
 			  
@@ -177,14 +203,17 @@
 
 			    <li class="list-group-item">অবশিস্ট লোন এর পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount -  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 
 			@elseif ($single_entry->entry_type == "loan_and_masik_joma")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">লোন মাসিক জমা  </div>
 			  
@@ -203,14 +232,17 @@
 
 			    <li class="list-group-item">মোট জমাঃ  {{ $single_entry->Daily_entry_and_loan->total_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 
 			@elseif ($single_entry->entry_type == "reserve_and_income")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">রিজার্ভ ( আয় )  </div>
 			  
@@ -222,14 +254,17 @@
 			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_reserve->money_amount }}</li>
 
 			    
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
 
 			@elseif ($single_entry->entry_type == "reserve_and_spent")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">রিজার্ভ ( ব্যয় )  </div>
 			  
@@ -241,7 +276,10 @@
 			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_reserve->money_amount }}</li>
 
 			    
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 
@@ -250,7 +288,7 @@
 
 			@elseif ($single_entry->entry_type == "munafa_theke_khoroch")
 			
-			<div class="panel panel-info">
+			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">মুনাফা থেকে খরচ </div>
 			  
@@ -262,7 +300,10 @@
 			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_munafa_theke_khoroch->money_amount }}</li>
 
 			    
-			    <li class="list-group-item" style="text-align: center;"><button class="btn btn-success " type="">প্রিন্ট করুন </button></li>
+			    <li class="list-group-item" style="text-align: center;">
+			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
+			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    </li>
 			  </ul>
 			</div>
 

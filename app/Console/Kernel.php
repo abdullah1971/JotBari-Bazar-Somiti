@@ -14,7 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         
-        'App\Console\Commands\HappyBirthday'
+        // 'App\Console\Commands\HappyBirthday',
+        'App\Console\Commands\ClosingGenerating',
+        'App\Console\Commands\ClosingPosting'
     ];
 
     /**
@@ -25,7 +27,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('sms:birthday')
+        // $schedule->command('sms:birthday')
+        //          ->everyMinute();
+
+        // $schedule->command('generate:closing')
+        //          ->everyMinute();
+
+        $schedule->command('closing:posting')
                  ->everyMinute();
     }
 

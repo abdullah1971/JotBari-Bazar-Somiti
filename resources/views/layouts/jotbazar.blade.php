@@ -64,11 +64,11 @@
 
 	            <li @yield('hirizontal_nav_bibidh_active')><a href="{{ route('company.reserve_income') }}">রিজার্ভ</a></li>
 
-	            <li @yield('hirizontal_nav_closing_active')><a href="#">ক্লোজিং</a></li>
+	            <li @yield('hirizontal_nav_closing_active')><a href="{{ route('company.upcoming_closing_info') }}">ক্লোজিং</a></li>
 
 	            <li @yield('hirizontal_nav_sodosso_active')><a href="{{ route('company_sodosso.home') }}">সদস্য</a></li>
 
-	            <li @yield('hirizontal_nav_comitee_active')><a href="#">কমিটি</a></li>
+	            <li @yield('hirizontal_nav_report_active')><a href="{{ route('company.daily_report') }}">রিপোর্ট</a></li>
 
 	            <li @yield('hirizontal_nav_search_active')><a href="#">খুঁজুন </a></li>
 
@@ -159,6 +159,7 @@
     <!-- Latest compiled and minified JavaScript -->
     {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> --}}
 
+    <script type="text/javascript" src="{{ asset('js/jQuery.print.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 
 

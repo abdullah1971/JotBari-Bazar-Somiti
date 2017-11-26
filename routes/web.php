@@ -155,6 +155,53 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+
+	/**
+	 *
+	 * report portion
+	 *
+	 */
+	
+	/* daily report */
+	Route::get('/company_daily_report/{from?}/{to?}', 'ReportController@DailyReport')->name('company.daily_report');
+	Route::post('/company_daily_report/{from?}/{to?}', 'ReportController@DailyReportInfo')->name('company.daily_report_info');
+
+
+	/* monthly report */
+	Route::get('/company_monthly_report/{time?}', 'ReportController@MonthlyReport')->name('company.monthly_report');
+	Route::post('/company_monthly_report/{time?}', 'ReportController@MonthlyReportInfo')->name('company.monthly_report_info');
+
+
+
+	/* closing report */
+	Route::get('/company_closing_report/{time?}', 'ReportController@ClosingReport')->name('company.closing_report');
+	Route::post('/company_closing_report/{time?}', 'ReportController@ClosingReportInfo')->name('company.closing_report_info');
+
+
+
+
+
+	/**
+	 *
+	 * closing generation
+	 *
+	 */
+	
+	/* upcoming closing info */
+	
+	Route::get('/company_upcoming_closing_info', 'ClosingController@ShowUpcompingClosingInfo')->name('company.upcoming_closing_info');
+	Route::post('/company_upcomong_closing_info', 'ClosingController@UpdatePercentage')->name('company.upcoming_update_percentage');
+
+
+	/* percentage adjutment  */
+	
+	Route::post('/company_percentage_adjustment', 'ClosingController@PercentageAdjustment')->name('company.percentage_adjustment');
+
+
+	/* delete rin khelapi */
+	Route::get('/company_rin_khelapi_remove/{id}', 'ClosingController@RemoveRinKhelapi')->name('company.remove_rin_khelapi');
+
+
 	/**
 	 *
 	 * ajax portion

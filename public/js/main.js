@@ -798,6 +798,94 @@ $(document).ready(function() {
 		});
 	
 	/*=====  End of fetching data for company member page by using ajax   ======*/
+
+
+
+
+
+	/*================================
+	=            closing             =
+	================================*/
+		
+
+		/**
+		 *
+		 * percentage
+		 *
+		 */
+		
+		$("#closing_percentage_input").keyup(function() {
+			
+			// alert($("#closing_percentage_input").val());
+
+			var percentage = $("#closing_percentage_input").val();
+			var token = $("input[name=_token]").val();
+
+
+			$.ajax({
+				url: '/company_percentage_adjustment',
+				type: 'POST',
+				// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+				data: {_token: token, percentage: percentage},
+			})
+			.done(function(data) {
+
+
+				if(data.status == "money need"){
+
+					$("#closing_money_taken_from_reserve_info").text(data.money_amount);
+					$("#closing_money_given_to_reserve_info").text("0");
+				}
+				else if(data.status == "money extra"){
+
+					$("#closing_money_taken_from_reserve_info").text("0");
+					$("#closing_money_given_to_reserve_info").text(data.money_amount);
+				}
+
+				console.log(data.status);
+				console.log(data.money_amount);
+
+				// console.log("success");
+			})
+			
+			
+		});
+	
+
+		/**
+		 *
+		 * remove rin khelapi
+		 *
+		 */
+		
+		// $(".delete_button").on('click', function() {
+			
+
+			
+		// });
+
+	/*=====  End of closing   ======*/
+
+
+
+	/*============================================================
+	=            daily entry print and delete portion            =
+	============================================================*/
+	
+		$(".print_button").on('click', function() {
+			
+			var value = $(this).val();
+
+			var panel = "#panel_" + value;
+
+			$(panel).print();
+
+			console.log(panel);
+		});
+	
+	/*=====  End of daily entry print and delete portion  ======*/
+	
+	
 	
 
 

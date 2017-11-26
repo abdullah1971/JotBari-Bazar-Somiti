@@ -120,3 +120,29 @@ th {
 
     background-color: #0b5077;
 }
+
+
+
+
+/* fixed table header */
+/*.fixed_table_header thead tr{
+
+    position: fixed;
+}
+*/
+
+/*.fixed_table_header tbody{
+
+    height: 600px;
+    overflow-y: auto;
+    position: absolute;
+}*/
+
+
+.fixed_table_header{
+
+    height: 600px;
+    /*overflow-y: auto;*/
+    /*overflow-x: auto;*/
+    /*position: relative;*/
+}
