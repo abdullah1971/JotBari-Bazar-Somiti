@@ -32,11 +32,87 @@ class ReportController extends Controller
     public function DailyReport($from = null, $to = null)
     {
 
+      // return $from;
+
     	if($from == null && $to == null)
     		$daily_info = null;
     	else
     		$daily_info = Daily_entry::whereDate('updated_at', '>=', $from)
     							->whereDate('updated_at', '<=', $to)->paginate(15);
+
+
+
+
+       //  $current_time = Carbon::now();
+
+       //  if ($current_time->month >= 2 && $current_time->month <= 7) {
+            
+       //      // $time = "abc";
+       //      $starting_date = $current_time->year."-02-01";
+       //      $end_date = $current_time->year."-07-31";
+       //  }
+       //  else{
+
+       //      // $time = "def";
+       //      $starting_date = $current_time->year."-08-01";
+       //      $end_date = ($current_time->year + 1 )."-01-31";
+       //  }
+
+       //  $sonchoy_instance = Sonchoy::where('user_id', 1)
+       //                              ->where('info_type', 'sonchoy_masik_joma')
+       //                              ->whereDate('updated_at', '>=', $starting_date)
+       //                              ->whereDate('updated_at', '<=', $end_date)
+       //                              ->get();
+
+
+       //  $loan_taking_instance = Loan::where('user_id', 1)
+       //                              ->where('info_type', 'loan_bitoron')
+       //                              ->whereDate('updated_at', '>=', $starting_date)
+       //                              ->whereDate('updated_at', '<=', $end_date)
+       //                              ->get();
+
+
+       // /**
+       //  *
+       //  * sonchoy masik joma info
+       //  *
+       //  */
+       
+
+       // $sonchoy_masik_munafa_table = '<table class="table table-hover table-striped">
+                   
+       //                     <thead>
+       //                           <tr>
+       //                             <th style="text-align: center;">মাসিক জমা</th>
+       //                             <th style="text-align: center;">জরিমানা</th>
+       //                             <th style="text-align: center;">মোট জমা</th>
+       //                             <th style="text-align: center;">তারিখ </th>
+       //                           </tr>
+       //                     </thead>
+       //                         <tbody style="text-align: center; font-size: 22px;">';
+
+
+       // $temp_sonchoy_masik_munafa_table_info = "";
+
+       // foreach ($sonchoy_instance as $single_sonchoy) {
+           
+       //     $tempDate = $single_sonchoy->updated_at->formatLocalized('%A %d %B %Y');
+           
+       //     $temp = "<tr>
+       //                 <td>$single_sonchoy->money_amount</td>
+       //                 <td>$single_sonchoy->jorimana_amount</td>
+       //                 <td>$single_sonchoy->total_amount</td>
+       //                 <td>$tempDate</td>                                    
+       //             </tr>  ";
+
+       //     $temp_sonchoy_masik_munafa_table_info = $temp_sonchoy_masik_munafa_table_info.$temp;
+       // }
+                  
+       // $sonchoy_masik_munafa_table = $sonchoy_masik_munafa_table.$temp_sonchoy_masik_munafa_table_info.'</tbody>
+
+       //                 </table>';
+
+       //  return $sonchoy_masik_munafa_table;
 
 
 
@@ -55,6 +131,13 @@ class ReportController extends Controller
     	
     	$from_date = $request->from_day_for_daily_report_input;
     	$to_date = $request->to_day_for_daily_report_input;
+
+
+      if($request->from_day_for_daily_report_input == null){
+
+        $from_date = $request->today_date;
+        $to_date = $request->today_date;
+      }
 
     	// return $request->all();
 
@@ -249,13 +332,13 @@ class ReportController extends Controller
     public function MonthlyReportInfo(Request $request, $time = null)
     {
         
-        $time = $request->month_for_monthly_report_input;
+        // $time = $request->month_for_monthly_report_input;
 
         // return $time->month;
 
-        $time_part = explode('-', $time);
+        // $time_part = explode('-', $time);
 
-        $month_with_year = $time_part[0]."-".$time_part[1];
+        $month_with_year = $request->year."-".$request->month;
 
         return redirect()->route('company.monthly_report', ['time' => $month_with_year]);
     }
@@ -286,7 +369,19 @@ class ReportController extends Controller
     public function ClosingReportInfo(Request $request, $time = null)
     {
 
+      if ($request->half == 1) {
         
-        return redirect()->route('company.closing_report', ['time' => $request->date_for_closing_report_input]);
+        $time = $request->year."-01-31";
+
+      }
+      else{
+
+        $time = $request->year."-07-31";
+      }
+
+      // return $time;
+
+        
+        return redirect()->route('company.closing_report', ['time' => $time]);
     }
 }

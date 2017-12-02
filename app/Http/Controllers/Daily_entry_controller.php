@@ -56,6 +56,23 @@ class Daily_entry_controller extends Controller
     	
     	 */
 
+
+        if ($request->sheyar_subCatagory_input == "sell") {
+            
+            $user_id = $request->from_sovvo_sodosso_number_input;
+        }
+        else{
+
+            $user_id = $request->sovvo_sodosso_number_input;
+        }
+
+        $user_account_validity_test = User_account::where('user_id', $user_id)->get()->first();
+
+        if ($user_account_validity_test != null && $user_account_validity_test->account_status == "inactive") {
+            
+            return back()->withInput();
+        }
+
     	
     	if($request->daily_catagory_select == "sheyar"){
  			
@@ -219,7 +236,8 @@ class Daily_entry_controller extends Controller
 
     				'sovvo_sodosso_number_input' => 'required',
     				'sonchoy_masik_jorimana_input' => 'required',
-    				'sonchoy_net_masik_joma_input' => 'required',
+                    'sonchoy_net_masik_joma_input' => 'required',
+    				'sonchoy_joma_date_input' => 'required',
 
     			]);
 
@@ -246,6 +264,7 @@ class Daily_entry_controller extends Controller
                 $sonchoy_instance->jorimana_amount = $request->sonchoy_masik_jorimana_input;
                 $sonchoy_instance->total_amount = $request->sonchoy_net_masik_joma_input;
                 $sonchoy_instance->current_month_sonchoy =  $user_account_instance->net_sonchoy;
+                $sonchoy_instance->updated_at = $request->sonchoy_joma_date_input;
 
                 $sonchoy_instance->save();
 
@@ -261,6 +280,7 @@ class Daily_entry_controller extends Controller
                 $reserve_instance->info_type = "sonchoy_masik_jorimana";
                 $reserve_instance->subject = $request->sovvo_sodosso_number_input;
                 $reserve_instance->money_amount = $request->sonchoy_masik_jorimana_input;
+                $reserve_instance->updated_at = $request->sonchoy_joma_date_input;
 
                 $reserve_instance->save();
 
@@ -273,6 +293,7 @@ class Daily_entry_controller extends Controller
 
                 $daily_entry_instance->entry_type = "sonchoy_and_masik_joma";
                 $daily_entry_instance->type_entry_id = $sonchoy_instance->id;
+                $daily_entry_instance->updated_at = $request->sonchoy_joma_date_input;
 
                 $daily_entry_instance->save();
 
@@ -456,7 +477,8 @@ class Daily_entry_controller extends Controller
 
     				'sovvo_sodosso_number_input' => 'required',
     				'loan_now_pay_input' => 'required',
-    				'loan_remaining_pay_input' => 'required',
+                    'loan_remaining_pay_input' => 'required',
+    				'loan_joma_date_input' => 'required',
 
     			]);
 
@@ -489,6 +511,7 @@ class Daily_entry_controller extends Controller
                 $loan_instance->user_id = $request->sovvo_sodosso_number_input;
                 $loan_instance->info_type = $request->loan_subCatagory_input;
                 $loan_instance->money_amount = $request->loan_now_pay_input;
+                $loan_instance->updated_at = $request->loan_joma_date_input;
 
                 $loan_instance->save();
 
@@ -501,6 +524,7 @@ class Daily_entry_controller extends Controller
 
                 $daily_entry_instance->entry_type = "loan_and_joma";
                 $daily_entry_instance->type_entry_id = $loan_instance->id;
+                $daily_entry_instance->updated_at = $request->loan_joma_date_input;
 
                 $daily_entry_instance->save();
 
@@ -521,6 +545,7 @@ class Daily_entry_controller extends Controller
     				'sovvo_sodosso_number_input' => 'required',
     				'loan_masik_munafa_joma_input' => 'required',
     				'loan_masik_jorimana_input' => 'required',
+                    'loan_net_masik_joma_input' => 'required',
     				'loan_net_masik_joma_input' => 'required',
 
     			]);
@@ -532,7 +557,8 @@ class Daily_entry_controller extends Controller
                 $munafa_instance = new Munafa;
 
                 $munafa_instance->user_id = $request->sovvo_sodosso_number_input;
-                $munafa_instance->amount = $request->loan_masik_munafa_joma_input;
+                $munafa_instance->amount = $request->loan_net_masik_joma_input;
+                $munafa_instance->updated_at = $request->loan_net_masik_joma_input;
 
                 $munafa_instance->save();
 
@@ -541,13 +567,13 @@ class Daily_entry_controller extends Controller
 
                 /* add jorimana in reserve */
                 
-                $reserve_instance = new Reserve;
+                // $reserve_instance = new Reserve;
 
-                $reserve_instance->info_type = "loan_masik_jorimana";
-                $reserve_instance->subject = $request->sovvo_sodosso_number_input;
-                $reserve_instance->money_amount = $request->loan_masik_jorimana_input;
+                // $reserve_instance->info_type = "loan_masik_jorimana";
+                // $reserve_instance->subject = $request->sovvo_sodosso_number_input;
+                // $reserve_instance->money_amount = $request->loan_masik_jorimana_input;
 
-                $reserve_instance->save();
+                // $reserve_instance->save();
 
 
 
@@ -562,6 +588,7 @@ class Daily_entry_controller extends Controller
                 $loan_instance->money_amount = $request->loan_masik_munafa_joma_input;
                 $loan_instance->jorimana_amount = $request->loan_masik_jorimana_input;
                 $loan_instance->total_amount = $request->loan_net_masik_joma_input;
+                $loan_instance->updated_at = $request->loan_net_masik_joma_input;
 
                 $loan_instance->save();
 
@@ -574,6 +601,7 @@ class Daily_entry_controller extends Controller
 
                 $daily_entry_instance->entry_type = "loan_and_masik_joma";
                 $daily_entry_instance->type_entry_id = $loan_instance->id;
+                $daily_entry_instance->updated_at = $request->loan_net_masik_joma_input;
 
                 $daily_entry_instance->save();
 
@@ -591,22 +619,80 @@ class Daily_entry_controller extends Controller
              * bibidh
              *
              */
-            $this->validate($request, [
 
-                    'bibidh_uddesso_input' => 'required',
-                    'bibidh_money_amount_input' => 'required',
-                ]);
+            if ($request->bibidh_subCatagory_input == "income" && $request->bibidh_ay_option_input != "others") {
+
+                // return $request->bibidh_ay_option_input;
+                
+                $this->validate($request, [
+
+                        'bibidh_ay_option_input' => 'required',
+                        'bibidh_money_amount_input' => 'required',
+                    ]);
 
 
-            /* update reserve table */
+                /* update reserve table */
+                
+                $reserve_instance = new Reserve;
+
+                $reserve_instance->info_type = $request->bibidh_subCatagory_input;
+                $reserve_instance->subject = $request->bibidh_ay_option_input;
+                $reserve_instance->money_amount = $request->bibidh_money_amount_input;
+
+                $reserve_instance->save();
+
+
+            }
+            else if ($request->bibidh_subCatagory_input == "income" && $request->bibidh_ay_option_input == "others") {
+
+                // return $request->bibidh_ay_option_input;
+                
+                $this->validate($request, [
+
+                        'bibidh_ay_option_input' => 'required',
+                        'bibidh_biboron_input' => 'required',
+                        'bibidh_money_amount_input' => 'required',
+                    ]);
+
+
+                /* update reserve table */
+                
+                $reserve_instance = new Reserve;
+
+                $reserve_instance->info_type = $request->bibidh_subCatagory_input;
+                $reserve_instance->subject = $request->bibidh_biboron_input;
+                $reserve_instance->money_amount = $request->bibidh_money_amount_input;
+
+                $reserve_instance->save();
+
+
+
+            }
+            else if ($request->bibidh_subCatagory_input == "spent") {
+                
+                $this->validate($request, [
+
+                        'bibidh_uddesso_input' => 'required',
+                        'bibidh_money_amount_input' => 'required',
+                    ]);
+
+
+                /* update reserve table */
+                
+                $reserve_instance = new Reserve;
+
+                $reserve_instance->info_type = $request->bibidh_subCatagory_input;
+                $reserve_instance->subject = $request->bibidh_uddesso_input;
+                $reserve_instance->money_amount = $request->bibidh_money_amount_input;
+
+                $reserve_instance->save();
+
+
+            }
+
+
+
             
-            $reserve_instance = new Reserve;
-
-            $reserve_instance->info_type = $request->bibidh_subCatagory_input;
-            $reserve_instance->subject = $request->bibidh_uddesso_input;
-            $reserve_instance->money_amount = $request->bibidh_money_amount_input;
-
-            $reserve_instance->save();
 
 
 
@@ -695,10 +781,394 @@ class Daily_entry_controller extends Controller
         
         $user_account_info = User_account::where('user_id', $request->sovvo_sodosso_number)->get()->first();
 
+        $current_time = Carbon::now();
+
+        if ($current_time->month >= 2 && $current_time->month <= 7) {
+            
+            // $time = "abc";
+            $starting_date = $current_time->year."-02-01";
+            $end_date = $current_time->year."-07-31";
+        }
+        else{
+
+            // $time = "def";
+            $starting_date = $current_time->year."-08-01";
+            $end_date = ($current_time->year + 1 )."-01-31";
+        }
+
+        $sonchoy_instance = Sonchoy::where('user_id', $request->sovvo_sodosso_number)
+                                    ->where('info_type', 'sonchoy_masik_joma')
+                                    ->whereDate('updated_at', '>=', $starting_date)
+                                    ->whereDate('updated_at', '<=', $end_date)
+                                    ->get();
+
+
+        $loan_taking_instance = Loan::where('user_id', $request->sovvo_sodosso_number)
+                                    ->where('info_type', 'loan_bitoron')
+                                    ->get();
+
+        $loan_giving_instance = Loan::where('user_id', $request->sovvo_sodosso_number)
+                                    ->where('info_type', 'loan_joma')
+                                    ->get();
+
+        $loan_masik_munafa_instance = Loan::where('user_id', $request->sovvo_sodosso_number)
+                                    ->where('info_type', 'loan_masik_munafa')
+                                    ->whereDate('updated_at', '>=', $starting_date)
+                                    ->whereDate('updated_at', '<=', $end_date)
+                                    ->get();
+
+
+        // $temp = '<th style="text-align: center;">শোধের পরিমান</th>';
+
+        /**
+         *
+         * loan taking info
+         *
+         */
+        
+        $loan_taking_table = '<table class="table table-hover table-striped">
+                    
+                            <thead>
+                                  <tr>
+                                    <th style="text-align: center;">লোনের পরিমান</th>
+                                    <th style="text-align: center;">তারিখ </th>
+                                  </tr>
+                            </thead>
+                                <tbody style="text-align: center; font-size: 22px;">';
+
+
+        $temp_loan_taking_table_info = "";
+
+        foreach ($loan_taking_instance as $single_loan) {
+            
+            $tempDate = $single_loan->updated_at->formatLocalized('%A %d %B %Y');
+            
+            $temp = "<tr>
+                        <td>$single_loan->money_amount</td>
+                        <td>$tempDate</td>                                    
+                    </tr>  ";
+
+            $temp_loan_taking_table_info = $temp_loan_taking_table_info.$temp;
+        }
+                   
+        $loan_taking_table = $loan_taking_table.$temp_loan_taking_table_info.'</tbody>
+
+                        </table>';
+
+
+        /**
+         *
+         * loan giving info
+         *
+         */
+        
+
+        $loan_giving_table = '<table class="table table-hover table-striped">
+                    
+                            <thead>
+                                  <tr>
+                                    <th style="text-align: center;">শোধের পরিমান</th>
+                                    <th style="text-align: center;">তারিখ </th>
+                                  </tr>
+                            </thead>
+                                <tbody style="text-align: center; font-size: 22px;">';
+
+
+        $temp_loan_giving_table_info = "";
+
+        foreach ($loan_giving_instance as $single_loan) {
+            
+            $tempDate = $single_loan->updated_at->formatLocalized('%A %d %B %Y');
+            
+            $temp = "<tr>
+                        <td>$single_loan->money_amount</td>
+                        <td>$tempDate</td>                                    
+                    </tr>  ";
+
+            $temp_loan_giving_table_info = $temp_loan_giving_table_info.$temp;
+        }
+                   
+        $loan_giving_table = $loan_giving_table.$temp_loan_giving_table_info.'</tbody>
+
+                        </table>';
+
+        /**
+         *
+         * loan masik munafa info
+         *
+         */
+        
+
+        $loan_masik_munafa_table = '<table class="table table-hover table-striped">
+                    
+                            <thead>
+                                  <tr>
+                                    <th style="text-align: center;">মাসিক জমা</th>
+                                    <th style="text-align: center;">জরিমানা</th>
+                                    <th style="text-align: center;">মোট জমা</th>
+                                    <th style="text-align: center;">তারিখ </th>
+                                  </tr>
+                            </thead>
+                                <tbody style="text-align: center; font-size: 22px;">';
+
+
+        $temp_loan_masik_munafa_table_info = "";
+
+        foreach ($loan_masik_munafa_instance as $single_loan) {
+            
+            $tempDate = $single_loan->updated_at->formatLocalized('%A %d %B %Y');
+            
+            $temp = "<tr>
+                        <td>$single_loan->money_amount</td>
+                        <td>$single_loan->jorimana_amount</td>
+                        <td>$single_loan->total_amount</td>
+                        <td>$tempDate</td>                                    
+                    </tr>  ";
+
+            $temp_loan_masik_munafa_table_info = $temp_loan_masik_munafa_table_info.$temp;
+        }
+                   
+        $loan_masik_munafa_table = $loan_masik_munafa_table.$temp_loan_masik_munafa_table_info.'</tbody>
+
+                        </table>';
+
+
+
+        /**
+         *
+         * sonchoy masik joma info
+         *
+         */
+        
+
+        $sonchoy_masik_munafa_table = '<table class="table table-hover table-striped">
+                    
+                            <thead>
+                                  <tr>
+                                    <th style="text-align: center;">মাসিক জমা</th>
+                                    <th style="text-align: center;">জরিমানা</th>
+                                    <th style="text-align: center;">মোট জমা</th>
+                                    <th style="text-align: center;">তারিখ </th>
+                                  </tr>
+                            </thead>
+                                <tbody style="text-align: center; font-size: 22px;">';
+
+
+        $temp_sonchoy_masik_munafa_table_info = "";
+
+        foreach ($sonchoy_instance as $single_sonchoy) {
+            
+            $tempDate = $single_sonchoy->updated_at->formatLocalized('%A %d %B %Y');
+            
+            $temp = "<tr>
+                        <td>$single_sonchoy->money_amount</td>
+                        <td>$single_sonchoy->jorimana_amount</td>
+                        <td>$single_sonchoy->total_amount</td>
+                        <td>$tempDate</td>                                    
+                    </tr>  ";
+
+            $temp_sonchoy_masik_munafa_table_info = $temp_sonchoy_masik_munafa_table_info.$temp;
+        }
+                   
+        $sonchoy_masik_munafa_table = $sonchoy_masik_munafa_table.$temp_sonchoy_masik_munafa_table_info.'</tbody>
+
+                        </table>';
+
+
+
         // return $user_account_info;
         // $user_account_info = $request->all();
 
-        return Response()->json(['user_info' => $user_account_info]);
+        return Response()->json(['user_info' => $user_account_info, 'sonchoy' => $sonchoy_masik_munafa_table, 'loan_uttolon' => $loan_taking_table, 'loan_joma' => $loan_giving_table, 'loan_masik_munafa' => $loan_masik_munafa_table]);
+
+    }
+
+
+
+
+    /**
+     *
+     * delete notification
+     *
+     */
+    
+    public function DeleteNotification($id)
+    {
+        
+        $daily_entry_instance = Daily_entry::find($id);
+
+        $daily_entry_type = $daily_entry_instance->entry_type;
+
+        $entry_type_id = $daily_entry_instance->type_entry_id;
+
+
+        if($daily_entry_type == "sheyar_and_buy"){
+
+            /**
+             *
+             * sheyar buy
+             *
+             */
+            
+
+            $entry_type_instance  = Sheyar::find($entry_type_id);
+
+                $user_account_instance = User_account::where('user_id' , $entry_type_instance->user_id)->get()->first();
+                $user_account_instance->sheyar -= ($entry_type_instance->sheyar_amount / 100);
+                $user_account_instance->save();
+
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "sheyar_and_sell"){
+
+            /**
+             *
+             * sheyar sell
+             *
+             */
+
+            $entry_type_instance  = Sheyar::find($entry_type_id);
+
+                /* who sells */
+                
+                $user_account_instance = User_account::where('user_id' , $entry_type_instance->user_id)->get()->first();
+                $user_account_instance->sheyar += ($entry_type_instance->sheyar_amount / 100);
+                $user_account_instance->save();
+
+                /* whow buys */
+                
+                $user_account_instance = User_account::where('user_id' , $entry_type_instance->to_whom)->get()->first();
+                $user_account_instance->sheyar -= ($entry_type_instance->sheyar_amount / 100);
+                $user_account_instance->save();
+
+
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "sonchoy_and_masik_joma"){
+
+            /**
+             *
+             * sonchoy joma
+             *
+             */
+            
+
+            $entry_type_instance  = Sonchoy::find($entry_type_id);
+
+                $user_account_instance = User_account::where('user_id' , $entry_type_instance->user_id)->get()->first();
+                $user_account_instance->net_sonchoy -= ($entry_type_instance->total_amount);
+                $user_account_instance->save();
+
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "sonchoy_and_uttolon"){
+
+
+            /**
+             *
+             * sonchoy uttolon
+             *
+             */
+            
+
+            $entry_type_instance  = Sonchoy::find($entry_type_id);
+
+                $user_account_instance = User_account::where('user_id' , $entry_type_instance->user_id)->get()->first();
+                $user_account_instance->net_sonchoy += ($entry_type_instance->money_amount);
+                $user_account_instance->save();
+
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "loan_and_bitoron"){
+
+
+            /**
+             *
+             * loan bitoron
+             *
+             */
+            
+            $entry_type_instance  = Loan::find($entry_type_id);
+
+                $user_account_instance = User_account::where('user_id' , $entry_type_instance->user_id)->get()->first();
+                $user_account_instance->taken_loan_amount -= ($entry_type_instance->money_amount);
+                $user_account_instance->save();
+
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "loan_and_joma"){
+
+
+            /**
+             *
+             * loan joma
+             *
+             */
+            
+            $entry_type_instance  = Loan::find($entry_type_id);
+
+                $user_account_instance = User_account::where('user_id' , $entry_type_instance->user_id)->get()->first();
+                $user_account_instance->paid_loan_amount -= ($entry_type_instance->money_amount);
+                $user_account_instance->save();
+
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "loan_and_masik_joma"){
+
+
+            /**
+             *
+             * loan masik munafa 
+             *
+             */
+            
+            $entry_type_instance  = Loan::find($entry_type_id);
+
+                $munafa_instance = Munafa::where('user_id', $entry_type_instance->user_id)
+                                            ->get()->first();
+                $munafa_instance->delete();
+
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "reserve_and_income"){
+
+            /**
+             *
+             * reserve income
+             *
+             */
+            
+            $entry_type_instance  = Reserve::find($entry_type_id);
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "reserve_and_spent"){
+
+            /**
+             *
+             * reserve spend
+             *
+             */
+            
+            $entry_type_instance  = Reserve::find($entry_type_id);
+            $entry_type_instance->delete();
+        }
+        else if($daily_entry_type == "munafa_theke_khoroch"){
+
+            /**
+             *
+             * munafa theke khoroch
+             *
+             */
+            
+            $entry_type_instance  = Munafa_theke_khoroch::find($entry_type_id);
+            $entry_type_instance->delete();
+        }
+
+
+        $daily_entry_instance->delete();
+
+
+        return redirect()->route('daily_entry.home');
 
     }
 }

@@ -70,7 +70,7 @@
 
 	            <li @yield('hirizontal_nav_report_active')><a href="{{ route('company.daily_report') }}">রিপোর্ট</a></li>
 
-	            <li @yield('hirizontal_nav_search_active')><a href="#">খুঁজুন </a></li>
+	            {{-- <li @yield('hirizontal_nav_search_active')><a href="#">খুঁজুন </a></li> --}}
 
 
 

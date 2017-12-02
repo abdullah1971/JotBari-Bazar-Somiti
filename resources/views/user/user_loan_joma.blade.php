@@ -35,7 +35,7 @@
 	  	<thead>
 	  	      <tr>
 	  	        <th style="text-align: center; font-size: 22px;">লোন শোধের পরিমান </th>
-	  	        <th style="text-align: center; font-size: 22px;">ভবিস্যতে উত্তোলনের পরিমান</th>
+	  	        {{-- <th style="text-align: center; font-size: 22px;">ভবিস্যতে উত্তোলনের পরিমান</th> --}}
 	  	        <th style="text-align: center; font-size: 22px;">তারিখ </th>
 	  	      </tr>
 	  	</thead>
@@ -46,7 +46,7 @@
 
 		  	      <tr>
 		  	        <td>{{ $single_loan->money_amount }}</td>
-		  	        <td>{{ $single_loan->UserAccountInfo->sheyar * 4000 - $single_loan->UserAccountInfo->taken_loan_amount + $single_loan->UserAccountInfo->paid_loan_amount }}</td>
+		  	        {{-- <td>{{ $single_loan->UserAccountInfo->sheyar * 4000 - $single_loan->UserAccountInfo->taken_loan_amount + $single_loan->UserAccountInfo->paid_loan_amount }}</td> --}}
 		  	        <td>{{ $single_loan->updated_at->formatLocalized('%A %d %B %Y') }}</td>	  	        
 		  	      </tr>
 	  	    		

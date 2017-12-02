@@ -18,7 +18,7 @@
 		  <a href="{{ route('company.sodoss_sheyar_info') }}" class="list-group-item">শেয়ার বিবরন </a>
 		  <a href="{{ route('company.sodosso_sonchoy_info') }}" class="list-group-item">সঞ্চয় বিবরন </a>
       <a href="{{ route('company.sodosso__loan_info') }}" class="list-group-item">লোন বিবরন </a>
-		  <a href="#" class="list-group-item">সদস্য বাতিল </a>
+		  <a href="{{ route('company.sodosso_delete') }}" class="list-group-item">সদস্য বাতিল </a>
 		  <a href="{{ route('company_sodosso.masik_sonchoy_set') }}" class="list-group-item active">মাসিক সঞ্চয় নির্ধারন </a>
 		</div>
 
@@ -45,12 +45,12 @@
 
         	{{ csrf_field() }}
 
-              <div id="sovvo_sodosso_number" class="form-group">
-                <label for="sovvo_sodosso_number_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+              <div id="company_member_page_sovvo_sodosso_number" class="form-group">
+                <label for="company_member_page_sovvo_sodosso_number_input" class="control-label col-md-3 col-sm-3 col-xs-12">
                 	সভ্য সদস্য নম্বর
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="sovvo_sodosso_number_input" id="sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number" required>
+                  <input name="company_member_page_sovvo_sodosso_number_input" id="company_member_page_sovvo_sodosso_number_input" class="form-control col-md-7 col-xs-12"  type="number" required>
                 </div>
               </div>
 

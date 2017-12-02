@@ -19,7 +19,7 @@
 		  <a href="{{ route('company.sodoss_sheyar_info') }}" class="list-group-item">শেয়ার বিবরন </a>
 		  <a href="{{ route('company.sodosso_sonchoy_info') }}" class="list-group-item">সঞ্চয় বিবরন </a>
 		  <a href="{{ route('company.sodosso__loan_info') }}" class="list-group-item">লোন বিবরন </a>
-		  <a href="#" class="list-group-item">সদস্য বাতিল </a>
+		  <a href="{{ route('company.sodosso_delete') }}" class="list-group-item">সদস্য বাতিল </a>
 		  <a href="{{ route('company_sodosso.masik_sonchoy_set') }}" class="list-group-item">মাসিক সঞ্চয় নির্ধারন </a>
 		</div>
 
@@ -184,6 +184,30 @@
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input name="user_image_input" id="user_image_input" class="form-control col-md-7 col-xs-12"  type="file">
+                </div>
+              </div>
+
+
+               <!-- user nomenee name -->
+              
+              <div id="nominee_name" class="form-group">
+                <label for="nominee_name_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                  নোমিনির নাম
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input name="nominee_name_input" id="nominee_name_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
+                </div>
+              </div>
+
+
+              <!-- user nomenee relation -->
+              
+              <div id="nominee_relation" class="form-group">
+                <label for="nominee_relation_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                  নোমিনির সাথে সম্পর্ক  
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input name="nominee_relation_input" id="nominee_relation_input" class="form-control col-md-7 col-xs-12"  type="text" value="">
                 </div>
               </div>
 

@@ -16,6 +16,7 @@
 		<div class="list-group">
 		  <a href="{{ route('company.loan_biboron') }}" class="list-group-item active">লোন বিবরন </a>
 		  <a href="{{ route('company.loan_masik_munafa') }}" class="list-group-item">লোনের মাসিক মুনাফা</a>
+		  <a href="{{ route('company.loan_giving_info') }}" class="list-group-item">লোনের জামিনদারের তথ্য </a>
 		  
 		  
 		</div>
@@ -38,6 +39,7 @@
 	  	        <th style="text-align: center; font-size: 22px;">শেয়ার সংখা </th>
 	  	        <th style="text-align: center; font-size: 22px;">গ্রহনকৃত লোনের পরিমান </th>
 	  	        <th style="text-align: center; font-size: 22px;">শোধকৃত লোনের পরিমান </th>
+	  	        <th style="text-align: center; font-size: 22px;">জামিনদার</th>
 	  	        <th style="text-align: center; font-size: 22px;">ভবিস্যতে সর্বোচ্চ লোন গ্রহনের পরিমান </th>
 	  	      </tr>
 	  	</thead>
@@ -52,6 +54,13 @@
 		  	        <td>{{ $single_user_account->sheyar }}</td>
 		  	        <td>{{ $single_user_account->taken_loan_amount }}</td>
 		  	        <td>{{ $single_user_account->paid_loan_amount }}</td>
+		  	        <td>
+		  	        	@foreach ($single_user_account->UserBasicInfo->JamindarInfo as $single_jamindar)
+		  	        		
+		  	        		{{ $single_jamindar->UserBasicInfo->name ." ( ". $single_jamindar->UserBasicInfo->membership_no ." )" }}
+		  	        	@endforeach
+
+		  	        </td>	
 		  	        <td>{{ $single_user_account->sheyar * 4000 - $single_user_account->taken_loan_amount + $single_user_account->paid_loan_amount }}</td>	  	        
 		  	      </tr>
 	  	    		

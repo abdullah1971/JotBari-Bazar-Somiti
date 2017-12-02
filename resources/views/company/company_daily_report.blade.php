@@ -43,40 +43,83 @@
 
         	{{ csrf_field() }}
 
-              <div id="from_day_for_daily_report" class="form-group">
-                <label for="from_day_for_daily_report_input" class="control-label col-md-3 col-sm-3 col-xs-12">
-                  যে তারিখ থেকে
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="from_day_for_daily_report_input" id="from_day_for_daily_report_input" class="form-control col-md-7 col-xs-12"  type="date" required>
-                </div>
+            <div class="row">
+              
+
+              <div class="col-sm-2 col-md-2 col-xl-2">
+
+                @php
+
+                  $today = Carbon\Carbon::now();
+                  // $today = Carbon::now();
+
+                  $today_date_info = $today->year."-".$today->month."-".$today->day;
+
+                @endphp
+
+                <input type="hidden" name="today_date" value="{{ $today_date_info }}">
+                
+                <button class="btn btn-success" type="">আজকের রিপোর্ট </button>
+
               </div>
 
-              <div id="to_day_for_daily_report" class="form-group">
-                <label for="to_day_for_daily_report_input" class="control-label col-md-3 col-sm-3 col-xs-12">
-                	যে তারিখ পর্যন্ত 
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="to_day_for_daily_report_input" id="to_day_for_daily_report_input" class="form-control col-md-7 col-xs-12"  type="date" required>
+
+              <div class="col-sm-4 col-md-4 col-xl-4">
+
+                <div id="from_day_for_daily_report" class="form-group">
+                  <label for="from_day_for_daily_report_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                    যে তারিখ থেকে
+                  </label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input name="from_day_for_daily_report_input" id="from_day_for_daily_report_input" class="form-control col-md-7 col-xs-12"  type="date" >
+                  </div>
                 </div>
+
               </div>
+
+              <div class="col-sm-4 col-md-4 col-xl-4">
+                
+                <div id="to_day_for_daily_report" class="form-group">
+                  <label for="to_day_for_daily_report_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                    যে তারিখ পর্যন্ত 
+                  </label>
+                  <div class="col-md-9 col-sm-9 col-xs-12">
+                    <input name="to_day_for_daily_report_input" id="to_day_for_daily_report_input" class="form-control col-md-7 col-xs-12"  type="date" >
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-sm-2 col-md-2 col-xl-2">
+                
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      
+                      <button type="submit" class="btn btn-success pull-right">Submit</button>
+
+                  {{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
+
+                    </div>
+                  </div>
+
+              </div>
+
+              
+
+            </div>
+
+              
+
+              
 
 
               
 
 
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12">
-              	
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                
-              	<button type="submit" class="btn btn-success pull-right">Submit</button>
-
-				  	{{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
-
-              </div>
-            </div>
+            
         </form>
       </div>
     </div>
@@ -88,8 +131,8 @@
 
     @if ($daily_info != null)
       
-      <div class="table-responsive" style="margin-top: 20px;">
-        <table class="table table-hover table-striped">
+      <div id="daily_report_table" class="table-responsive" style="margin-top: 20px;">
+        <table class="table table-hover table-striped table-bordered">
           
           <thead>
                 <tr>
@@ -263,6 +306,12 @@
         </table>
       </div>
 
+      <div class="pull-left" style="font-size: 20px;">
+
+        <button type="" id="daily_report_print_button" class="btn btn-success">প্রিন্ট করুন </button>
+        
+      </div>
+
       <div class="pull-right" style="font-size: 20px;">
 
         {{ $daily_info->links() }}
@@ -275,3 +324,17 @@
 	        
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+

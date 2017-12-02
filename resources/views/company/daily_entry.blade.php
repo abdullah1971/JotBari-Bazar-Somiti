@@ -42,7 +42,9 @@
 			    <li class="list-group-item" style="text-align: center;">
 			    	
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 
 			    	
 			    </li>
@@ -70,7 +72,9 @@
 
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -96,7 +100,9 @@
 
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -124,7 +130,9 @@
 
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -151,7 +159,9 @@
 
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -178,7 +188,9 @@
 
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -205,7 +217,9 @@
 
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -234,7 +248,9 @@
 
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -256,7 +272,9 @@
 			    
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -278,7 +296,9 @@
 			    
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -302,7 +322,9 @@
 			    
 			    <li class="list-group-item" style="text-align: center;">
 			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<button class="btn btn-danger " type="">বাতিল করুন </button>
+			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			    	</a>
 			    </li>
 			  </ul>
 			</div>
@@ -390,7 +412,7 @@
 
 	                  	    <select name="sonchoy_subCatagory_input" id="sonchoy_subCatagory_input" class="form-control input_select_val">
 	                  	      <option value="sonchoy_masik_joma">মাসিক সঞ্চয় জমা</option>
-	                  	      <option value="sonchoy_masik_joma_advanced">মাসিক সঞ্চয় জমা ( অগ্রিম )</option>
+	                  	      {{-- <option value="sonchoy_masik_joma_advanced">মাসিক সঞ্চয় জমা ( অগ্রিম )</option> --}}
 	                  	      <option value="sonchoy_uttolon">সঞ্চয় উত্তলন</option>
 	                  	      
 	                  	    </select>
@@ -548,6 +570,11 @@
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
 	                  	    <input name="sonchoy_masik_jorimana_input" id="sonchoy_masik_jorimana_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
+
+	                  	  <div class="col-md-3 col-sm-3 col-xs-12">
+							{{-- <button class="btn btn-info"></button>	 --}}
+							<button id="loan_modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#sonchoy_info_modal">মাসিক জমার বিবরন </button>              	  	
+	                  	  </div>
 	                  	</div>
 
 
@@ -569,24 +596,33 @@
 	                  	  </div>
 	                  	</div>
 
+	                  	<div id="sonchoy_joma_date" class="form-group remove_item">
+	                  	  <label for="sonchoy_joma_date_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+	                  	  	জমা দেওয়ার তারিখ 
+	                  	  </label>
+	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
+	                  	    <input name="sonchoy_joma_date_input" id="sonchoy_joma_date_input" class="form-control col-md-7 col-xs-12"  type="date">
+	                  	  </div>
+	                  	</div>
 
-	                  	<div id="sonchoy_ogrim_joma_month" class="form-group remove_item">
+
+	                  	{{-- <div id="sonchoy_ogrim_joma_month" class="form-group remove_item">
 	                  	  <label for="sonchoy_ogrim_joma_month_input" class="control-label col-md-3 col-sm-3 col-xs-12">
 	                  	  	মাসের পরিমান 
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
 	                  	    <input name="sonchoy_ogrim_joma_month_input" id="sonchoy_ogrim_joma_month_input" class="form-control col-md-7 col-xs-12"  type="number">
 	                  	  </div>
-	                  	</div>
+	                  	</div> --}}
 
-	                  	<div id="sonchoy_ogrim_joma_amount" class="form-group remove_item">
+	                  	{{-- <div id="sonchoy_ogrim_joma_amount" class="form-group remove_item">
 	                  	  <label for="sonchoy_ogrim_joma_amount_input" class="control-label col-md-3 col-sm-3 col-xs-12">
 	                  	  	মোট জমা <br> ( টাকায় )
 	                  	  </label>
 	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
 	                  	    <input name="sonchoy_ogrim_joma_amount_input" id="sonchoy_ogrim_joma_amount_input" class="form-control col-md-7 col-xs-12"  type="number" readonly="true" value="2500">
 	                  	  </div>
-	                  	</div>
+	                  	</div> --}}
 
 
 	                  	<div id="sonchoy_net_amount" class="form-group remove_item">
@@ -685,6 +721,16 @@
 	                  	  </div>
 	                  	</div>
 
+	                  	<div id="loan_joma_date" class="form-group remove_item">
+	                  	  <label for="loan_joma_date_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+	                  	  	জমা দেওয়ার তারিখ 
+	                  	  </label>
+	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
+	                  	    <input name="loan_joma_date_input" id="loan_joma_date_input" class="form-control col-md-7 col-xs-12"  type="date">
+	                  	  </div>
+	                  	</div>
+
+
 
 
 	                  	<div id="loan_masik_munafa_joma" class="form-group remove_item">
@@ -724,6 +770,7 @@
 	                  	  </div>
 	                  	</div> -->
 
+
 	                  	<div id="loan_net_masik_joma" class="form-group remove_item">
 	                  	  <label for="loan_net_masik_joma_input" class="control-label col-md-3 col-sm-3 col-xs-12">
 	                  	  	মোট জমা <br> ( টাকায় )
@@ -732,6 +779,17 @@
 	                  	    <input name="loan_net_masik_joma_input" id="loan_net_masik_joma_input" class="form-control col-md-7 col-xs-12"  type="number" value="0">
 	                  	  </div>
 	                  	</div>
+
+
+	                  	<div id="loan_masik_munafa_joma_date" class="form-group remove_item">
+	                  	  <label for="loan_masik_munafa_joma_date_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+	                  	  	জমা দেওয়ার তারিখ 
+	                  	  </label>
+	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
+	                  	    <input name="loan_masik_munafa_joma_date_input" id="loan_masik_munafa_joma_date_input" class="form-control col-md-7 col-xs-12"  type="date">
+	                  	  </div>
+	                  	</div>
+
 
 	                  
 	                  <!--====  End of loan  ====-->
@@ -742,7 +800,40 @@
 	                  =            bibidh portion            =
 	                  =====================================-->
 	                  
-	                  	
+	                  	<div id="bibidh_ay_option" class="form-group remove_item">
+
+	                  	  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="bibidh_ay_option_input">উৎস</label>
+
+	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
+
+	                  	    <select name="bibidh_ay_option_input" id="bibidh_ay_option_input" class="form-control input_select_val">
+	                  	      <option value="form_sell">ফরম বিক্রি</option>
+	                  	      <option value="vobon_1_vara">ভবন-১ এর ভাড়া </option>
+	                  	      <option value="vobon_2_vara">ভবন-২ এর ভাড়া </option>
+	                  	      <option value="vobon_3_vara">ভবন-৩ এর ভাড়া </option>
+	                  	      <option value="vobon_4_vara">ভবন-৪ এর ভাড়া </option>
+	                  	      <option value="vobon_5_vara">ভবন-৫ এর ভাড়া </option>
+	                  	      <option value="vobon_6_vara">ভবন-৬ এর ভাড়া </option>
+	                  	      <option value="vobon_7_vara">ভবন-৭ এর ভাড়া </option>
+	                  	      <option value="vobon_8_vara">ভবন-৮ এর ভাড়া </option>
+	                  	      <option value="pas_boi_bikri">পাশ বই বিক্রি </option>
+	                  	      <option value="sodosso_vorti_fi">সদস্য ভর্তি ফি </option>
+	                  	      <option value="others">অন্যান্য  </option>
+	                  	      
+	                  	    </select>
+
+	                  	  </div>
+	                  	</div>
+
+
+	                  	<div id="bibidh_biboron" class="form-group remove_item">
+	                  	  <label for="bibidh_biboron_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+	                  	  	বিবরন 
+	                  	  </label>
+	                  	  <div class="col-md-6 col-sm-6 col-xs-12">
+	                  	    <input name="bibidh_biboron_input" id="bibidh_biboron_input" class="form-control col-md-7 col-xs-12"  type="text">
+	                  	  </div>
+	                  	</div>
 
 
 	                  	<div id="bibidh_uddesso" class="form-group remove_item">
@@ -848,43 +939,42 @@
 
 
 	         <div id="loan_modal_table" class="table-responsive" style="margin-top: 20px;">
-	         	  <table class="table table-hover table-striped">
-	         	    
-	         	  	<thead>
-	         	  	      <tr>
-	         	  	        <th style="text-align: center;">ক্রমিক</th>
-	         	  	        <th style="text-align: center;">লোনের পরিমান</th>
-	         	  	        <th style="text-align: center;">শোধের পরিমান</th>
-	         	  	        <th style="text-align: center;">তারিখ </th>
-	         	  	      </tr>
-	         	  	</thead>
-	         	  	    <tbody style="text-align: center; font-size: 22px;">
-
-	         	  	    	
-	         	  	    		
-
-	         		  	      <tr>
-	         		  	        <td>kdjhfdkfj</td>
-	         		  	        <td>kdjhfdkfj</td>
-	         		  	        <td>kdjhfdkfj</td>
-	         		  	        <td>kdjhfdkfj</td>
-	         		  	        	  	        
-	         		  	      </tr>	        
-	         		  	      
-	         	  	    		
-	         	  	    	
-	         	  	      
-	         	  	    </tbody>
-
-	         	  </table>
+	         	  
 	         	</div>
 	         
 
 
 	       </div>
 	       <div class="modal-footer">
-	         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	         <button type="button" class="btn btn-primary">Save changes</button>
+	         <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+	         {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+	       </div>
+	     </div><!-- /.modal-content -->
+	   </div><!-- /.modal-dialog -->
+	 </div><!-- /.modal -->
+
+
+
+	 <div id="sonchoy_info_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+	   <div class="modal-dialog" role="document">
+	     <div class="modal-content">
+	       <div class="modal-header">
+	         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	         <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+	       </div>
+	       <div class="modal-body">
+
+
+	         <div id="sonchoy_modal_table" class="table-responsive" style="margin-top: 20px;">
+	         	  
+	         	</div>
+	         
+
+
+	       </div>
+	       <div class="modal-footer">
+	         <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+	         {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
 	       </div>
 	     </div><!-- /.modal-content -->
 	   </div><!-- /.modal-dialog -->

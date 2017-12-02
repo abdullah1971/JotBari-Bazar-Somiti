@@ -41,13 +41,13 @@ class CompanySodossInfo extends Controller
          *
          */
 
-        $user_account_instance = User_account::find($request->sovvo_sodosso_number_input);
+        $user_account_instance = User_account::find($request->company_member_page_sovvo_sodosso_number_input);
 
         $user_account_instance->fixed_sonchoy = $request->sonchoy_monthly_fix_amount_input;
 
         $user_account_instance->save();
 
-        return redirect()->route('company.company_sodosso.masik_sonchoy_set');
+        return redirect()->route('company_sodosso.masik_sonchoy_set');
     }
 
 
@@ -107,7 +107,9 @@ class CompanySodossInfo extends Controller
             'user_husbandORwife_name_input' => 'string',
             'present_address_input' => 'string',
             'permanent_address_input' => 'string',
-            'date_of_being_user_input' => 'string',
+            'permanent_address_input' => 'string',
+            'nominee_name_input' => 'string',
+            'nominee_relation_input' => 'string',
             // 'mobile_no_input' => 'numeric',
             // 'user_image_input' => 'image|size:5100',
 
@@ -152,12 +154,14 @@ class CompanySodossInfo extends Controller
         $user_info_instance->permanent_address = $request->permanent_address_input;
         $user_info_instance->mobile_no = $request->mobile_no_input;
         $user_info_instance->date_of_being_user = $request->date_of_being_user_input;
+        $user_info_instance->nominee_name = $request->nominee_name_input;
+        $user_info_instance->nominee_relation = $request->nominee_relation_input;
 
 
         if ($request->hasFile('user_image_input')) {
 
 
-            $image_name = $request->user_image_input->getClientOriginalName();
+            $image_name = $user_instance->membership_no."_".$request->user_image_input->getClientOriginalName();
 
             $path = $request->user_image_input->storeAs('public/images', $image_name);
 
@@ -277,5 +281,61 @@ class CompanySodossInfo extends Controller
         $user_id = $request->sovvo_sodosso_number_input;
 
         return redirect()->route('company.sodosso__loan_info', ['id' => $user_id]);
+    }
+
+
+
+    /**
+     *
+     * sodosso delete
+     *
+     */
+    public function DeleteSodosso()
+    {
+        return view('company.company_sodosso_batil');
+    }
+
+
+
+    /**
+     *
+     * sodosso delete info 
+     *
+     */
+    
+    public function DeleteSodossoInfo(Request $request)
+    {
+        $this->validate($request, [
+
+            'sovvo_sodosso_number_input' => 'required|numeric',
+
+        ]);
+
+        
+        $user_account_instance = User_account::where('user_id', $request->sovvo_sodosso_number_input)->get()->first();
+
+        if ($user_account_instance) {
+            
+            $user_account_instance->account_status = "inactive";
+
+            $user_account_instance->net_sonchoy = 0;
+
+            $user_account_instance->taken_loan_amount = 0;
+
+            $user_account_instance->paid_loan_amount = 0;
+
+            $user_account_instance->fixed_sonchoy = 0;
+
+            $user_account_instance->save();
+
+
+
+
+            return redirect()->route('company_sodosso.home');
+        }
+        else{
+            return back()->withInput();
+        }
+
     }
 }

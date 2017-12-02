@@ -16,6 +16,7 @@
 		<div class="list-group">
 		  <a href="{{ route('company.loan_biboron') }}" class="list-group-item">লোন বিবরন </a>
 		  <a href="{{ route('company.loan_masik_munafa') }}" class="list-group-item active">লোনের মাসিক মুনাফা</a>
+		  <a href="{{ route('company.loan_giving_info') }}" class="list-group-item">লোনের জামিনদারের তথ্য </a>
 		  
 		  
 		</div>

@@ -5,6 +5,7 @@ namespace App;
 use App\Loan;
 use App\Munafa;
 use App\Reserve;
+use App\Rin_jamindar_info;
 use App\Sheyar;
 use App\Sonchoy;
 use App\TemporaryRinKhelapiInfo;
@@ -158,6 +159,33 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\TemporaryRinKhelapiInfo', 'user_id', 'membership_no');
     }
+
+
+
+    /**
+     *
+     * relation with user rin jamindar info for jamindar list
+     *
+     */
+    
+    public function JamindarInfo()
+    {
+        
+        return $this->hasMany('App\Rin_jamindar_info', 'user_id', 'membership_no');
+    }
+
+
+
+    /**
+     *
+     * relation with user and rin jamindar info for user inof   
+     *
+     */
+    
+    // public function FunctionName($value='')
+    // {
+    //     # code...
+    // }
 
 
 }

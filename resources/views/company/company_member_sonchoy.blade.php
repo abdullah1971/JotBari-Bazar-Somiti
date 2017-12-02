@@ -18,7 +18,7 @@
 		  <a href="{{ route('company.sodoss_sheyar_info') }}" class="list-group-item">শেয়ার বিবরন </a>
 		  <a href="{{ route('company.sodosso_sonchoy_info') }}" class="list-group-item active">সঞ্চয় বিবরন </a>
       <a href="{{ route('company.sodosso__loan_info') }}" class="list-group-item">লোন বিবরন </a>
-		  <a href="#" class="list-group-item">সদস্য বাতিল </a>
+		  <a href="{{ route('company.sodosso_delete') }}" class="list-group-item">সদস্য বাতিল </a>
 		  <a href="{{ route('company_sodosso.masik_sonchoy_set') }}" class="list-group-item">মাসিক সঞ্চয় নির্ধারন </a>
 		</div>
 

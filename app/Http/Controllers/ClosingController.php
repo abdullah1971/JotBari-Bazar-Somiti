@@ -92,6 +92,7 @@ class ClosingController extends Controller
         }
 
 
+
         /**
          *
          * calculate the starting and end date of the closing

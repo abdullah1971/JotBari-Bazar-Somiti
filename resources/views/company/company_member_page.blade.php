@@ -19,7 +19,7 @@
 		  <a href="{{ route('company.sodoss_sheyar_info') }}" class="list-group-item">শেয়ার বিবরন </a>
 		  <a href="{{ route('company.sodosso_sonchoy_info') }}" class="list-group-item">সঞ্চয় বিবরন </a>
 		  <a href="{{ route('company.sodosso__loan_info') }}" class="list-group-item">লোন বিবরন </a>
-		  <a href="#" class="list-group-item">সদস্য বাতিল </a>
+		  <a href="{{ route('company.sodosso_delete') }}" class="list-group-item">সদস্য বাতিল </a>
 		  <a href="{{ route('company_sodosso.masik_sonchoy_set') }}" class="list-group-item">মাসিক সঞ্চয় নির্ধারন </a>
 		</div>
 
@@ -319,6 +319,63 @@
           </div>
           
           <div id="member_mobile_no" class="col-md-6 col-sm-6 col-xs-12">
+           {{--  @if ($info_status)
+              
+              {{ $user_info_instance->mobile_no }}
+
+            @endif --}}
+
+          </div>
+
+
+        </div>
+
+
+        {{-- /* nominee name */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            নোমিনির নাম
+
+          </div>
+          
+          <div id="nominee_name_input" class="col-md-6 col-sm-6 col-xs-12">
+           {{--  @if ($info_status)
+              
+              {{ $user_info_instance->mobile_no }}
+
+            @endif --}}
+
+          </div>
+
+
+        </div>
+
+
+
+        {{-- /* nominee relation */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            নোমিনির সাথে সম্পর্ক 
+
+          </div>
+          
+          <div id="nominee_relation_input" class="col-md-6 col-sm-6 col-xs-12">
            {{--  @if ($info_status)
               
               {{ $user_info_instance->mobile_no }}

@@ -76,8 +76,9 @@ $(document).ready(function() {
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			$("#sonchoy_joma_date").addClass('remove_item');
 
 			/* loan portion */
 			$("#loan_subCatagory").addClass('remove_item');
@@ -93,11 +94,16 @@ $(document).ready(function() {
 			$("#loan_masik_jorimana_char").addClass('remove_item');
 			$("#loan_net_masik_joma").addClass('remove_item');
 
+			$("#loan_joma_date").addClass('remove_item');
+			$("#loan_masik_munafa_joma_date").addClass('remove_item');
+
 
 			/* bibidh portion */
 			$("#bibidh_subCatagory").addClass('remove_item');
 			$("#bibidh_uddesso").addClass('remove_item');
 			$("#bibidh_money_amount").addClass('remove_item');
+			$("#bibidh_ay_option").addClass('remove_item');
+			$("#bibidh_biboron").addClass('remove_item');
 
 
 			/* munafa theke khoroch portion */
@@ -109,6 +115,7 @@ $(document).ready(function() {
 			/*----------  remove remove_item class  ----------*/
 			
 			/* sheyar portion */
+			$("#sovvo_sodosso_number").removeClass('remove_item');
 			$("#sheyar_subCatagory").removeClass('remove_item');
 			$("#number_of_sheyar").removeClass('remove_item');
 			$("#sheyar_amount_in_money").removeClass('remove_item');
@@ -145,11 +152,16 @@ $(document).ready(function() {
 			$("#loan_masik_jorimana_char").addClass('remove_item');
 			$("#loan_net_masik_joma").addClass('remove_item');
 
+			$("#loan_joma_date").addClass('remove_item');
+			$("#loan_masik_munafa_joma_date").addClass('remove_item');
+
 
 			/* bibidh portion */
 			$("#bibidh_subCatagory").addClass('remove_item');
 			$("#bibidh_uddesso").addClass('remove_item');
 			$("#bibidh_money_amount").addClass('remove_item');
+			$("#bibidh_ay_option").addClass('remove_item');
+			$("#bibidh_biboron").addClass('remove_item');
 
 
 			/* munafa theke khoroch portion */
@@ -170,6 +182,7 @@ $(document).ready(function() {
 			$("#sonchoy_masik_jorimana").removeClass('remove_item');
 			$("#sonchoy_masik_jorimana_char").removeClass('remove_item');
 			$("#sonchoy_net_masik_joma").removeClass('remove_item');
+			$("#sonchoy_joma_date").removeClass('remove_item');
 			
 
 
@@ -196,13 +209,16 @@ $(document).ready(function() {
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			$("#sonchoy_joma_date").addClass('remove_item');
 
 			/* bibidh portion */
 			$("#bibidh_subCatagory").addClass('remove_item');
 			$("#bibidh_uddesso").addClass('remove_item');
 			$("#bibidh_money_amount").addClass('remove_item');
+			$("#bibidh_ay_option").addClass('remove_item');
+			$("#bibidh_biboron").addClass('remove_item');
 
 
 			/* munafa theke khoroch portion */
@@ -248,8 +264,9 @@ $(document).ready(function() {
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			$("#sonchoy_joma_date").addClass('remove_item');
 
 
 			/* loan portion */
@@ -266,6 +283,9 @@ $(document).ready(function() {
 			$("#loan_masik_jorimana_char").addClass('remove_item');
 			$("#loan_net_masik_joma").addClass('remove_item');
 
+			$("#loan_joma_date").addClass('remove_item');
+			$("#loan_masik_munafa_joma_date").addClass('remove_item');
+
 
 			/* munafa theke khoroch portion */
 			$("#munafa_theke_khoroch_uddesso").addClass('remove_item');
@@ -279,8 +299,10 @@ $(document).ready(function() {
 			
 			/* bibidh portion */
 			$("#bibidh_subCatagory").removeClass('remove_item');
-			$("#bibidh_uddesso").removeClass('remove_item');
+			// $("#bibidh_uddesso").removeClass('remove_item');
 			$("#bibidh_money_amount").removeClass('remove_item');
+			$("#bibidh_ay_option").removeClass('remove_item');
+			// $("#bibidh_biboron").removeClass('remove_item');
 			
 		}
 		else if(daily_catagory_select === "munafa_theke_khoroch") {
@@ -308,8 +330,9 @@ $(document).ready(function() {
 			$("#sonchoy_net_masik_joma").addClass('remove_item');
 			$("#sonchoy_net_amount").addClass('remove_item');
 			$("#sonchoy_uttolon_amount").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_month").addClass('remove_item');
-			$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_month").addClass('remove_item');
+			// $("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+			$("#sonchoy_joma_date").addClass('remove_item');
 
 
 			/* loan portion */
@@ -326,11 +349,16 @@ $(document).ready(function() {
 			$("#loan_masik_jorimana_char").addClass('remove_item');
 			$("#loan_net_masik_joma").addClass('remove_item');
 
+			$("#loan_joma_date").addClass('remove_item');
+			$("#loan_masik_munafa_joma_date").addClass('remove_item');
+
 
 			/* bibidh portion */
 			$("#bibidh_subCatagory").addClass('remove_item');
 			$("#bibidh_uddesso").addClass('remove_item');
 			$("#bibidh_money_amount").addClass('remove_item');
+			$("#bibidh_ay_option").addClass('remove_item');
+			$("#bibidh_biboron").addClass('remove_item');
 			
 
 
@@ -445,21 +473,22 @@ $(document).ready(function() {
 				$("#sonchoy_masik_jorimana").removeClass('remove_item');
 				$("#sonchoy_masik_jorimana_char").removeClass('remove_item');
 				$("#sonchoy_net_masik_joma").removeClass('remove_item');
+				$("#sonchoy_joma_date").removeClass('remove_item');
 			}
 			else if (sonchoy_subCatagory === "sonchoy_masik_joma_advanced") {
 
 
-				/* add remove_item class */
-				$("#sonchoy_net_amount").addClass('remove_item');
-				$("#sonchoy_uttolon_amount").addClass('remove_item');
-				$("#sonchoy_masik_joma").addClass('remove_item');
-				$("#sonchoy_masik_jorimana").addClass('remove_item');
-				$("#sonchoy_masik_jorimana_char").addClass('remove_item');
-				$("#sonchoy_net_masik_joma").addClass('remove_item');
+				// /* add remove_item class */
+				// $("#sonchoy_net_amount").addClass('remove_item');
+				// $("#sonchoy_uttolon_amount").addClass('remove_item');
+				// $("#sonchoy_masik_joma").addClass('remove_item');
+				// $("#sonchoy_masik_jorimana").addClass('remove_item');
+				// $("#sonchoy_masik_jorimana_char").addClass('remove_item');
+				// $("#sonchoy_net_masik_joma").addClass('remove_item');
 
-				/* remove remvoe_item class */
-				$("#sonchoy_ogrim_joma_month").removeClass('remove_item');
-				$("#sonchoy_ogrim_joma_amount").removeClass('remove_item');
+				// /* remove remvoe_item class */
+				// $("#sonchoy_ogrim_joma_month").removeClass('remove_item');
+				// $("#sonchoy_ogrim_joma_amount").removeClass('remove_item');
 				
 
 			}
@@ -472,6 +501,7 @@ $(document).ready(function() {
 				$("#sonchoy_net_masik_joma").addClass('remove_item');
 				$("#sonchoy_ogrim_joma_month").addClass('remove_item');
 				$("#sonchoy_ogrim_joma_amount").addClass('remove_item');
+				$("#sonchoy_joma_date").addClass('remove_item');
 
 
 				/* remove remove_item class */
@@ -512,6 +542,9 @@ $(document).ready(function() {
 				$("#loan_masik_jorimana_char").addClass('remove_item');
 				$("#loan_net_masik_joma").addClass('remove_item');
 
+				$("#loan_joma_date").addClass('remove_item');
+				$("#loan_masik_munafa_joma_date").addClass('remove_item');
+
 				/* remove remvoe_item class */
 				$("#number_of_sheyar").removeClass('remove_item');
 				$("#loan_max_possible_amount").removeClass('remove_item');
@@ -529,10 +562,15 @@ $(document).ready(function() {
 				$("#loan_max_possible_amount").addClass('remove_item');
 				$("#loan_giving_amount").addClass('remove_item');
 
+				// $("#loan_joma_date").addClass('remove_item');
+				$("#loan_masik_munafa_joma_date").addClass('remove_item');
+
 				/* remove remove_item class */
 				$("#loan_total_haveTo_pay").removeClass('remove_item');
 				$("#loan_now_pay").removeClass('remove_item');
 				$("#loan_remaining_pay").removeClass('remove_item');
+
+				$("#loan_joma_date").removeClass('remove_item');
 
 			}
 			else if (loan_subCatagory === "loan_masik_munafa") {
@@ -546,17 +584,112 @@ $(document).ready(function() {
 				$("#loan_now_pay").addClass('remove_item');
 				$("#loan_remaining_pay").addClass('remove_item');
 
+				$("#loan_joma_date").addClass('remove_item');
+				// $("#loan_masik_munafa_joma_date").addClass('remove_item');
+
 				/* remove remove_item class */
 				$("#loan_masik_munafa_joma").removeClass('remove_item');
 				$("#loan_masik_jorimana").removeClass('remove_item');
 				$("#loan_masik_jorimana_char").removeClass('remove_item');
 				$("#loan_net_masik_joma").removeClass('remove_item');
+				
+				$("#loan_masik_munafa_joma_date").removeClass('remove_item');
 
 			}
 
 		});
 	
 	/*=====  End of loan portion ( except main catagory select )  ======*/
+
+
+
+	/*=====================================================================
+	=            bibidh portion ( except main catagory select)            =
+	=====================================================================*/
+	
+		$("#bibidh_subCatagory_input").change(function() {
+			
+			var bibidh_subCatagory = $("#bibidh_subCatagory_input").val();
+
+			console.log(bibidh_subCatagory);
+
+
+			if (bibidh_subCatagory == "income") {
+
+				/* add remvoe_item class */
+				$("#bibidh_uddesso").addClass('remove_item');
+				$("#bibidh_biboron").addClass('remove_item');
+				
+
+				/* remove remove_item class */
+				$("#bibidh_ay_option").removeClass('remove_item');
+				
+				
+			}
+
+			else if (bibidh_subCatagory == "spent") {
+
+				/* add remvoe_item class */
+				$("#bibidh_ay_option").addClass('remove_item');
+				$("#bibidh_biboron").addClass('remove_item');
+				
+
+				/* remove remove_item class */
+				$("#bibidh_uddesso").removeClass('remove_item');
+			}
+		});
+
+
+
+		$("#bibidh_ay_option_input").change(function() {
+			
+			var bibidh_ay_option = $("#bibidh_ay_option_input").val();
+			// console.log($("#bibidh_ay_option_input").val());
+
+			if(bibidh_ay_option == "others"){
+
+				$("#bibidh_biboron").removeClass('remove_item');
+			}
+			else {
+
+				$("#bibidh_biboron").addClass('remove_item');
+			}
+		});
+	
+	
+	/*=====  End of bibidh portion ( except main catagory select)  ======*/
+	
+
+
+	/*=====================================================
+	=            daily entry input calculation            =
+	=====================================================*/
+	
+		$("#sonchoy_net_masik_joma_input").keyup(function() {
+			
+			var net_joma = parseInt($("#sonchoy_masik_jorimana_input").val()) + parseInt($("#sonchoy_masik_joma_input").val());
+
+			$("#sonchoy_net_masik_joma_input").val(net_joma);
+		});
+
+
+		$("#loan_now_pay_input").keyup(function() {
+			
+			var need_to_pay = parseInt($("#loan_total_haveTo_pay_input").val()) - parseInt($("#loan_now_pay_input").val());
+
+			$("#loan_remaining_pay_input").val(need_to_pay);
+		});
+
+
+		$("#loan_net_masik_joma_input").keyup(function() {
+			
+			var net_joma = parseInt($("#loan_masik_munafa_joma_input").val()) + parseInt($("#loan_masik_jorimana_input").val());
+
+			$("#loan_net_masik_joma_input").val(net_joma);
+		});
+	
+	/*=====  End of daily entry input calculation  ======*/
+	
 
 
 
@@ -583,7 +716,7 @@ $(document).ready(function() {
 			})
 			.done(function(data) {
 
-				console.log(data.user_info.sheyar);
+				// console.log(data.sonchoy);
 
 				/* number of sheyar */
 				$("#number_of_sheyar_input").val(data.user_info.sheyar);
@@ -610,7 +743,16 @@ $(document).ready(function() {
 
 
 				/* update loan table */
-				// $("#loan_modal_table").empty();
+				$("#loan_modal_table").empty();
+				var loan_info = data.loan_uttolon + "<br>" + data.loan_joma + "<br>" + data.loan_masik_munafa;
+				$("#loan_modal_table").html(loan_info);
+
+				console.log(loan_info);
+
+
+				/* update sonchoy table (within closing) */
+				$("#sonchoy_modal_table").empty();
+				$("#sonchoy_modal_table").html(data.sonchoy);
 			})
 			.fail(function() {
 				console.log("error");
@@ -707,6 +849,9 @@ $(document).ready(function() {
 				$("#member_mobile_no").text();
 				$("#member_date_of_being_user").text();
 				$("#member_image").empty();	
+				$("#nominee_name_input").empty();	
+				$("#nominee_relation_input").empty();	
+				$("#sonchoy_monthly_fix_amount_input").val("");	
 
 				/* for sodosso info update page */
 				
@@ -744,6 +889,7 @@ $(document).ready(function() {
 				$("#member_fixed_sonchoy").text(data.user_account.fixed_sonchoy);
 				$("#member_net_sonchoy").text(data.user_account.net_sonchoy);
 				$("#member_net_loan").text(data.user_account.taken_loan_amount - data.user_account.paid_loan_amount);
+				$("#sonchoy_monthly_fix_amount_input").val(data.user_account.fixed_sonchoy);
 
 
 
@@ -763,6 +909,8 @@ $(document).ready(function() {
 				$("#member_mobile_no").text(data.user_info.mobile_no);
 				$("#member_date_of_being_user").text(data.user_info.date_of_being_user);
 				$("#member_image").html(image_code);
+				$("#nominee_name_input").html(data.user_info.nominee_name);
+				$("#nominee_relation_input").html(data.user_info.nominee_relation);
 
 
 				/**
@@ -882,11 +1030,59 @@ $(document).ready(function() {
 
 			console.log(panel);
 		});
+
+		$(".confirm").on('click', function() {
+			
+			if(confirm("নিশ্চিত করুন ")){
+
+				return true;
+			}
+			else{
+
+				// history.back();
+				return false;
+			}
+
+
+		});
 	
 	/*=====  End of daily entry print and delete portion  ======*/
 	
 	
 	
+	/*============================================
+	=            report print protion            =
+	============================================*/
+	
+		$("#daily_report_print_button").on('click', function() {
+			
 
+			$("#daily_report_table").print();
+
+			console.log(panel);
+		});
+
+
+
+		$("#masik_report_print_button").on('click', function() {
+			
+
+			$("#masik_report").print();
+
+			console.log(panel);
+		});
+
+
+
+		$("#closing_report_print_button").on('click', function() {
+			
+
+			$("#closing_report").print();
+
+			console.log(panel);
+		});
+	
+	/*=====  End of report print protion  ======*/
+	
 
 });

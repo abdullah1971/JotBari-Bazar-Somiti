@@ -43,33 +43,103 @@
 
         	{{ csrf_field() }}
 
-              <div id="month_for_monthly_report" class="form-group">
-                <label for="month_for_monthly_report_input" class="control-label col-md-3 col-sm-3 col-xs-12">
-                  মাস 
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input name="month_for_monthly_report_input" id="month_for_monthly_report_input" class="form-control col-md-7 col-xs-12"  type="date" required>
-                </div>
-              </div>
 
-              
-
-
-              
-
-
-            <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12">
-              	
-              </label>
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="row">
                 
-              	<button type="submit" class="btn btn-success pull-right">Submit</button>
+                <div class="col-sm-5 col-md-5 col-xl-6">
+                  
+                  <div id="month_for_monthly_report" class="form-group">
+                    <label for="month_for_monthly_report_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                      মাস 
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      {{-- <input name="month_for_monthly_report_input" id="month_for_monthly_report_input" class="form-control col-md-7 col-xs-12"  type="date" required> --}}
 
-				  	{{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
+                      <select id='month' name="month"  class="form-control col-md-7 col-xs-12">
+                          <option value=''>--Select Month--</option>
+                          <option style="font-size: 20px;" value='01'>Janaury</option>
+                          <option style="font-size: 20px;" value='02'>February</option>
+                          <option style="font-size: 20px;" value='03'>March</option>
+                          <option style="font-size: 20px;" value='04'>April</option>
+                          <option style="font-size: 20px;" value='05'>May</option>
+                          <option style="font-size: 20px;" value='06'>June</option>
+                          <option style="font-size: 20px;" value='07'>July</option>
+                          <option style="font-size: 20px;" value='08'>August</option>
+                          <option style="font-size: 20px;" value='09'>September</option>
+                          <option style="font-size: 20px;" value='10'>October</option>
+                          <option style="font-size: 20px;" value='11'>November</option>
+                          <option style="font-size: 20px;" value='12'>December</option>
+                          </select> 
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-sm-5 col-md-5 col-xl-6">
+                  
+                  <div id="year_for_monthly_report" class="form-group">
+                    <label for="year_for_monthly_report_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                      বছর 
+                    </label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      {{-- <input name="year_for_monthly_report_input" id="year_for_monthly_report_input" class="form-control col-md-7 col-xs-12"  type="date" required> --}}
+
+                      @php
+                        
+                        $start_year = 1980;
+
+                        $end_year = Carbon\Carbon::now()->year;
+
+                      @endphp
+
+                      <select id='year' name="year"  class="form-control col-md-7 col-xs-12">
+                          <option value=''>--Select Year--</option>
+                          @for ($i = $end_year; $i >= $start_year; $i--)
+                            
+                            <option style="font-size: 20px;" value="{{ $i }}">{{ $i }}</option>
+                            
+                          @endfor
+                          
+                          </select> 
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+                <div class="col-sm-2 col-md-2 col-xl-2">
+                  
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                      
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      
+                      <button type="submit" class="btn btn-success pull-right">Submit</button>
+
+                  {{-- <button class="btn btn-primary pull-right" type="reset" style="    margin-right: 5px;">Reset</button> --}}
+
+                    </div>
+                  </div>
+
+                </div>
 
               </div>
-            </div>
+
+              
+
+              
+
+
+              
+
+
+            
         </form>
       </div>
     </div>
@@ -81,6 +151,10 @@
 
 
       @if ($time != null)
+
+{{--         <div id="masik_report">
+          
+        
         
 
           <div class="row" style="position: ;background-color: #27ae60; color: white;font-size: 21px;">
@@ -186,19 +260,25 @@
           @endfor
         </div>
 
+      </div>
+
       @endif
 
           
+      <div class="pull-left" style="font-size: 20px;">
 
+        <button type="" id="masik_report_print_button" class="btn btn-success">প্রিন্ট করুন </button>
+        
+      </div> --}}
 
 
 
       
-      {{-- {{-- <div class="table-responsive" style="margin-top: 20px;height: 600px;overflow-y: auto;">
-        {{-- <table class="table table-hover table-striped fixed_table_header"> --}}
+       <div id="masik_report" class="table-responsive" style="margin-top: 20px;overflow-y: auto;">
+         <table class="table table-hover table-striped fixed_table_header table-bordered"> 
 
           
-          {{-- <thead>
+           <thead>
                 <tr>
                   <th style="text-align: center; font-size: 22px;">তারিখ</th>
                   <th style="text-align: center; font-size: 22px;">সঞ্চয় আদায়</th>
@@ -213,8 +293,8 @@
                   <th style="text-align: center; font-size: 22px;">ঋণ প্রদান </th>
                   <th style="text-align: center; font-size: 22px;">মোট ব্যয়  </th>
                 </tr>
-          </thead> --}}
-              {{-- <tbody style=" font-size: 22px;">
+          </thead>
+              <tbody style=" font-size: 22px;">
                 
                   @for ($i = 0; $i < $end_date; $i++)
                     
@@ -254,16 +334,22 @@
               </tbody>
 
         </table>
-      </div> --}} 
+      </div>
 
-     {{--  <div class="pull-right" style="font-size: 20px;">
+      <div class="col-sm-offset-3 col-sm-5" style="font-size: 20px;">
+
+        <button type="" id="masik_report_print_button" class="btn btn-success">প্রিন্ট করুন </button>
+        
+      </div> 
+
+      {{-- <div class="pull-right" style="font-size: 20px;">
 
         {{ $daily_info->links() }}
         
       </div> --}}
       
     
-    
+    @endif
 	        
 
 @endsection

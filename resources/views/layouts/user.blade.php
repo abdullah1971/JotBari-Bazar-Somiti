@@ -60,11 +60,11 @@
 
 	            <li style="padding: 0 12px;" @yield('hirizontal_nav_loan_active')><a href="{{ route('user.loan_uttolon') }}">লোন </a></li>
 
-	            <li style="padding: 0 12px;" @yield('hirizontal_nav_closing_active')><a href="#">ক্লোজিং</a></li>
+	           {{--  <li style="padding: 0 12px;" @yield('hirizontal_nav_closing_active')><a href="#">ক্লোজিং</a></li> --}}
 
-	            <li style="padding: 0 12px;" @yield('hirizontal_nav_comitee_active')><a href="#">কমিটি</a></li>
+	            {{-- <li style="padding: 0 12px;" @yield('hirizontal_nav_comitee_active')><a href="#">কমিটি</a></li> --}}
 
-	            <li style="padding: 0 12px;" @yield('hirizontal_nav_search_active')><a href="#">খুজুন</a></li>
+	            {{-- <li style="padding: 0 12px;" @yield('hirizontal_nav_search_active')><a href="#">খুজুন</a></li> --}}
 
 
 
