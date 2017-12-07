@@ -15,7 +15,7 @@ class CreateUserAccountsTable extends Migration
     {
         Schema::create('user_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer("user_id");
+            $table->bigInteger("user_id");
             $table->bigInteger('sheyar');
             $table->bigInteger('fixed_sonchoy')->nullable($value = true);
             $table->bigInteger('net_sonchoy')->nullable($value = true);

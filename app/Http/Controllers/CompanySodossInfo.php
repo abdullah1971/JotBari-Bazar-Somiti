@@ -102,14 +102,14 @@ class CompanySodossInfo extends Controller
         $this->validate($request, [
 
             // 'user_membership_no' => 'required',
-            'user_father_name_input' => 'string',
-            'user_mother_name_input' => 'string',
-            'user_husbandORwife_name_input' => 'string',
-            'present_address_input' => 'string',
-            'permanent_address_input' => 'string',
-            'permanent_address_input' => 'string',
-            'nominee_name_input' => 'string',
-            'nominee_relation_input' => 'string',
+            'user_father_name_input' => 'nullable | string',
+            'user_mother_name_input' => 'nullable | string',
+            'user_husbandORwife_name_input' => 'nullable | string',
+            'present_address_input' => 'nullable | string',
+            'permanent_address_input' => 'nullable | string',
+            'permanent_address_input' => 'nullable | string',
+            'nominee_name_input' => 'nullable | string',
+            'nominee_relation_input' => 'nullable | string',
             // 'mobile_no_input' => 'numeric',
             // 'user_image_input' => 'image|size:5100',
 
@@ -137,7 +137,7 @@ class CompanySodossInfo extends Controller
         
         $user_instance = User::where('membership_no', $user_membership_no)->get()->first();
 
-
+        // return $user_membership_no;
 
         /* user name */
         
@@ -159,6 +159,9 @@ class CompanySodossInfo extends Controller
 
 
         if ($request->hasFile('user_image_input')) {
+
+
+            // return "something";
 
 
             $image_name = $user_instance->membership_no."_".$request->user_image_input->getClientOriginalName();

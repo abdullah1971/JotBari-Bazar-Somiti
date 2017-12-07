@@ -80,13 +80,42 @@
     <!-- sheyar info -->
 
     @if (!$loan_info->isEmpty())
+
       
       <div class="table-responsive" style="margin-top: 20px;">
+
+
+        <div class="row">
+          
+          <div class="col-sm-offset-3 col-md-offset-3 col-xl-offset-3 col-sm-3 col-md-3 col-xl-3" style="font-size: 20px;">
+            সদস্য নম্বর 
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-6" style="font-size: 20px;">
+            {{ $loan_info[0]->UserBasicInfo->membership_no }}
+          </div>
+
+        </div><br><br>
+
+        
+        <div class="row">
+          
+          <div class="col-sm-offset-3 col-md-offset-3 col-xl-offset-3 col-sm-3 col-md-3 col-xl-3" style="font-size: 20px;">
+            নাম
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-6" style="font-size: 20px;">
+            {{ $loan_info[0]->UserBasicInfo->name }}
+          </div>
+
+        </div><br><br>
+
+        
         <table class="table table-hover table-striped">
           
           <thead>
                 <tr>
-                  <th style="text-align: center; font-size: 22px;">সদস্য</th>
+                  {{-- <th style="text-align: center; font-size: 22px;">সদস্য</th> --}}
                   <th style="text-align: center; font-size: 22px;">লেন-দেনের ধরন</th>
                   <th style="text-align: center; font-size: 22px;">জরিমানা</th>
                   <th style="text-align: center; font-size: 22px;">মোট প্রদেয়</th>
@@ -99,11 +128,11 @@
                   
 
                   <tr>
-                    <td>
+                    {{-- <td>
                       
                       {{ $single_loan->UserBasicInfo->name ." ( ". $single_loan->UserBasicInfo->membership_no ." )" }}
                       
-                    </td>
+                    </td> --}}
                     <td>
                       @if ($single_loan->info_type == "loan_masik_munafa")
                         

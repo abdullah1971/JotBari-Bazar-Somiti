@@ -121,6 +121,17 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 		/**
 		 *
+		 * munafa theke khoroch portion
+		 *
+		 */
+		
+		Route::get('company_munafa_theke_khoroch', 'MunafaThekeKhorochController@ShowMunafaThekeKHorochInfo')->name('company.munafa_theke_khoroch_info');
+
+
+
+
+		/**
+		 *
 		 * sodosso portion
 		 *
 		 */
@@ -231,6 +242,68 @@ Route::middleware(['auth', 'admin'])->group(function () {
 		
 
 		Route::post('/get_all_data_about_specified_user', 'Daily_entry_controller@Get_all_data_about_specified_user')->name('ajax_data.fetch_user_data');
+
+
+
+
+		/**
+		 *
+		 * initial info entry
+		 *
+		 */
+
+
+		/* sheyar input */
+		Route::get('/temp_sheyar_kroy', 'TemporaryInitialInfoSubmissionController@SheyarKroyInfo')->name('company.temp_sheyar_info');
+		Route::post('/temp_sheyar_kroy', 'TemporaryInitialInfoSubmissionController@SheyarKroyInfoUpdate')->name('company.temp_sheyar_info_update');
+
+
+		Route::get('/temp_sheyar_bikroy', 'TemporaryInitialInfoSubmissionController@SheyarbiKroyInfo')->name('company.temp_sheyar_bikroy_info');
+		Route::post('/temp_sheyar_bikroy', 'TemporaryInitialInfoSubmissionController@SheyarbiKroyInfoUpdate')->name('company.temp_sheyar_bikroy_info_update');
+
+
+
+
+		/* sonchoy input */
+		Route::get('/sonchoy_page', 'TemporaryInitialInfoSubmissionController@SonchoyInfo')->name('company.sonchoy_info');
+
+		Route::post('/sonchoy_page', 'TemporaryInitialInfoSubmissionController@SonchoyInfoPost')->name('company.sonchoy_info_post');
+
+
+		/* loan input */
+		Route::get('temp_loan_bitoron_page', 'TemporaryInitialInfoSubmissionController@LoanBitoron')->name('company.temp_loan_bitoron');
+		Route::post('temp_loan_bitoron_page', 'TemporaryInitialInfoSubmissionController@LoanBitoronUpdate')->name('company.temp_loan_bitoron_update');
+
+
+		Route::get('temp_loan_joma_page', 'TemporaryInitialInfoSubmissionController@Loanjoma')->name('company.temp_loan_joma');
+		Route::post('temp_loan_joma_page', 'TemporaryInitialInfoSubmissionController@LoanjomaUpdate')->name('company.temp_loan_joma_update');
+
+
+		Route::get('temp_loan_masik_munafa_page', 'TemporaryInitialInfoSubmissionController@Loanmasik_munafa')->name('company.temp_loan_masik_munafa');
+		Route::post('temp_loan_masik_munafa_page', 'TemporaryInitialInfoSubmissionController@Loanmasik_munafaUpdate')->name('company.temp_loan_masik_munafa_update');
+
+
+
+		/* reserve input */
+		Route::get('temp_reserve_page', 'TemporaryInitialInfoSubmissionController@ReserveInfo')->name('company.temp_reserve_info');
+		Route::post('temp_reserve_page', 'TemporaryInitialInfoSubmissionController@ReserveInfoUpdate')->name('company.temp_reserve_info_update');
+
+
+
+		/* user net sonchoy info input */
+		Route::get('temp_net_sonchoy_page', 'TemporaryInitialInfoSubmissionController@NetSonchoy')->name('company.temp_net_sonchoy_info');
+		Route::post('temp_net_sonchoy_page', 'TemporaryInitialInfoSubmissionController@NetSonchoyUpdate')->name('company.temp_net_sonchoy_info_update');
+
+
+		/* user sonchoy fix info input */
+		Route::get('temp_sonchoy_fix_page', 'TemporaryInitialInfoSubmissionController@SonchoyFix')->name('company.temp_sonchoy_fix_info');
+		Route::post('temp_sonchoy_fix_page', 'TemporaryInitialInfoSubmissionController@SonchoyFixUpdate')->name('company.temp_sonchoy_fix_info_update');
+
+
+
+		/* user loan info input */
+		Route::get('temp_loan_page', 'TemporaryInitialInfoSubmissionController@TempLoan')->name('company.temp_loan_info');
+		Route::post('temp_loan_page', 'TemporaryInitialInfoSubmissionController@TempLoanUpdate')->name('company.temp_loan_info_update');
 
 
 	/*=====  End of company portion  ======*/

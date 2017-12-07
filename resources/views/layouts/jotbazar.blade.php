@@ -64,6 +64,8 @@
 
 	            <li @yield('hirizontal_nav_bibidh_active')><a href="{{ route('company.reserve_income') }}">রিজার্ভ</a></li>
 
+	            <li @yield('hirizontal_nav_munafa_theke_khoroch_active')><a href="{{ route('company.munafa_theke_khoroch_info') }}">মুনাফা থেকে খরচ</a></li>
+
 	            <li @yield('hirizontal_nav_closing_active')><a href="{{ route('company.upcoming_closing_info') }}">ক্লোজিং</a></li>
 
 	            <li @yield('hirizontal_nav_sodosso_active')><a href="{{ route('company_sodosso.home') }}">সদস্য</a></li>

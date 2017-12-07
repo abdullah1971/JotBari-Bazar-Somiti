@@ -27,32 +27,39 @@
 		@endphp
 
 		@if ($single_entry->entry_type == "sheyar_and_buy")
+
+			<div>
+
+				<div id="panel_{{ $i }}" class="panel panel-info">
+				  <!-- info panel contents -->
+				  <div class="panel-heading">শেয়ার ক্রয় </div>
+				  
+
+				  <!-- List group -->
+				  <ul class="list-group">
+				    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_sheyar->UserBasicInfoKroy->name }}</li>
+				    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sheyar->user_id }}</li>
+				    <li class="list-group-item">শেয়ার সংখাঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount / 100 }}</li>
+				    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
+				    
+				  </ul>
+				</div>
+				
+
+				<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+				<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+					<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+				</a>
+
+				
+			</div><br><br>
 			
-			<div id="panel_{{ $i }}" class="panel panel-info">
-			  <!-- info panel contents -->
-			  <div class="panel-heading">শেয়ার ক্রয় </div>
-			  
-
-			  <!-- List group -->
-			  <ul class="list-group">
-			    <li class="list-group-item">নাম : {{ $single_entry->Daily_entry_and_sheyar->UserBasicInfoKroy->name }}</li>
-			    <li class="list-group-item">সদস্য নম্বরঃ {{ $single_entry->Daily_entry_and_sheyar->user_id }}</li>
-			    <li class="list-group-item">শেয়ার সংখাঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount / 100 }}</li>
-			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
-			    <li class="list-group-item" style="text-align: center;">
-			    	
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-
-			    	
-			    </li>
-			  </ul>
-			</div>
 
 		@elseif ($single_entry->entry_type == "sheyar_and_sell")
+
+		<div>
 			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">শেয়ার বিক্রয়ঃ  </div>
@@ -70,17 +77,25 @@
 
 			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
-		@elseif ($single_entry->entry_type == "sheyar_and_sell")
+
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+
 			
+		</div><br><br>
+			
+
+		@elseif ($single_entry->entry_type == "sheyar_and_sell")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">শেয়ার বিক্রয়  </div>
@@ -98,17 +113,25 @@
 
 			    <li class="list-group-item">টাকার পরিমানঃ {{ $single_entry->Daily_entry_and_sheyar->sheyar_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
-		@elseif ($single_entry->entry_type == "sonchoy_and_masik_joma")
+
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+
 			
+		</div><br><br>
+			
+
+		@elseif ($single_entry->entry_type == "sonchoy_and_masik_joma")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">সঞ্চয় মাসিক জমা   </div>
@@ -128,18 +151,26 @@
 
 			    <li class="list-group-item">বর্তমানে মোট সঞ্চয়ঃ  {{ $single_entry->Daily_entry_and_sonchoy->current_month_sonchoy }}</li>
 
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
 
-		@elseif ($single_entry->entry_type == "sonchoy_and_uttolon")
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+
 			
+		</div><br><br>
+			
+
+
+		@elseif ($single_entry->entry_type == "sonchoy_and_uttolon")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">সঞ্চয় উত্তোলন   </div>
@@ -157,18 +188,26 @@
 
 			    <li class="list-group-item">বর্তমানে মোট সঞ্চয়ঃ  {{ $single_entry->Daily_entry_and_sonchoy->current_month_sonchoy }}</li>
 
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
 
-		@elseif ($single_entry->entry_type == "loan_and_bitoron")
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+
 			
+		</div><br><br>
+			
+
+
+		@elseif ($single_entry->entry_type == "loan_and_bitoron")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">লোন বিতরন  </div>
@@ -186,18 +225,27 @@
 
 			    <li class="list-group-item">ভবিস্যতে লোন প্রাপ্তির পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->sheyar * 4000 - $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount +  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
 
-		@elseif ($single_entry->entry_type == "loan_and_joma")
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+
+
 			
+		</div><br><br>
+			
+
+
+		@elseif ($single_entry->entry_type == "loan_and_joma")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">লোন জমা  </div>
@@ -215,18 +263,24 @@
 
 			    <li class="list-group-item">অবশিস্ট লোন এর পরিমানঃ  {{ $single_entry->Daily_entry_and_loan->UserAccountInfo->taken_loan_amount -  $single_entry->Daily_entry_and_loan->UserAccountInfo->paid_loan_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
-
-			@elseif ($single_entry->entry_type == "loan_and_masik_joma")
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
 			
+		</div><br><br>
+			
+
+
+		@elseif ($single_entry->entry_type == "loan_and_masik_joma")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">লোন মাসিক জমা  </div>
@@ -246,18 +300,26 @@
 
 			    <li class="list-group-item">মোট জমাঃ  {{ $single_entry->Daily_entry_and_loan->total_amount }}</li>
 
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
 
-			@elseif ($single_entry->entry_type == "reserve_and_income")
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+
 			
+		</div><br><br>
+			
+
+
+		@elseif ($single_entry->entry_type == "reserve_and_income")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">রিজার্ভ ( আয় )  </div>
@@ -270,18 +332,26 @@
 			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_reserve->money_amount }}</li>
 
 			    
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
 
-			@elseif ($single_entry->entry_type == "reserve_and_spent")
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+
 			
+		</div><br><br>
+			
+
+
+		@elseif ($single_entry->entry_type == "reserve_and_spent")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">রিজার্ভ ( ব্যয় )  </div>
@@ -294,20 +364,27 @@
 			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_reserve->money_amount }}</li>
 
 			    
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
 
 
-
-
-			@elseif ($single_entry->entry_type == "munafa_theke_khoroch")
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
 			
+		</div><br><br>
+			
+
+
+
+
+		@elseif ($single_entry->entry_type == "munafa_theke_khoroch")
+
+		<div>
+			
+
 			<div id="panel_{{ $i }}" class="panel panel-info">
 			  <!-- info panel contents -->
 			  <div class="panel-heading">মুনাফা থেকে খরচ </div>
@@ -320,14 +397,18 @@
 			    <li class="list-group-item">টাকার পরিমানঃ  {{ $single_entry->Daily_entry_and_munafa_theke_khoroch->money_amount }}</li>
 
 			    
-			    <li class="list-group-item" style="text-align: center;">
-			    	<button class="print_button btn btn-success " value="{{ $i }}" type="">প্রিন্ট করুন	</button>
-			    	<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
-			    		<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
-			    	</a>
-			    </li>
+			    
 			  </ul>
 			</div>
+
+
+			<button class="print_button btn btn-success " value="{{ $i }}" type="" style="margin-left: 60px;">প্রিন্ট করুন	</button>
+			<a href="{{ route('company.daily_entry_notification_delete', ['id' => $single_entry->id]) }}">
+				<button class="btn btn-danger confirm" value="{{ $single_entry->id }}" type="">বাতিল করুন </button>
+			</a>
+			
+		</div><br><br>
+			
 
 		@endif
 
@@ -356,7 +437,8 @@
 	          <div class="col-md-12 col-sm-12 col-xs-12">
 	            <div class="x_panel">
 	              <div class="x_title">
-	                <h2>Form Design <small>different form elements</small></h2>
+	                {{-- <h2>Form Design <small>different form elements</small></h2> --}}
+	                <br><br><br>
 	                
 	                <div class="clearfix"></div>
 	              </div>

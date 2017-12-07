@@ -21,7 +21,7 @@ class CompanySheyar extends Controller
 
     	$sheyar_instance = new Sheyar;
 
-    	$sheyar_info = $sheyar_instance->orderBy('updated_at', 'desc')->paginate(2);
+    	$sheyar_info = $sheyar_instance->orderBy('updated_at', 'desc')->paginate(10);
 
         // $sheyar_info = $sheyar_instance->all();
 
@@ -45,7 +45,7 @@ class CompanySheyar extends Controller
 
     	$sheyar_instance = new Sheyar;
 
-    	$sheyar_info = $sheyar_instance->where('info_type', 'buy')->orderBy('updated_at', 'desc')->paginate(2);
+    	$sheyar_info = $sheyar_instance->where('info_type', 'buy')->orderBy('updated_at', 'desc')->paginate(10);
 
 
     	return view('company.company_sheyar_kroy', compact('sheyar_info'));
@@ -60,7 +60,7 @@ class CompanySheyar extends Controller
 
     	$sheyar_instance = new Sheyar;
 
-    	$sheyar_info = $sheyar_instance->where('info_type', 'sell')->orderBy('updated_at', 'desc')->paginate(2);
+    	$sheyar_info = $sheyar_instance->where('info_type', 'sell')->orderBy('updated_at', 'desc')->paginate(10);
 
         // foreach ($sheyar_info as $single_sheyar) {
             

@@ -104,7 +104,7 @@
 
         {{-- /* membership no */ --}}
         
-        <hr>
+        {{-- <hr>
         <div class="row">
 
           <div class="col-md-2 col-sm-2 col-xs-12">
@@ -119,12 +119,12 @@
           
           <div id="member_no" class="col-md-6 col-sm-6 col-xs-12">
               
-            {{-- {{ $user->membership_no }} --}}
+             {{ $user->membership_no }} 
 
           </div>
 
 
-        </div>
+        </div> --}}
 
 
 

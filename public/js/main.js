@@ -824,6 +824,11 @@ $(document).ready(function() {
 
 
 
+				console.log(data.user);
+				console.log(data.user_account);
+				console.log(data.user_info);
+
+
 				/**
 				 *
 				 * first clear all field 
@@ -874,7 +879,7 @@ $(document).ready(function() {
 				 */
 				
 
-				$("#member_no").text(data.user.membership_no);
+				$("#user_membership_no").val(data.user.membership_no);
 				$("#member_name").text(data.user.name);
 
 
@@ -899,18 +904,25 @@ $(document).ready(function() {
 				 *
 				 */
 
-				var image_code = '<img src="storage/images/' + data.user_info.image_path + '" alt="">';
-				
-				$("#member_father_name").text(data.user_info.user_father_name);
-				$("#member_mother_name").text(data.user_info.user_mother_name);
-				$("#member_husbandORwife_name").text(data.user_info.user_husbandORwife_name);
-				$("#member_present_address").text(data.user_info.present_address);
-				$("#member_permanent_address").text(data.user_info.permanent_address);
-				$("#member_mobile_no").text(data.user_info.mobile_no);
-				$("#member_date_of_being_user").text(data.user_info.date_of_being_user);
-				$("#member_image").html(image_code);
-				$("#nominee_name_input").html(data.user_info.nominee_name);
-				$("#nominee_relation_input").html(data.user_info.nominee_relation);
+
+				if (data.user_info != null) {
+
+
+					var image_code = '<img src="storage/images/' + data.user_info.image_path + '" alt="">';
+					
+					$("#member_father_name").text(data.user_info.user_father_name);
+					$("#member_mother_name").text(data.user_info.user_mother_name);
+					$("#member_husbandORwife_name").text(data.user_info.user_husbandORwife_name);
+					$("#member_present_address").text(data.user_info.present_address);
+					$("#member_permanent_address").text(data.user_info.permanent_address);
+					$("#member_mobile_no").text(data.user_info.mobile_no);
+					$("#member_date_of_being_user").text(data.user_info.date_of_being_user);
+					$("#member_image").html(image_code);
+					$("#nominee_name_input").html(data.user_info.nominee_name);
+					$("#nominee_relation_input").html(data.user_info.nominee_relation);
+
+					
+				}
 
 
 				/**
@@ -919,6 +931,9 @@ $(document).ready(function() {
 				 *
 				 */
 				
+
+
+
 				$("#user_name_input").val(data.user.name);
 				$("#user_father_name_input").val(data.user_info.user_father_name);
 				$("#user_mother_name_input").val(data.user_info.user_mother_name);
@@ -931,9 +946,7 @@ $(document).ready(function() {
 				$("#user_membership_no").val(data.user_info.membership_no);
 				
 
-				console.log(data.user);
-				console.log(data.user_account);
-				console.log(data.user_info);
+				
 
 			})
 			.fail(function() {

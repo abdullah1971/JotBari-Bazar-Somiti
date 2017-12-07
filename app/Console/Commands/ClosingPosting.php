@@ -394,5 +394,54 @@ class ClosingPosting extends Command
          $closing_info_instance->save();
 
 
+
+         /**
+          *
+          * give the user their money (sheyar munafa + sonchoy munafa )
+          *
+          */
+         
+
+
+         $user_account_instance = User_account::all();
+
+         foreach ($user_account_instance as $single_account) {
+
+            /* sheyar munafa */
+            
+            $sonchoy_instance = new Sonchoy;
+             
+            $user_sheyar = $single_account->sheyar * 100;
+            $sheyar_munafa = floor(($user_sheyar * $percentage) / 100);
+
+            $sonchoy_instance->user_id = $single_account->user_id;
+            $sonchoy_instance->info_type = "sheyar_munafa";
+            $sonchoy_instance->money_amount = $sheyar_munafa;
+            $sonchoy_instance->current_month_sonchoy = $single_account->net_sonchoy + $sheyar_munafa;
+
+            $sonchoy_instance->save();
+
+
+            /* sonchoy munafa */
+
+            $sonchoy_instance = new Sonchoy;
+            
+            $user_sonchoy = $single_account->net_sonchoy;
+            $sonchoy_munafa = floor(($user_sonchoy * $percentage) / 100);
+
+            $sonchoy_instance->user_id = $single_account->user_id;
+            $sonchoy_instance->info_type = "sonchoy_munafa";
+            $sonchoy_instance->money_amount = $sheyar_munafa;
+            $sonchoy_instance->current_month_sonchoy = $single_account->net_sonchoy + $sonchoy_munafa + $sheyar_munafa;
+
+            $sonchoy_instance->save();
+
+
+            $single_account->net_sonchoy = $single_account->net_sonchoy + $sheyar_munafa + $sonchoy_munafa;
+
+            $single_account->save();
+         }
+
+
     }
 }

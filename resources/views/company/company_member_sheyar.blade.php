@@ -82,11 +82,38 @@
     @if (!$sheyar_info->isEmpty())
       
       <div class="table-responsive" style="margin-top: 20px;">
+
+        <div class="row">
+          
+          <div class="col-sm-offset-3 col-md-offset-3 col-xl-offset-3 col-sm-3 col-md-3 col-xl-3" style="font-size: 20px;">
+            সদস্য নম্বর 
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-6" style="font-size: 20px;">
+            {{ $sheyar_info[0]->UserBasicInfoKroy->membership_no }}
+          </div>
+
+        </div><br><br>
+
+        
+        <div class="row">
+          
+          <div class="col-sm-offset-3 col-md-offset-3 col-xl-offset-3 col-sm-3 col-md-3 col-xl-3" style="font-size: 20px;">
+            নাম
+          </div>
+
+          <div class="col-sm-6 col-md-6 col-xl-6" style="font-size: 20px;">
+            {{ $sheyar_info[0]->UserBasicInfoKroy->name }}
+          </div>
+
+        </div><br><br>
+
+        
         <table class="table table-hover table-striped">
           
           <thead>
                 <tr>
-                  <th style="text-align: center; font-size: 22px;">যে ক্রয় করেছে /<br> যে বিক্রয় করেছে </th>
+                  {{-- <th style="text-align: center; font-size: 22px;">যে ক্রয় করেছে /<br> যে বিক্রয় করেছে </th> --}}
                   <th style="text-align: center; font-size: 22px;">শেয়ার সংখা </th>
                   <th style="text-align: center; font-size: 22px;">টাকার পরিমান </th>
                   <th style="text-align: center; font-size: 22px;">যার কাছে বিক্রয় করা হয়েছে </th>
@@ -98,11 +125,11 @@
                   
 
                   <tr>
-                    <td>
+                    {{-- <td>
                       
                       {{ $single_sheyar->UserBasicInfoKroy->name ." ( ". $single_sheyar->UserBasicInfoKroy->membership_no ." )" }}
                       
-                    </td>
+                    </td> --}}
                     <td>{{ $single_sheyar->sheyar_amount / 100 }}</td>
                     <td>{{ $single_sheyar->sheyar_amount  }}</td>
                     <td>
