@@ -293,6 +293,60 @@
 
 
 
+        {{-- /* nominee name */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            নোমিনির নাম 
+
+          </div>
+          
+          <div id="nominee_relation_input" class="col-md-6 col-sm-6 col-xs-12">
+            @if ($info_status)
+              
+              {{ $user_info_instance->nominee_name }}
+
+            @endif
+
+          </div>
+
+
+        </div>{{-- /* nominee relation */ --}}
+        
+        <hr>
+        <div class="row">
+
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            
+          </div>
+          
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            
+            নোমিনির সাথে সম্পর্ক 
+
+          </div>
+          
+          <div id="nominee_relation_input" class="col-md-6 col-sm-6 col-xs-12">
+            @if ($info_status)
+              
+              {{ $user_info_instance->nominee_relation }}
+
+            @endif
+
+          </div>
+
+
+        </div>
+
+
+
 
         {{-- /* sodosso pod er date */ --}}
         

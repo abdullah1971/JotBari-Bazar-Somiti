@@ -39,19 +39,19 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Form Design <small>different form elements</small></h2>
+            <h2></h2><br>
             
             <div class="clearfix"></div>
           </div>
         <div>
         <br />
 
-        <form class="form-horizontal form-label-left">
+        <h2></h2><br>
 
         	{{ csrf_field() }}
 
               <div id="company_member_page_sovvo_sodosso_number" class="form-group">
-                <label for="company_member_page_sovvo_sodosso_number_input" class="control-label col-md-3 col-sm-3 col-xs-12">
+                <label for="company_member_page_sovvo_sodosso_number_input" class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: end;">
                 	সভ্য সদস্য নম্বর
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -66,7 +66,7 @@
             
         </form>
       </div>
-    </div>
+    </div><br><br>
 
 
 
